@@ -1,0 +1,46 @@
+footer {
+  border-top: 1px solid #26806b;
+  padding: 40px 0;
+
+  .social-icons__item {
+    display: inline-block;
+    margin: 30px 10px;
+
+    a {
+      width: 40px;
+      height: 40px;
+      background-color: #9053a1;
+      border-radius: 50px;
+      text-align: center;
+      display: block;
+      padding: 6px 0;
+    }
+  }
+
+  .nav-footer {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+      font-size: 14px;
+      line-height: 32px;
+
+      a {
+        color: #231f20;
+      }
+
+      span {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 32px;
+        color: #013e43;
+      }
+
+      label {
+        color: #9053a1;
+        text-decoration: underline;
+      }
+    }
+  }
+}
