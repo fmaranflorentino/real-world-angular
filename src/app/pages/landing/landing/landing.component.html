@@ -1,0 +1,303 @@
+<!-- BANNER -->
+<div class="slide-banner">
+  <owl-carousel-o [options]="bannerOpts">
+    <ng-template carouselSlide>
+      <div class="slide-banner">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7 col-md-10 col-sm-12">
+              <h1>Financiamento rápido para você comprar agora</h1>
+              <p>
+                Compre pelo nosso site o Market Club financia suas compras com
+                menor taxa de juros do mercado.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div class="slide-banner">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7 col-md-10 col-sm-12">
+              <h1>Financiamento rápido para você comprar agora</h1>
+              <p>
+                Compre pelo nosso site o Market Club financia suas compras com
+                menor taxa de juros do mercado.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template carouselSlide>
+      <div class="slide-banner">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7 col-md-10 col-sm-12">
+              <h1>Financiamento rápido para você comprar agora</h1>
+              <p>
+                Compre pelo nosso site o Market Club financia suas compras com
+                menor taxa de juros do mercado.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+  <a href="#" class="btn btn-primary">Confira os produtos</a>
+</div>
+
+<div class="container">
+  <div class="row">
+    <owl-carousel-o
+      [options]="differentialOpts"
+      class="slide-differential col-12"
+    >
+      <ng-template carouselSlide class="col-md-auto">
+        <div class="slide-differential__item">
+          <img src="../../../assets/img/icon1.png" />
+          <h1>1.000.000</h1>
+          <p>Clientes já cadastrados</p>
+        </div>
+      </ng-template>
+      <ng-template carouselSlide class="col-md-auto">
+        <div class="slide-differential__item">
+          <img src="../../../assets/img/icon2.png" />
+          <h1>15.000</h1>
+          <p>Pontos de Venda</p>
+        </div>
+      </ng-template>
+      <ng-template carouselSlide class="col-md-auto">
+        <div class="slide-differential__item">
+          <img src="../../../assets/img/icon3.png" />
+          <h1>10.000.000</h1>
+          <p>Ecomizados anualmente por nossos clientes</p>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+</div>
+
+<div class="slide-products">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="title">
+          Realize seus sonhos pagando<br />as menores parcelas do mercado
+        </h1>
+      </div>
+      <owl-carousel-o [options]="productsOpts" class="col-12">
+        <ng-template carouselSlide class="col-md-auto">
+          <app-product></app-product>
+        </ng-template>
+        <ng-template carouselSlide class="col-md-auto">
+          <app-product></app-product>
+        </ng-template>
+        <ng-template carouselSlide class="col-md-auto">
+          <app-product></app-product>
+        </ng-template>
+        <ng-template carouselSlide class="col-md-auto">
+          <app-product></app-product>
+        </ng-template>
+        <ng-template carouselSlide class="col-md-auto">
+          <app-product></app-product>
+        </ng-template>
+        <ng-template carouselSlide class="col-md-auto">
+          <app-product></app-product>
+        </ng-template>
+        <ng-template carouselSlide class="col-md-auto">
+          <app-product></app-product>
+        </ng-template>
+        <ng-template carouselSlide class="col-md-auto">
+          <app-product></app-product>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+
+  <div class="curves">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path
+        fill="#F1FAFA"
+        fill-opacity="1"
+        d="M0,160L34.3,165.3C68.6,171,137,181,206,202.7C274.3,224,343,256,411,261.3C480,267,549,245,617,218.7C685.7,192,754,160,823,138.7C891.4,117,960,107,1029,112C1097.1,117,1166,139,1234,133.3C1302.9,128,1371,96,1406,80L1440,64L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"
+      ></path>
+    </svg>
+  </div>
+</div>
+
+<!-- STORES -->
+<div class="stores">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="title">
+          Lojas que já fazem parte do Market Club
+          <a href="#" class="link-purple">Veja todos</a>
+        </h1>
+      </div>
+      <owl-carousel-o [options]="storesOpts" class="col-12">
+        <ng-template carouselSlide class="col-md-auto">
+          <div class="stores__box">
+            <img src="../../../../assets/img/stores/logo1.png" />
+          </div>
+        </ng-template>
+        <ng-template carouselSlide class="col-md-auto">
+          <div class="stores__box">
+            <img src="../../../../assets/img/stores/logo2.png" />
+          </div>
+        </ng-template>
+        <ng-template carouselSlide class="col-md-auto">
+          <div class="stores__box">
+            <img src="../../../../assets/img/stores/logo3.png" />
+          </div>
+        </ng-template>
+        <ng-template carouselSlide class="col-md-auto">
+          <div class="stores__box">
+            <img src="../../../../assets/img/stores/logo4.png" />
+          </div>
+        </ng-template>
+        <ng-template carouselSlide class="col-md-auto">
+          <div class="stores__box">
+            <img src="../../../../assets/img/stores/logo5.png" />
+          </div>
+        </ng-template>
+        <ng-template carouselSlide class="col-md-auto">
+          <div class="stores__box">
+            <img src="../../../../assets/img/stores/logo6.png" />
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+</div>
+
+<section class="container simulator py-4">
+  <div class="row">
+    <div class="col-6">
+      <h2>Faça a simulação do financiamento</h2>
+
+
+      <article>
+        <div class="range">
+          <span>Valor desejado</span>
+          <ng5-slider [(value)]="value" [options]="options"></ng5-slider>
+        </div>
+
+        <div class="range">
+          <span>Número de parcelas</span>
+          <ng5-slider [(value)]="value" [options]="options2"></ng5-slider>
+        </div>
+      </article>
+    </div>
+    <div class="col-6">
+      <div class="simulator--box">
+        <p>
+          <span class="d-block">
+            Valor de cada parcela
+          </span>
+
+          <span class="d-block">
+            24 vezes de
+          </span>
+
+          <span class="d-block">
+            R$ 2150,00
+          </span>
+        </p>
+
+        <button>
+          Solicitar financiamento
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-facilities></app-facilities>
+
+<section class="container step-by-step py-4">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center mb-2">
+      <h2>
+        Confira o passo-a-passo
+      </h2>
+    </div>
+    <div class="col-md-3">
+      <div class="steps-list mb-2 w-100 d-flex">
+        <img src="./../../../../assets/img/icon2.png" alt="" />
+        <div>
+          <h6 class="m-0 pl-2 pb-2">Simule</h6>
+          <p class="mt-0 pl-2">Sem compromisso</p>
+        </div>
+      </div>
+      <div class="steps-list mb-2 w-100 d-flex">
+        <img src="./../../../../assets/img/icon2.png" alt="" />
+        <div>
+          <h6 class="m-0 pl-2 pb-2">Simule</h6>
+          <p class="mt-0 pl-2">Sem compromisso</p>
+        </div>
+      </div>
+      <div class="steps-list mb-2 w-100 d-flex">
+        <img src="./../../../../assets/img/icon2.png" alt="" />
+        <div>
+          <h6 class="m-0 pl-2 pb-2">Simule</h6>
+          <p class="mt-0 pl-2">Sem compromisso</p>
+        </div>
+      </div>
+      <div class="steps-list mb-2 w-100 d-flex">
+        <img src="./../../../../assets/img/icon2.png" alt="" />
+        <div>
+          <h6 class="m-0 pl-2 pb-2">Simule</h6>
+          <p class="mt-0 pl-2">Sem compromisso</p>
+        </div>
+      </div>
+      <div class="steps-list mb-2 w-100 d-flex">
+        <img src="./../../../../assets/img/icon2.png" alt="" />
+        <div>
+          <h6 class="m-0 pl-2 pb-2">Simule</h6>
+          <p class="mt-0 pl-2">Sem compromisso</p>
+        </div>
+      </div>
+      <div class="steps-list mb-2 w-100 d-flex">
+        <img src="./../../../../assets/img/icon2.png" alt="" />
+        <div>
+          <h6 class="m-0 pl-2 pb-2">Simule</h6>
+          <p class="mt-0 pl-2">Sem compromisso</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-9"></div>
+  </div>
+</section>
+
+<section class="container sellers py-4">
+  <div class="row">
+    <div class="col-6">
+      <img src="./../../../../assets/img/temp/01.png" width="100%" alt="">
+    </div>
+    <div class="col-6">
+      <ng-container>
+        <h3>Venda no Market Club</h3>
+        <p>
+          O Market Club conecta lojistas à centenas de pessoas, de forma rápida
+          e fácil.
+        </p>
+        <a>
+          Saiba mais
+        </a>
+      </ng-container>
+
+      <ng-container>
+        <h2>Não perca tempo, comece a vender no Market Club agora</h2>
+
+        <button mat-ripple class="btn btn-round btn-primary">Quero vender</button>
+        <button mat-ripple class="btn btn-round btn-transparent">Indicar lojista</button>
+
+      </ng-container>
+    </div>
+  </div>
+</section>
