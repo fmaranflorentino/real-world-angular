@@ -1,1 +1,289 @@
-/* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import "~@angular/material/theming";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$marketclub-ui-primary: mat-palette($mat-indigo);
+$marketclub-ui-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$marketclub-ui-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$marketclub-ui-theme: mat-light-theme(
+  $marketclub-ui-primary,
+  $marketclub-ui-accent,
+  $marketclub-ui-warn
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($marketclub-ui-theme);
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+
+* {
+  font-family: "Poppins", sans-serif !important;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+@import "~ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+@import "~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+@import "./assets/scss/bootstrap/bootstrap";
+@import "./assets/scss/components/button";
+
+/* RANGE SIMULATOR  */
+.range .ng5-slider .ng5-slider-floor,
+.range .ng5-slider .ng5-slider-ceil {
+  top: 10px;
+  font-size: 14px;
+}
+
+.range .ng5-slider .ng5-slider-model-value {
+  left: 0 !important;
+  font-size: 22px;
+  font-weight: 600;
+  color: #231f20;
+}
+
+.range .ng5-slider .ng5-slider-bar {
+  left: 0;
+  width: 100%;
+  height: 4px;
+  z-index: 1;
+  background: #d8d8d8;
+  border-radius: 2px;
+}
+.range .ng5-slider .ng5-slider-pointer {
+  background: #ffffff;
+  width: 24px;
+  height: 24px;
+}
+.range .ng5-slider .ng5-slider-pointer-min {
+  background: #ffffff;
+  border: 3px solid #26806b;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  top: -10px;
+}
+.range .ng5-slider .ng5-slider-pointer:after {
+  display: none;
+}
+
+.menu-cart {
+  position: relative;
+  top: 55px;
+  right: -35px;
+
+  .triangle {
+    top: 0;
+    right: 22px;
+    position: absolute;
+    background-color: #fff;
+    text-align: left;
+  }
+  .triangle:before,
+  .triangle:after {
+    content: '';
+    position: absolute;
+    background-color: inherit;
+  }
+  .triangle,
+  .triangle:before,
+  .triangle:after {
+    width:  3em;
+    height: 3em;
+    border-top-right-radius: 20%;
+  }
+  
+  .triangle {
+    transform: rotate(-60deg) skewX(-30deg) scale(1,.866);
+  }
+  .triangle:before {
+    transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%);
+  }
+  .triangle:after {
+    transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%);
+  }
+  
+  &--content {
+    border-radius: 6px;
+
+    width: 340px;
+    padding: 20px;
+
+    h6 {
+      font-size: 1.24rem;
+      color: #013e43;
+    }
+
+    img {
+      width: 55px;
+      height: 55px;
+    }
+
+    span {
+      color: #9053a1;
+    }
+
+    .btn-round {
+      background-color: #9053a1;
+      color:#fff;
+    }
+  }
+}
+
+.menu-search {
+  position: relative;
+  top: -47px;
+  right: -26px;
+
+  &--content {
+    border-radius: 6px;
+
+    width: 650px;
+
+    header {
+      button {
+        border: 0;
+        background: transparent;
+
+        border-radius: 50%;
+        position: relative;
+        top: -10px;
+      }
+    }
+
+    h5 {
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .mat-form-field {
+      width: 100%;
+    }
+
+    ul {
+      li {
+        font-size: 14px;
+
+        list-style: none;
+      }
+    }
+  }
+}
+
+/* SLIDE BANNER HOME */
+.slide-banner .owl-theme .owl-dots .owl-dot span {
+  width: 40px;
+  height: 5px;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+}
+.slide-banner .owl-theme .owl-dots .owl-dot.active span,
+.slide-banner .owl-theme .owl-dots .owl-dot:hover span {
+  background: #25806b;
+  width: 60px;
+}
+
+.slide-banner .owl-theme .owl-nav.disabled + .owl-dots {
+  margin-top: -130px;
+  display: flex;
+  position: relative;
+}
+
+@media (min-width: 576px) {
+  .slide-banner .owl-dots {
+    max-width: 540px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 992px) {
+  .slide-banner .owl-dots {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1200px) {
+  .slide-banner .owl-dots {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .slide-banner .owl-dots {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .slide-banner .owl-theme .owl-nav.disabled + .owl-dots {
+    margin-top: 0px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+}
+
+/* SLIDE PRODUCTS HOME */
+.slide-products .owl-theme .owl-nav [class*="owl-"] {
+  color: #8f53a1;
+  font-size: 14px;
+  margin: 5px;
+  padding: 4px 7px;
+  background: #ffffff;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid #8f53a1;
+  border-radius: 50px;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+}
+.slide-products .owl-theme .owl-nav [class*="owl-"] i {
+  font-size: 18px;
+  line-height: 37px;
+}
+.slide-products .owl-theme .owl-nav {
+  margin-top: 0px;
+  position: absolute;
+  top: -81px;
+  right: 0;
+}
+.slide-products .owl-theme .owl-nav [class*="owl-"] img {
+  margin-top: 5px;
+}
+
+.mat-menu-panel {
+  max-width: none !important;
+  overflow: visible !important;
+
+  &.menu-search {
+    position: relative;
+    top: -40px;
+  }
+}
