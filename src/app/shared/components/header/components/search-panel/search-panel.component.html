@@ -1,0 +1,25 @@
+<div class="menu-search--content px-3" (click)="$event.stopPropagation()">
+  <header class="w-100">
+    <mat-form-field class="w-100">
+      <input
+        type="text"
+        matInput
+        placeholder="Buscar por empréstimos, simulador"
+        autocomplete="off"
+      />
+
+     <button matSuffix mat-ripple><img  src="../../../assets/img/icons/search.png" /></button> 
+    </mat-form-field>
+  </header>
+
+  <div class="d-flex w-100 flex-column">
+    <h5 class="d-block mt-0 mb-3">Termos mais buscados</h5>
+
+    <ul class="d-block ml-0 mt-0 pl-0">
+      <li class="mb-2">Financeiro</li>
+      <li class="mb-2">Parcelas</li>
+      <li class="mb-2">Como funciona</li>
+      <li class="mb-2">Carro</li>
+    </ul>
+  </div>
+</div>
