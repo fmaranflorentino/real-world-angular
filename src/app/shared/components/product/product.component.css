@@ -1,0 +1,34 @@
+.product-box {
+    /* max-width: 260px; */
+    margin-bottom: 50px;
+    display: block;
+    padding: 10px;
+}
+.product-box__title h1 {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
+}
+.product-box__title span {
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: uppercase;
+}
+.product-box__price span {
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: lowercase;
+}
+
+.product-box__price p {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #9053A1;
+}
+
+.product-box__img {
+    margin-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+}
