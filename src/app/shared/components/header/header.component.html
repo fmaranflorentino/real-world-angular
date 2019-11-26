@@ -1,0 +1,133 @@
+<header>
+  <div class="header-top">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="phone">
+            <img src="../../../assets/img/icons/phone.png" />
+            <span>0800 770 6883</span>
+          </div>
+        </div>
+        <div class="col-md-auto">
+          <div class="access">
+            <img src="../../../assets/img/icons/user.png" />
+            <span>Acessar Minha Conta</span>
+          </div>
+        </div>
+        <div class="col-md-auto">
+          <div class="location" [matMenuTriggerFor]="menu">
+            <img src="../../../assets/img/icons/place.png" />
+            <span mat-button
+              >Bebedouro, SP <i class="fa fa-angle-down"></i
+            ></span>
+          </div>
+
+          <mat-menu #menu="matMenu" class="menu-stores">
+            <ng-template matMenuContent>
+              <div
+                class="menu-stores--content"
+                (click)="$event.stopPropagation()"
+              >
+                <h6 class="mt-0 mb-2 text-center">
+                  Encontre as lojas mais próximas à você
+                </h6>
+
+                <div class="d-block">
+                  <mat-form-field class="w-100 my-3">
+                    <input matInput placeholder="Digite seu CEP" />
+                    <span matSuffix>Não sabe o CEP?</span>
+                  </mat-form-field>
+                </div>
+
+                <div class="d-flex justify-content-end">
+                  <button mat-ripple class="btn btn-round btn-transparent-full">
+                    Cancelar
+                  </button>
+                  <button mat-ripple class="btn btn-round btn-primary">Localizar</button>
+                </div>
+              </div>
+            </ng-template>
+          </mat-menu>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-bar">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-auto">
+          <div class="logo">
+            <a routerLink="/home"><img src="../../../assets/img/logo.png"/></a>
+          </div>
+        </div>
+        <div class="col-md-auto">
+          <ul class="nav-header">
+            <li class="nav-header__item">
+              <a routerLink="/sobre">Como Funciona</a>
+            </li>
+            <li class="nav-header__item">
+              <a routerLink="/produtos">Produtos/Serviços</a>
+            </li>
+            <li class="nav-header__item">
+              <a routerLink="/beneficios">Benefícios</a>
+            </li>
+            <li class="nav-header__item">
+              <a routerLink="/parceiros">Parceiros</a>
+            </li>
+            <li class="nav-header__item">
+              <a routerLink="/simulador">Simulador</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-auto">
+          <div class="search" mat-ripple>
+            <a href="javascript: void(0)" [matMenuTriggerFor]="menuSearch"
+              ><img src="../../../assets/img/icons/search.png"
+            /></a>
+          </div>
+          <mat-menu #menuSearch="matMenu" class="menu-search">
+            <ng-template matMenuContent>
+              <app-search-panel></app-search-panel>
+            </ng-template>
+          </mat-menu>
+        </div>
+        <div class="col-md-auto">
+          <div class="cart" mat-ripple>
+            <a href="javascript: void(0)" [matMenuTriggerFor]="menuCart"
+              ><img src="../../../assets/img/icons/cart.png"
+            /></a>
+          </div>
+          <mat-menu #menuCart="matMenu" class="menu-cart">
+            <ng-template matMenuContent>
+              <div class="triangle"></div>
+              <div
+                class="menu-cart--content"
+                (click)="$event.stopPropagation()"
+              >
+                <h6 class="mt-0 mb-2">
+                  Meu carrinho
+                </h6>
+
+                <div class="d-flex w-100 pt-3">
+                  <img src="./../../../../assets/img/icon1.png" alt="" />
+                  <div class="px-3">
+                    <h4 class="m-0 mb-2">
+                      BMW Série 3 Sedã 2.0 16V TurboActive
+                    </h4>
+                    <span>R$ 230.900</span>
+                    <button type="button" class="btn btn-round mt-3" mat-ripple>
+                      Fechar pedido
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </mat-menu>
+        </div>
+        <div class="col-md-auto">
+          <a href="#" class="btn btn-round btn-primary">Faça parte </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

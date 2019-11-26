@@ -1,0 +1,93 @@
+header {
+  background-color: #fff;
+
+  .header-top {
+    border-bottom: 1px solid #dadada;
+    color: #231f20;
+    font-size: 14px;
+    line-height: 21px;
+    padding: 10px 0;
+
+    img {
+      margin-right: 5px;
+    }
+  }
+
+  .phone img {
+    width: 17px;
+  }
+  .user img {
+    width: 15px;
+  }
+  .location img {
+    width: 12px;
+  }
+
+  .nav-header {
+    padding: 0;
+    margin: 0;
+
+    &__item {
+      display: inline;
+
+      a {
+        font-size: 14px;
+        color: #231f20;
+        padding: 10px 20px;
+      }
+    }
+  }
+
+  .search {
+    img {
+      width: 20px;
+    }
+  }
+
+  .cart {
+    img {
+      width: 23px;
+    }
+  }
+
+  .nav-bar {
+    padding: 20px 0;
+
+    .row {
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.nav-bar .row {
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-bar {
+  padding: 20px 0;
+}
+
+.menu-stores {
+  &--content {
+    border-radius: 6px;
+
+    min-width: 470px;
+    padding: 30px;
+
+    h6 {
+      font-size: 1.24rem;
+      color: #013e43;
+    }
+  }
+}
+
+
+
+.btn-round {
+  font-size: 14px;
+  letter-spacing: 1px;
+
+  padding: 13px 25px;
+}
