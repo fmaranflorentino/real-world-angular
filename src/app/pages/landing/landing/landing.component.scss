@@ -107,6 +107,14 @@ owl-carousel-o.slide-differential {
 .slide-products {
   padding: 80px 0 0;
   position: relative;
+
+  .title {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    color: #013E43;
+    margin-bottom: 30px;
+  }
 }
 
 .curves {
@@ -125,6 +133,14 @@ owl-carousel-o.slide-differential {
 .stores {
   background-color: #f1fafa;
   padding: 80px 0;
+
+  .title {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    color: #013E43;
+    margin-bottom: 30px;
+  }
 }
 .stores__box {
   background-color: #fff;
@@ -143,7 +159,13 @@ owl-carousel-o.slide-differential {
   position: absolute;
 }
 
-
+.link-purple {
+  color: #9053A1;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  border-bottom: 2px solid #9053A1;
+}
 
 .step-by-step {
   .steps-list {
@@ -171,9 +193,26 @@ owl-carousel-o.slide-differential {
 }
 
 .simulator {
+  .title {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    color: #013E43;
+    margin-bottom: 30px;
+  }
+
+  .range {
+    margin-bottom: 50px; 
+
+    span {
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  
   &--box {
-    width: 80%;
-    min-height: 400px;
+    width: 100%;
+    min-height: 450px;
 
     display: flex;
     flex-direction: column;
@@ -184,14 +223,39 @@ owl-carousel-o.slide-differential {
     background: #013e43;
     border-radius: 50%;
 
+    &--first {
+     font-size: 26px;
+     margin-bottom: 20px;
+    }
+
+    &--second {
+      font-size: 35px;
+    }
+
+    &--last {
+      font-size: 35px;
+      font-weight: bold;
+    }
+
     p {
         text-align: center;
         font-size: 1rem;
         color: #fff;
+
+        span {
+          display: block;
+        }
     }
 
     button {
         max-width: 250px;
     }
   }
+}
+.title {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 48px;
+  color: #013e43;
+  margin-bottom: 30px;
 }
