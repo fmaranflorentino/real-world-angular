@@ -1,0 +1,19 @@
+<div class="slide-banner" *ngIf="bannerItems && bannerItems.length > 0">
+  <owl-carousel-o [options]="opts">
+    <ng-template carouselSlide *ngFor="let item of bannerItems">
+      <div class="slide-banner">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7 col-md-10 col-sm-12">
+              <h1>{{ item.title }}</h1>
+              <p>
+                {{ item.desc }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+  <a href="#" class="btn btn-primary">Confira os produtos</a>
+</div>
