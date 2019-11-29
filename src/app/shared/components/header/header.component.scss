@@ -35,6 +35,11 @@ header {
         color: #231f20;
         padding: 10px 20px;
       }
+
+      &__activated {
+          font-weight: bold;
+          color: #9053a1 !important;
+      }
     }
   }
 
@@ -82,8 +87,6 @@ header {
     }
   }
 }
-
-
 
 .btn-round {
   font-size: 14px;
