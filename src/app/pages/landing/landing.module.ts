@@ -7,7 +7,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
 
 import { LandingComponent } from './landing/landing.component';
 import { BannerCarouselComponent } from './components/banner-carousel/banner-carousel.component';
-import { ProductsCarouselComponent } from './components/products-carousel/products-carousel.component';
 import { StoresCarouselComponent } from './components/stores-carousel/stores-carousel.component';
 import { SimulatorComponent } from './components/simulator/simulator.component';
 import { StepByStepComponent } from './components/step-by-step/step-by-step.component';
@@ -16,7 +15,7 @@ import { SellersComponent } from './components/sellers/sellers.component';
 
 
 @NgModule({
-  declarations: [LandingComponent, BannerCarouselComponent, ProductsCarouselComponent, StoresCarouselComponent, SimulatorComponent, StepByStepComponent, FacilitiesComponent, SellersComponent],
+  declarations: [LandingComponent, BannerCarouselComponent, StoresCarouselComponent, SimulatorComponent, StepByStepComponent, FacilitiesComponent, SellersComponent],
   imports: [
     CommonModule,
     LandingRoutingModule,
