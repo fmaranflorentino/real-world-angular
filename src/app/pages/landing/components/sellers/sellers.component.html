@@ -1,28 +1,50 @@
 <section class="container sellers">
-    <div class="row align-items-center">
-      <div class="col-7">
-        <img src="./../../../../assets/img/temp/01.png" width="100%" alt="">
-      </div>
-      <div class="col-5">
-        <ng-container>
-          <h3 class="title">Venda no Market Club</h3>
-          <p class="sellers--text">
-            O Market Club conecta lojistas à centenas de pessoas, de forma rápida
-            e fácil.
-          </p>
-          <a>
-            Saiba mais
-          </a>
-        </ng-container>
-  
-        <ng-container *ngIf="false">
-          <h2>Não perca tempo, comece a vender no Market Club agora</h2>
-  
-          <button mat-ripple class="btn btn-round btn-primary">Quero vender</button>
-          <button mat-ripple class="btn btn-round btn-transparent">Indicar lojista</button>
-  
-        </ng-container>
-      </div>
+  <div class="row align-items-center" @scaleOut *ngIf="firstStep">
+    <div class="col-7">
+      <img
+        @fadeIn
+        src="./../../../../assets/img/temp/01.png"
+        width="100%"
+        alt=""
+      />
+
     </div>
-  </section>
-  
+    <div class="col-5">
+      <ng-container @fadeIn>
+        <h3 class="title">Venda no Market Club</h3>
+        <p class="sellers--text">
+          O Market Club conecta lojistas à centenas de pessoas, de forma rápida
+          e fácil.
+        </p>
+        <a href="javascript:void(0)" (click)="toggleStep()">
+          Saiba mais
+        </a>
+      </ng-container>
+    </div>
+  </div>
+
+
+
+  <div class="row align-items-center" @scaleIn *ngIf="secondStep">
+    <div class="col-7">
+      <img
+        @fadeIn
+        src="./../../../../assets/img/temp/02.png"
+        width="100%"
+        alt=""
+      />
+    </div>
+    <div class="col-5">
+      <ng-container @fadeIn>
+        <h2 class="title">Não perca tempo, comece a vender no Market Club agora</h2>
+
+        <button mat-ripple class="btn btn-round btn-primary mr-3">
+          Quero vender
+        </button>
+        <button mat-ripple class="btn btn-round btn-transparent">
+          Indicar lojista
+        </button>
+      </ng-container>
+    </div>
+  </div>
+</section>
