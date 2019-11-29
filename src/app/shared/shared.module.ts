@@ -1,23 +1,47 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
-import { CarouselModule } from 'ngx-owl-carousel-o';
-import { Ng5SliderModule } from 'ng5-slider';
 
 import { ComponentsModule } from './components/components.module';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxGalleryModule } from 'ngx-gallery';
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true
+};
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
+    RouterModule,
     ComponentsModule,
-    CarouselModule,
-    Ng5SliderModule
+    NgxPaginationModule,
+    NgxGalleryModule,
+    PerfectScrollbarModule,
   ],
   exports: [
     ComponentsModule,
-    CarouselModule,
-    Ng5SliderModule
+    NgxPaginationModule,
+    NgxGalleryModule,
+    PerfectScrollbarModule,
   ],
+  providers: [
+    { provide: HAMMER_GESTURE_CONFIG, useClass: SharedModule },
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+    },
+  ]
 })
-export class SharedModule { }
+export class SharedModule extends HammerGestureConfig {
+  overrides = {
+    pinch: { enable: false },
+    rotate: { enable: false }
+  } as any;
+}
