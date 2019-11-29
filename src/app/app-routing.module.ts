@@ -6,7 +6,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: 'home',
-    loadChildren: () => import('./pages/landing/landing.module').then(m => m.LandingModule)
+    loadChildren: () => import('./pages/landing/landing.module').then(m => m.LandingModule),
   },
   { path: 'produtos', loadChildren: () => import('./pages/products/products.module').then(m => m.ProductsModule) },
   { path: 'parceiros', loadChildren: () => import('./pages/partners/partners.module').then(m => m.PartnersModule) },
