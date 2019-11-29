@@ -1,7 +1,11 @@
+button {
+  outline: none !important;
+}
+
 .btn {
   outline: none !important;
   cursor: pointer;
-  
+
   &.btn-round {
     border-radius: 30px;
     border: 0;
