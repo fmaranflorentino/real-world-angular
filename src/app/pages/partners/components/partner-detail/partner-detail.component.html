@@ -1,0 +1,99 @@
+<div class="top">
+    <div class="container">
+      <div class="breadcrumb">
+        <ul>
+          <li><a routerLink="">Página inicial</a></li>
+          <li><i class="fa fa-angle-right"></i></li>
+          <li><a routerLink="/parceiros">Parceiros</a></li>
+          <li><i class="fa fa-angle-right"></i></li>
+          <li class="active">Tok & Stok</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="container partners-info">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="partners-info__img">
+          <img src=".././../../../../assets/img/parceiro.jpg" class="img-fluid"/>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="partners-info__logo">
+          <img src=".././../../../../assets/img/parceiro-logo.png" class="img-fluid"/>
+        </div>
+        <div class="partners-info__rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-half-empty"></i>
+          <span>4.5 of 5</span>
+        </div>
+        <div class="partners-info__desc">
+          <p>
+            A Tok&Stok surgiu em 1978, fruto do empreendedorismo do casal, Régis e Ghislaine Dubrule, recém-chegado da França ao Brasil. O nome resume bem o conceito inovador que seus fundadores desejavam implantar no país: a palavra “Tok” refere-se ao design arrojado de seus produtos e “Stok” menciona a disponibilidade desses móveis para retirada imediata.
+          </p>
+        </div>
+        <div class="partners-info__contact">
+            <div class="partners-info__contact__phone">
+              <img src="../../../../../assets/img/icons/phone.png"/>
+              <span>(11) 1234-5678</span>
+            </div>
+            <div class="partners-address">
+              <img src="../../../../../assets/img/icons/place.png"/>
+              <span> Av. Marginal Tietê, 1250 - Vila Guilherme <br/>
+                  São Paulo - SP, 02050-010
+                  <br/>
+                  <a routerLink="" class="link-purple">Como Chegar</a>
+              </span> 
+            </div>
+            <div class="partners-info__contact__phone">
+              <img src="../../../../../assets/img/icons/clock.png"/>
+              <span>Todos os dias das 10h às 22h</span>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- PRODUCTS -->
+  <div class="slide-products back-curves">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="title">Produtos oferecidos por essa empresa</h1>
+        </div>
+        <owl-carousel-o [options]="productsOptions" class="col-12">
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>  
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>  
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+  

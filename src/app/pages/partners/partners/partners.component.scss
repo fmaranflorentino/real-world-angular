@@ -1,0 +1,31 @@
+.partner-box {
+    max-width: 260px;
+    margin-bottom: 50px;
+    display: block;
+}
+.partner-box__img {
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 8px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.partner-box__title h1 {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
+}
+.partner-box__title span {
+    font-size: 14px;
+    line-height: 21px;
+    text-transform: uppercase;
+}
+
+.partner-box__desc p {
+    font-size: 14px;
+    line-height: 22px;
+}

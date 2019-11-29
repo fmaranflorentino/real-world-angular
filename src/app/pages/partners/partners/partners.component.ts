@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PartnersComponent implements OnInit {
 
-  constructor() { }
+  collection = [];
+  
+  constructor() { 
+    for (let i = 1; i <= 50; i++) {
+      this.collection.push('item ${i}');
+    }
+  }
 
   ngOnInit() {
   }
