@@ -1,0 +1,232 @@
+<div class="top">
+    <div class="container">
+      <div class="breadcrumb">
+        <ul>
+          <li><a routerLink="">Página inicial</a></li>
+          <li><i class="fa fa-angle-right"></i></li>
+          <li><a routerLink="/produtos">Produtos/Serviços</a></li>
+          <li><i class="fa fa-angle-right"></i></li>
+          <li><a routerLink="/produtos/categorias/veiculos">Veículos</a></li>
+          <li><i class="fa fa-angle-right"></i></li>
+          <li class="active">BMW Série 3 Sedã</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="container product-info">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="product-info__img">
+            <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="product-info__logo">
+          <h1>BMW Série 3 Sedã 2.0 16V Turbo Active Automático</h1>
+        </div>
+        <div class="product-info__rating">
+          <fa-icon [icon]="faStar"></fa-icon>
+          <fa-icon [icon]="faStar"></fa-icon>
+          <fa-icon [icon]="faStar"></fa-icon>
+          <fa-icon [icon]="faStar"></fa-icon>
+
+          <!-- <i class="fa fa-star-half-empty"></i> -->
+          <span>4 of 5</span>
+        </div>
+        <perfect-scrollbar style="max-width: 600px; max-height: 250px;" [config]="config">
+          <div class="product-info__prices" for="radio1">
+            <div class="product-info__prices__select">
+              <input type="radio" id="radio1"/>
+            </div>
+            <div class="product-info__prices__offers">
+              <h3>R$ 230.900</h3>
+              <span>Loja São Paulo</span>
+            </div>
+            <div class="product-info__prices__label">
+              <label>Melhor preço</label>
+            </div>
+            <div class="product-info__prices__economy">
+                <span>Preço na loja:  R$ 255.000,00</span>
+                <span>Econômetro: 24.100,00</span>
+            </div>
+          </div>
+
+          <div class="product-info__prices" for="radio1">
+            <div class="product-info__prices__select">
+              <input type="radio" id="radio1"/>
+            </div>
+            <div class="product-info__prices__offers">
+              <h3>R$ 230.900</h3>
+              <span>Loja São Paulo</span>
+            </div>
+            <div class="product-info__prices__label">
+              <label>Melhor preço</label>
+            </div>
+            <div class="product-info__prices__economy">
+                <span>Preço na loja:  R$ 255.000,00</span>
+                <span>Econômetro: 24.100,00</span>
+            </div>
+          </div>
+
+          <div class="product-info__prices" for="radio1">
+            <div class="product-info__prices__select">
+              <input type="radio" id="radio1"/>
+            </div>
+            <div class="product-info__prices__offers">
+              <h3>R$ 230.900</h3>
+              <span>Loja São Paulo</span>
+            </div>
+            <div class="product-info__prices__label">
+              <label>Melhor preço</label>
+            </div>
+            <div class="product-info__prices__economy">
+                <span>Preço na loja:  R$ 255.000,00</span>
+                <span>Econômetro: 24.100,00</span>
+            </div>
+          </div>
+
+          <div class="product-info__prices" for="radio1">
+            <div class="product-info__prices__select">
+              <input type="radio" id="radio1"/>
+            </div>
+            <div class="product-info__prices__offers">
+              <h3>R$ 230.900</h3>
+              <span>Loja São Paulo</span>
+            </div>
+            <div class="product-info__prices__label">
+              <label>Melhor preço</label>
+            </div>
+            <div class="product-info__prices__economy">
+                <span>Preço na loja:  R$ 255.000,00</span>
+                <span>Econômetro: 24.100,00</span>
+            </div>
+          </div>
+
+          <div class="product-info__prices" for="radio1">
+            <div class="product-info__prices__select">
+              <input type="radio" id="radio1"/>
+            </div>
+            <div class="product-info__prices__offers">
+              <h3>R$ 230.900</h3>
+              <span>Loja São Paulo</span>
+            </div>
+            <div class="product-info__prices__label">
+              <label>Melhor preço</label>
+            </div>
+            <div class="product-info__prices__economy">
+                <span>Preço na loja:  R$ 255.000,00</span>
+                <span>Econômetro: 24.100,00</span>
+            </div>
+          </div>
+
+          <div class="product-info__prices" for="radio1">
+            <div class="product-info__prices__select">
+              <input type="radio" id="radio1"/>
+            </div>
+            <div class="product-info__prices__offers">
+              <h3>R$ 230.900</h3>
+              <span>Loja São Paulo</span>
+            </div>
+            <div class="product-info__prices__label">
+              <label>Melhor preço</label>
+            </div>
+            <div class="product-info__prices__economy">
+                <span>Preço na loja:  R$ 255.000,00</span>
+                <span>Econômetro: 24.100,00</span>
+            </div>
+          </div>
+        </perfect-scrollbar>
+
+        <div class="product-info__buttons">
+          <a routerLink="" class="btn btn-gray"><i class="fa fa-shopping-cart"></i>Quero Comprar</a>
+          <a routerLink="" class="link-purple noborder"><i class="fa fa-heart"> Adicionar aos Favoritos</i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-desc">
+    <!-- <app-tabs></app-tabs> -->
+  </div>
+  
+  
+  <!-- PRODUCTS -->
+  <div class="slide-products back-curves">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="title">Quem viu, viu também</h1>
+        </div>
+        <owl-carousel-o [options]="productsOptions" class="col-12">
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>  
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>  
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- PRODUCTS -->
+  <div class="slide-products back-green">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="title">Mais vendidos do mês</h1>
+        </div>
+        <owl-carousel-o [options]="productsOptions" class="col-12">
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>  
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>  
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+
+
+
+  
