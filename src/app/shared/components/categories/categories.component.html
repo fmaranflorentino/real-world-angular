@@ -1,0 +1,53 @@
+<div class="categories row" @listState *ngIf="categoriesList.length > 0">
+  <div class="col-md-2 col-6" *ngFor="let cat of categoriesList; let i = index">
+    <div
+     class="categories__item"
+     [ngClass]="{
+       'one': i === 1,
+       'two': i === 2,
+       'three': i === 3,
+       'four': i === 4,
+       'five': i === 5,
+       'six': i === 6,
+       'seven': i === 7
+     }"
+     >
+      <span>{{ cat.title }}</span>
+    </div>
+  </div>
+  <!-- <div class="col-md-2 col-6">
+    <div class="categories__item" data-info="Acessórios">
+      <span>Acessórios</span>
+    </div>
+  </div>
+  <div class="col-md-2 col-6">
+    <div class="categories__item" data-info="Decoração">
+      <span>Decoração</span>
+    </div>
+  </div>
+  <div class="col-md-2 col-6">
+    <div class="categories__item" data-info="Moda">
+      <span>Moda</span>
+    </div>
+  </div>
+  <div class="col-md-2 col-6">
+    <div class="categories__item" data-info="Viagens">
+      <span>Viagens</span>
+    </div>
+  </div>
+  <div class="col-md-2 col-6">
+    <div class="categories__item" data-info="Veículos">
+      <span>Veículos</span>
+    </div>
+  </div>
+  <div class="col-md-2 col-6">
+    <div class="categories__item" data-info="Promoções">
+        <span>Promoções</span>
+      </div>
+  </div>
+  <div class="col-md-2 col-6">
+    <div class="categories__item" data-info="Novidades">
+      <span>Novidades</span>
+    </div>
+  </div> -->
+</div>
