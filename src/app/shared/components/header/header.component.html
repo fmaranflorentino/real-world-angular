@@ -1,4 +1,4 @@
-<header>
+<header @fadeIn>
   <div class="header-top">
     <div class="container">
       <div class="row">
@@ -57,16 +57,16 @@
       <div class="row">
         <div class="col-md-auto">
           <div class="logo">
-            <a routerLink="/home"><img src="../../../assets/img/logo.png"/></a>
+            <a [routerLink]="['/home']"><img src="../../../assets/img/logo.png"/></a>
           </div>
         </div>
         <div class="col-md-auto">
           <ul class="nav-header">
-            <li class="nav-header__item">
-              <a routerLink="/sobre">Como Funciona</a>
+            <li routerLink="/sobre" class="nav-header__item">
+              <a >Como Funciona</a>
             </li>
             <li class="nav-header__item">
-              <a routerLink="/produtos">Produtos/Serviços</a>
+              <a [routerLink]="['/produtos']" [routerLinkActive]="['nav-header__item__activated']">Produtos/Serviços</a>
             </li>
             <li class="nav-header__item">
               <a routerLink="/beneficios">Benefícios</a>
@@ -93,9 +93,10 @@
         </div>
         <div class="col-md-auto">
           <div class="cart" mat-ripple>
-            <a href="javascript: void(0)" [matMenuTriggerFor]="menuCart"
+            <!-- <a href="javascript: void(0)" [matMenuTriggerFor]="menuCart"
               ><img src="../../../assets/img/icons/cart.png"
-            /></a>
+            /></a> -->
+            <fa-icon [icon]="faHeart" [matMenuTriggerFor]="menuCart" [styles]="{'color': '#9053a1'}"></fa-icon>
           </div>
           <mat-menu #menuCart="matMenu" class="menu-cart">
             <ng-template matMenuContent>
