@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { bannerOptions, differentialOptions, productsOptions, storesOptions } from './carousel-options';
 import { Options } from 'ng5-slider';
+import { MatDialog } from '@angular/material';
+import { LoginModalComponent } from 'src/app/shared/components/login-modal/login-modal.component';
+import { ModalService } from 'src/app/shared/services/modal';
 
 @Component({
   selector: 'app-landing',
@@ -57,13 +60,22 @@ export class LandingComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(public dialog: MatDialog, private modal: ModalService) { }
 
   ngOnInit() {
+    this.openDialog();
   }
 
   toggleSelectedStep(step: {title: string, text: string}): void {
     this.stepByStepSelected = {...step};
+  }
+
+  openDialog(): void {
+    const dialogRef = this.modal.open(LoginModalComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
 }
