@@ -1,0 +1,33 @@
+:host {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  h1 {
+    font-size: 32px;
+    font-weight: 600;
+	}
+	
+	input {
+		&[type=text] {
+			margin-bottom: 30px !important;
+		}
+	}
+}
+
+button {
+	&.btn-round {
+    padding: 7px 40px !important;
+	}
+
+  &.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
