@@ -30,15 +30,23 @@ header {
     &__item {
       display: inline;
 
+      &:hover {
+        a {
+          color: #9053a1 !important;
+        }
+      }
+
       a {
+        transition: all 0.3s ease-in-out;
         font-size: 14px;
         color: #231f20;
+
         padding: 10px 20px;
       }
 
       &__activated {
-          font-weight: bold;
-          color: #9053a1 !important;
+        font-weight: bold;
+        color: #9053a1 !important;
       }
     }
   }
