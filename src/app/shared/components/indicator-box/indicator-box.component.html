@@ -1,7 +1,6 @@
 <div class="container py-4" *ngIf="indicators && indicators.length > 0">
     <div class="row">
       <owl-carousel-o
-        [options]="differentialOpts"
         class="slide-differential col-12"
       >
         <ng-template carouselSlide class="col-md-auto" *ngFor="let indicator of indicators">
