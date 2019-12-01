@@ -54,6 +54,10 @@ html {
 @import "~ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
 @import "~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
 @import "./assets/scss/bootstrap/bootstrap";
+@import "./assets/scss/globals/animations";
+
+@import "./assets/scss/pages/my-account";
+
 @import "./assets/scss/components/button";
 
 /* RANGE SIMULATOR  */
@@ -461,3 +465,7 @@ input.form-control:active {
 //   border-radius:0;
 //   font-weight: 600;
 // }
+
+input.form-control:focus {
+  background: #fff !important;
+}

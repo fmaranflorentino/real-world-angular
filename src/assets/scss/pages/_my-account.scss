@@ -1,0 +1,99 @@
+.my-account {
+  padding: 60px 0;
+
+  &--menu-items {
+    padding: 0;
+
+    li {
+      border-top: 2px solid rgba(#bbb, 0.2);
+      cursor: pointer;
+
+      list-style: none;
+      padding: 20px 0;
+      position: relative;
+
+      @extend .d-block;
+
+      span,
+      small {
+        @extend .d-block;
+      }
+
+      span {
+        font-weight: bold;
+      }
+
+      svg {
+        position: absolute;
+        top: 28px;
+        right: 13px;
+      }
+
+      &.active {
+        span,
+        small,
+        svg {
+          color: #9053a1;
+        }
+      }
+
+      &.last {
+        border-bottom: 2px solid rgba(#bbb, 0.2);
+      }
+
+      &:hover {
+        svg {
+          animation: tada 0.7s forwards;
+          animation-delay: 0.3s;
+        }
+      }
+    }
+  }
+
+  .table {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+
+    &--header {
+      border-bottom: 1px solid #d6d6d6;
+
+      padding: 16px;
+
+      span {
+        font-weight: bold;
+      }
+
+      button {
+        font-size: 14px;
+
+        svg {
+            color: #9053a1;
+        }
+      }
+    }
+
+    &--body {
+      padding: 20px;
+
+      ul {
+        padding: 0;
+
+        li {
+          list-style: none;
+        }
+      }
+
+      .active {
+          svg {
+              color: #26806B;
+          }
+      }
+
+      .pending {
+          svg {
+              color: #ffc107;
+          }
+      }
+    }
+  }
+}
