@@ -1,5 +1,5 @@
 <h1 mat-dialog-title>Acesse sua conta</h1>
-<button class="close" type="button" mat-button>
+<button class="close" type="button" mat-button tabindex="-1">
   <mat-icon>
     <fa-icon [icon]="faTimes"></fa-icon>
   </mat-icon>
@@ -7,8 +7,20 @@
 <form>
   <div mat-dialog-content class="py-4">
     <div class="form-group">
-      <input type="text" placeholder="Usuário" class="form-control mb-3" />
-      <input type="password" placeholder="Senha" class="form-control" />
+      <input
+        type="text"
+        placeholder="Usuário"
+        class="form-control"
+        autocomplete="off"
+      />
+    </div>
+    <div class="form-group m-0 p-0">
+      <input
+        type="password"
+        placeholder="Senha"
+        class="form-control"
+        autocomplete="off"
+      />
     </div>
   </div>
   <div mat-dialog-actions class="justify-content-center">

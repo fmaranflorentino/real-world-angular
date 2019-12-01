@@ -11,19 +11,43 @@
   h1 {
     font-size: 32px;
     font-weight: 600;
-	}
-	
-	input {
-		&[type=text] {
-			margin-bottom: 30px !important;
-		}
-	}
+
+    @media screen and (max-width: 670px) {
+      font-size: 20px;
+    }
+  }
+
+  form {
+    @media screen and (max-width: 670px) {
+      width: 100%;
+    }
+  }
+
+  input {
+    width: 370px;
+
+    @media screen and (max-width: 670px) {
+      width: 100%;
+    }
+
+    padding-left: 0;
+
+    &[type="text"] {
+      margin-bottom: 40px !important;
+    }
+  }
+
+  input::placeholder {
+    font-weight: bold !important;
+  }
 }
 
 button {
-	&.btn-round {
-    padding: 7px 40px !important;
-	}
+  &.btn-round {
+    padding: 5px 40px !important;
+
+    margin-top: 30px !important;
+  }
 
   &.close {
     position: absolute;
