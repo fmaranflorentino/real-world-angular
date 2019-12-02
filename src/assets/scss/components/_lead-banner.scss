@@ -1,0 +1,51 @@
+app-lead-banner {
+  .slide-banner .owl-theme .owl-dots .owl-dot span {
+    width: 40px;
+    height: 5px;
+    -webkit-transition: width 0.5s;
+    transition: width 0.5s;
+  }
+  .slide-banner .owl-theme .owl-dots .owl-dot.active span,
+  .slide-banner .owl-theme .owl-dots .owl-dot:hover span {
+    background: #25806b;
+    width: 60px;
+  }
+
+  .slide-banner .owl-theme .owl-nav.disabled + .owl-dots {
+    margin-top: -130px;
+    display: flex;
+    position: relative;
+  }
+
+  @media (min-width: 576px) {
+    .slide-banner .owl-dots {
+      max-width: 540px;
+      margin: 0 auto;
+    }
+  }
+  @media (min-width: 992px) {
+    .slide-banner .owl-dots {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+  }
+  @media (min-width: 1200px) {
+    .slide-banner .owl-dots {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .slide-banner .owl-dots {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .slide-banner .owl-theme .owl-nav.disabled + .owl-dots {
+      margin-top: 0px;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+  }
+}

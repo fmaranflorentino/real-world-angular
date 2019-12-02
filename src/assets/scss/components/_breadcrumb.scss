@@ -1,0 +1,26 @@
+.breadcrumb {
+  background-color: transparent;
+  padding: 20px 0;
+  margin: 0;
+}
+.breadcrumb ul {
+  margin: 0;
+  padding: 0;
+}
+.breadcrumb ul li {
+  list-style: none;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 21px;
+}
+.breadcrumb ul li.active {
+  padding: 10px;
+}
+.breadcrumb ul li a {
+  color: #9053a1;
+  padding: 10px;
+}
+.breadcrumb ul li i {
+  color: #9053a1;
+  padding: 10px;
+}
