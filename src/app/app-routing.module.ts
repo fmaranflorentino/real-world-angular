@@ -12,9 +12,9 @@ const routes: Routes = [
   { path: 'parceiros', loadChildren: () => import('./pages/partners/partners.module').then(m => m.PartnersModule) },
   { path: 'beneficios', loadChildren: () => import('./pages/benefits/benefits.module').then(m => m.BenefitsModule) },
   { path: 'simulador', loadChildren: () => import('./pages/simulator/simulator.module').then(m => m.SimulatorModule) },
-  { path: 'sobre', loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule) },
+  { path: 'como-funciona', loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule) },
   { path: 'financiamento', loadChildren: () => import('./pages/financing/financing.module').then(m => m.FinancingModule) },
-  { path: 'minha-conta', loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule) }
+  { path: 'minha-conta', loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule) },
 ];
 
 @NgModule({
