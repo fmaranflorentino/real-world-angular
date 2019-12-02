@@ -101,20 +101,37 @@ export const listStateTrigger = trigger('listState', [
 
 export const slideInAnimation =
     trigger('routeAnimations', [
+        // transition('* => *', [
+        //     query(':enter, :leave',
+        //         style({ display: 'block' }),
+        //         { optional: true }),
+        //     group([
+        //         query(':enter', [
+        //             style({ transform: 'translateX(-100%)' }),
+        //             animate('0.5s ease-in-out',
+        //                 style({ transform: 'translateX(0%)' }))
+        //         ], { optional: true }),
+        //         query(':leave', [
+        //             style({ transform: 'translateX(0%)' }),
+        //             animate('0.5s ease-in-out',
+        //                 style({ transform: 'translateX(100%)' }))
+        //         ], { optional: true }),
+        //     ])
+        // ]),
         transition('* => *', [
             query(':enter, :leave',
                 style({ display: 'block' }),
                 { optional: true }),
             group([
                 query(':enter', [
-                    style({ transform: 'translateX(-100%)' }),
+                    style({ opacity: '0' }),
                     animate('0.5s ease-in-out',
-                        style({ transform: 'translateX(0%)' }))
+                        style({ opacity: '1' }))
                 ], { optional: true }),
                 query(':leave', [
-                    style({ transform: 'translateX(0%)' }),
-                    animate('0.5s ease-in-out',
-                        style({ transform: 'translateX(100%)' }))
+                    style({ opacity: '1' }),
+                    animate('.3s ease-in-out',
+                        style({ opacity: '0' }))
                 ], { optional: true }),
             ])
         ]),

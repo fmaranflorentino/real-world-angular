@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { listStateTrigger } from 'src/app/shared/helpers/animations';
 import { faBars, faTh, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
+import { wait } from 'src/app/shared/helpers/ui.helper';
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -14,6 +16,7 @@ export class ProductsComponent implements OnInit {
   faBars = faBars;
   faTh = faTh;
   faChevronDown = faChevronDown;
+  showEffects: boolean;
 
   constructor() {
     for (let i = 1; i <= 50; i++) {
@@ -22,6 +25,10 @@ export class ProductsComponent implements OnInit {
    }
 
   ngOnInit() {
+    wait(500)
+      .then(() => {
+        this.showEffects = true;
+      });
   }
 
 }

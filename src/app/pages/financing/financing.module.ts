@@ -9,7 +9,7 @@ import { FinancingComponent } from './financing/financing.component';
   declarations: [FinancingComponent],
   imports: [
     CommonModule,
-    FinancingRoutingModule
+    FinancingRoutingModule,
   ]
 })
 export class FinancingModule { }

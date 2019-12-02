@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { faChevronRight, faExclamation, faCheck, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { listStateTrigger, fadeIn } from 'src/app/shared/helpers/animations';
 
+import { wait } from 'src/app/shared/helpers/ui.helper';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -42,9 +44,10 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.showEffects = true;
-    }, 500);
+    wait(500)
+      .then(() => {
+        this.showEffects = true;
+      });
   }
 
   toggleActiveItem(item: { title: string, text: string }) : void {
