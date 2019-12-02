@@ -62,7 +62,7 @@
         </div>
         <div class="col-md-auto">
           <ul class="nav-header">
-            <li routerLink="/sobre" class="nav-header__item">
+            <li [routerLink]="['/como-funciona']" [routerLinkActive]="['nav-header__item__activated']" class="nav-header__item">
               <a href="javascript: void(0)">Como Funciona</a>
             </li>
             <li class="nav-header__item">
@@ -72,9 +72,9 @@
               <a routerLink="/beneficios">Benefícios</a>
             </li> -->
             <li class="nav-header__item">
-              <a routerLink="/parceiros">Parceiros</a>
+              <a routerLink="/parceiros" [routerLinkActive]="['nav-header__item__activated']">Parceiros</a>
             </li>
-            <li class="nav-header__item">
+            <li class="nav-header__item" [routerLinkActive]="['nav-header__item__activated']">
               <a routerLink="/simulador">Simulador</a>
             </li>
           </ul>
