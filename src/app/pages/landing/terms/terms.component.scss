@@ -1,0 +1,35 @@
+.btn-download {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #9053a1;
+
+    svg {
+        color: #9053a1;
+    }
+}
+
+button {
+    padding: 8px 30px !important;
+}
+
+@media screen and (min-width: 481px) {
+    .actions {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .actions {
+        button {
+            display: block;
+
+            margin-right: auto;
+            margin-left: auto;
+
+            &.btn-download {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
