@@ -1,0 +1,149 @@
+
+.slide-banner {
+    background-image: url("../../../../assets/img/banner-principal.png");
+    background-repeat: no-repeat;
+    height: 580px;
+    background-position: right top;
+}
+
+.slide-banner h1 {
+    font-weight: 600;
+    font-size: 46px;
+    line-height: 52px;
+    color: #013E43;
+    margin-top: 80px;
+}
+.slide-banner p {
+    font-size: 20px;
+    line-height: 38px;
+}
+.slide-banner .btn {
+    display: none;
+}
+
+@media (max-width:768px) {
+    .slide-banner {
+        background-image: url("../../../../assets/img/banner-principal.png");
+        background-position: 200px top;
+    }
+}
+@media (max-width:700px) {
+    .slide-banner {
+        background-color: #013E43;
+        background-image: url("../../../../assets/img/banner-principal-mobile.png");
+        height: 400px;
+        background-position: right top;
+    }
+    .slide-banner h1 {
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 45px;
+        color: #fff;
+        margin-top: 40px;
+    }
+    .slide-banner p {
+        font-size: 18px;
+        line-height: 30px;
+        color: #fff;
+    }
+
+    .slide-banner .btn {
+        display: block;
+        margin: -143px 30px;
+        z-index: 99;
+        position: relative;
+    }
+}
+
+
+.slide-differential__item h1 {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+}
+
+.slide-differential__item p {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+
+owl-carousel-o.slide-differential {
+    width: 80%;
+    margin-top: -50px;
+}
+
+.slide-differential .slide-differential__item img {
+    width: 62px;
+    display: block;
+    margin-bottom: 10px;
+}
+.slide-differential .slide-differential__item h1 {
+    font-size: 32px;
+    line-height: 48px;
+    font-weight: 600;
+    display: block;
+    color: #013E43;
+    margin: 0;
+}
+/* .slide-differential .slide-differential__item p {
+    
+} */
+/* .slide-differential {
+    margin-top: 70px;
+} */
+
+@media (max-width:700px) {
+    owl-carousel-o.slide-differential {
+        width: 100%;
+        margin-top: 80px;
+    }
+}
+
+/* 
+
+    .slide-differential .owl-carousel .owl-item {
+        width: calc(100vh - 10px) !important;
+    }
+     */
+
+
+.slide-products {
+    padding: 80px 0 0;
+    position: relative;
+}
+
+.curves {
+    position: absolute;
+    top: 260px;
+    width: 100%;
+    height: 200px;
+}
+@media (max-width:700px) {
+    .curves{
+        top: 450px;
+        height: 400px;
+    }
+}
+
+
+.stores {
+    background-color: #F1FAFA;
+    padding: 80px 0 ;
+}
+.stores__box {
+    background-color: #fff;
+    border-radius: 8px;
+    width: 170px;
+    height: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.stores .link-purple {
+    right: 15px;
+    top: 10px;
+    position: absolute;
+}

@@ -7,7 +7,7 @@
         </h1>
       </div>
 
-      <div class="col-4" *ngIf="showEffects">
+      <div class="col-12 col-md-3 col-lg-4" *ngIf="showEffects">
         <ul
           class="my-account--menu-items"
           @listState
@@ -26,24 +26,24 @@
         </ul>
       </div>
 
-      <div class="col-8" @fadeIn *ngIf="showEffects && selectedItem">
+      <div class="col-12 col-md-9 col-lg-8" @fadeIn *ngIf="showEffects && selectedItem">
         <ng-container *ngIf="selectedItem === menuItems[0]">
           <div class="table w-100">
             <div class="table--header row m-0">
-              <div class="col-3">
+              <div class="col-3 pl-0">
                 <span>
                   Código
                 </span>
               </div>
-              <div class="col-3">
+              <div class="col pl-0">
                 <span>
                   Produto
                 </span>
               </div>
-              <div class="col-3">
+              <div class="col-3 pl-0">
                 <span>Status</span>
               </div>
-              <div class="col-3">
+              <div class="col-auto pl-0">
                 <button mat-button class="link-purple p-0">
                   <fa-icon [icon]="faPlus" class="mr-2"></fa-icon>
                   <span>Adicionar Produto</span>
@@ -59,8 +59,15 @@
                 <li class="col-3 p-0">
                   {{ product.id }}
                 </li>
-                <li class="col-3 p-0">
-                  {{ product.name }}
+                <li
+                  class="col-3 p-0"
+                >
+                <span
+                  [matTooltipDisabled]="product.name.length < 16"
+                  [matTooltip]="product.name">
+
+                  {{ product.name | slice: 0:16 }} {{ product.name.length > 16 ? '...' : '' }}
+                </span>
                 </li>
                 <li
                   class="col-3 p-0"

@@ -318,6 +318,11 @@ app-filters-mobile,
   line-height: 48px;
   color: #013e43;
   margin-bottom: 30px;
+
+  @media screen and (max-width: 670px) {
+    font-size:25px !important;
+  }
+
 }
 .title span {
   display: block;

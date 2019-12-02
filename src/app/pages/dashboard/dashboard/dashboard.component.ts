@@ -25,8 +25,18 @@ export class DashboardComponent implements OnInit {
   selectedItem = this.menuItems[0];
 
   products = [
-    { id: 234234423, name: 'BMW Série 2 Sedã', status: 'pending'  },
-    { id: 45877878, name: 'Geladeira/Refrigerador', status: 'active'  },
+    { id: 2342354644423, name: 'BMW Série 2 Sedã', status: 'pending'  },
+    { id: 4587754564878, name: 'Geladeira/Refrigerador Brastempo', status: 'active'  },
+    { id: 2342354644423, name: 'BMW Série 2 Sedã', status: 'pending'  },
+    { id: 4587754564878, name: 'Geladeira/Refrigerador Brastempo', status: 'active'  },
+    { id: 2342354644423, name: 'BMW Série 2 Sedã', status: 'pending'  },
+    { id: 4587754564878, name: 'Geladeira/Refrigerador Brastempo', status: 'active'  },
+    { id: 2342354644423, name: 'BMW Série 2 Sedã', status: 'pending'  },
+    { id: 4587754564878, name: 'Geladeira/Refrigerador Brastempo', status: 'active'  },
+    { id: 2342354644423, name: 'BMW Série 2 Sedã', status: 'pending'  },
+    { id: 4587754564878, name: 'Geladeira/Refrigerador Brastempo', status: 'active'  },
+    { id: 2342354644423, name: 'BMW Série 2 Sedã', status: 'pending'  },
+    { id: 4587754564878, name: 'Geladeira/Refrigerador Brastempo', status: 'active'  },
   ];
 
   constructor() { }
