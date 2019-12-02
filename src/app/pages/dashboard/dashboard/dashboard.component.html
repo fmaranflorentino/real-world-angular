@@ -1,99 +1,126 @@
 <app-base>
-    <section class="my-account">
-        <div class="container">
-          <div class="row" @faIn *ngIf="showEffects">
-            <div class="col-12">
-              <h1 @fadeIn class="title">
-                Minha conta
-              </h1>
-            </div>
-      
-            <div class="col-12 col-md-3 col-lg-4">
-              <ul
-                class="my-account--menu-items"
-                @listState
-                *ngIf="menuItems?.length > 0"
-              >
-                <li
-                  mat-ripple
-                  *ngFor="let item of menuItems; let l = last"
-                  [ngClass]="{ last: l, active: item === selectedItem }"
-                  (click)="toggleActiveItem(item)"
-                >
-                  <span>{{ item.title }}</span>
-                  <small>{{ item.text }}</small>
-                  <fa-icon [icon]="faChevronRight"></fa-icon>
-                </li>
-              </ul>
-            </div>
-      
-            <div class="col-12 col-md-9 col-lg-8" @fadeIn *ngIf="showEffects && selectedItem">
-              <ng-container *ngIf="selectedItem === menuItems[0]">
-                <div class="table w-100">
-                  <div class="table--header row m-0">
-                    <div class="col-3 pl-0">
-                      <span>
-                        Código
-                      </span>
-                    </div>
-                    <div class="col pl-0">
-                      <span>
-                        Produto
-                      </span>
-                    </div>
-                    <div class="col-3 pl-0">
-                      <span>Status</span>
-                    </div>
-                    <div class="col-auto pl-0">
-                      <button mat-button class="link-purple p-0">
-                        <fa-icon [icon]="faPlus" class="mr-2"></fa-icon>
-                        <span>Adicionar Produto</span>
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    class="table--body row m-0"
-                    @listState
-                    *ngIf="products.length > 0"
-                  >
-                    <ul class="w-100 d-flex" *ngFor="let product of products">
-                      <li class="col-3 p-0">
-                        {{ product.id }}
-                      </li>
-                      <li
-                        class="col-3 p-0"
-                      >
-                      <span
-                        [matTooltipDisabled]="product.name.length < 16"
-                        [matTooltip]="product.name">
-      
-                        {{ product.name | slice: 0:16 }} {{ product.name.length > 16 ? '...' : '' }}
-                      </span>
-                      </li>
-                      <li
-                        class="col-3 p-0"
-                        [ngClass]="{
-                          active: product.status === 'active',
-                          pending: product.status === 'pending'
-                        }"
-                      >
-                        <fa-icon
-                          [icon]="
-                            product.status === 'pending' ? faExclamation : faCheck
-                          "
-                          class="mr-2"
-                        ></fa-icon>
-                        <span>{{
-                          product.status === "pending" ? "Pendente" : "Ativo"
-                        }}</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </ng-container>
-            </div>
-          </div>
+  <section class="my-account">
+    <div class="container dash">
+      <div class="row" @faIn *ngIf="showEffects">
+        <div class="col-12">
+          <h1 @fadeIn class="title">
+            Minha conta
+          </h1>
         </div>
-      </section>
-      
+
+        <div class="col-12 col-md-3 col-lg-4">
+          <ul
+            class="my-account--menu-items"
+            @listState
+            *ngIf="menuItems?.length > 0"
+          >
+            <li
+              mat-ripple
+              *ngFor="let item of menuItems; let l = last"
+              [ngClass]="{ last: l, active: item === selectedItem }"
+              (click)="toggleActiveItem(item)"
+            >
+              <span>{{ item.title }}</span>
+              <small>{{ item.text }}</small>
+              <fa-icon [icon]="faChevronRight"></fa-icon>
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="col-12 col-md-9 col-lg-8"
+          @fadeIn
+          *ngIf="showEffects && selectedItem"
+        >
+          <ng-container *ngIf="selectedItem === menuItems[0]">
+            <div class="table w-100" @fadeIn>
+              <div class="table--header row m-0">
+                <div class="col-3 pl-0">
+                  <span>
+                    Código
+                  </span>
+                </div>
+                <div class="col pl-0">
+                  <span>
+                    Produto
+                  </span>
+                </div>
+                <div class="col-3 pl-0">
+                  <span>Status</span>
+                </div>
+                <div class="col-auto pl-0">
+                  <button mat-button class="link-purple p-0">
+                    <fa-icon [icon]="faPlus" class="mr-2"></fa-icon>
+                    <span>Adicionar Produto</span>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="table--body row m-0"
+                @listOpacity
+                *ngIf="products.length > 0"
+              >
+                <ul class="w-100 d-flex" *ngFor="let product of products">
+                  <li class="col-3 p-0">
+                    {{ product.id }}
+                  </li>
+                  <li class="col-3 p-0">
+                    <span
+                      [matTooltipDisabled]="product.name.length < 16"
+                      [matTooltip]="product.name"
+                    >
+                      {{ product.name | slice: 0:16 }}
+                      {{ product.name.length > 16 ? "..." : "" }}
+                    </span>
+                  </li>
+                  <li
+                    class="col-3 p-0"
+                    [ngClass]="{
+                      active: product.status === 'active',
+                      pending: product.status === 'pending'
+                    }"
+                  >
+                    <fa-icon
+                      [icon]="
+                        product.status === 'pending' ? faExclamation : faCheck
+                      "
+                      class="mr-2"
+                    ></fa-icon>
+                    <span>{{
+                      product.status === "pending" ? "Pendente" : "Ativo"
+                    }}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="selectedItem === menuItems[1]">
+            <form>
+              <div class="row pl-3">
+                <div class="col-12 form-group">
+                  <label for="name">Nome completo</label>
+                  <input type="text" id="name" value="Maria da Silva Costa" placeholder="Nome completo" />
+                </div>
+                <div class="col-12 form-group">
+                  <label for="cpf">CPF</label>
+                  <input type="text" id="cpf" value="111.111.111-11" placeholder="111.111.111.-11" />
+                </div>
+                <div class="col-12 form-group">
+                  <label for="email">E-mail</label>
+                  <input type="text" id="email" value="mariadacostasilva@email.com.br" placeholder="seuemail@email.com" />
+                </div>
+                <div class="col-12 form-group">
+                  <label for="cel">Celular</label>
+                  <input type="text" id="cel" value="(11) 91234-5658" placeholder="(11) 99999-9999" />
+                </div>
+                <div class="col-12">
+                  <button mat-ripple type="button" class="btn btn-round">Atualizar dados</button>
+                </div>
+              </div>
+            </form>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </section>
 </app-base>

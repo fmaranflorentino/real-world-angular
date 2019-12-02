@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { faChevronRight, faExclamation, faCheck, faPlus } from '@fortawesome/free-solid-svg-icons';
-import { listStateTrigger, fadeIn } from 'src/app/shared/helpers/animations';
+import { listStateTrigger, listOpacity, fadeIn } from 'src/app/shared/helpers/animations';
 
 import { wait } from 'src/app/shared/helpers/ui.helper';
 
@@ -9,7 +9,7 @@ import { wait } from 'src/app/shared/helpers/ui.helper';
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
-  animations: [ listStateTrigger, fadeIn ]
+  animations: [ listStateTrigger, listOpacity, fadeIn ],
 })
 export class DashboardComponent implements OnInit {
   faChevronRight = faChevronRight;
@@ -21,7 +21,8 @@ export class DashboardComponent implements OnInit {
     { title: 'Meus dados', text: 'Veja e edite suas informações' },
     { title: 'Alterar senha', text: 'Altera a senha da sua conta' },
     { title: 'Financiamento em proocesso', text: 'Confira informações de financiamento' },
-    { title: 'Minhas vendas', text: 'Visualize seu histórico de vendas' },
+    { title: 'Minhas compras', text: 'Visualize seu histórico de compras' },
+    { title: 'Meus favoritos', text: 'Veja todos os itens favoritados' },
   ];
   showEffects: boolean;
   selectedItem = this.menuItems[0];

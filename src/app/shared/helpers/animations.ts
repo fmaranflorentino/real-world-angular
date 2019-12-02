@@ -2,7 +2,7 @@ import { animate, keyframes, query, stagger, style, transition, trigger, group }
 
 export const fadeIn = trigger('fadeIn', [
     transition(':leave', [
-        animate('700ms ease-in', keyframes([
+        animate('300ms ease-in', keyframes([
             style({
                 opacity: 1,
             }),
@@ -90,6 +90,46 @@ export const listStateTrigger = trigger('listState', [
                     style({
                         opacity: 0,
                         // transform: 'translateX(0)',
+                        offset: 1
+                    })
+                ]))
+            ])
+        ], { optional: true })
+    ])
+]);
+
+
+export const listOpacity = trigger('listOpacity', [
+    transition('* => *', [
+        query(':enter', [
+            style({
+                opacity: 0,
+            }),
+            stagger(300, [
+                animate('500ms ease-out', keyframes([
+                    style({
+                        opacity: 0.5,
+                        offset: 0.4
+                    }),
+                    style({
+                        opacity: 1,
+                        offset: 1
+                    })
+                ]))
+            ])
+        ], { optional: true }),
+        query(':leave', [
+            style({
+                opacity: 1,
+            }),
+            stagger(300, [
+                animate('300ms ease-out', keyframes([
+                    style({
+                        opacity: 0.5,
+                        offset: 0.4
+                    }),
+                    style({
+                        opacity: 0,
                         offset: 1
                     })
                 ]))
