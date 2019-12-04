@@ -5,7 +5,8 @@ import { RouterModule } from '@angular/router';
 import { declarations, components, modules } from './components-references';
 import { LoginModalComponent } from './login-modal/login-modal.component';
 import { HeaderMobileComponent } from './header-mobile/header-mobile.component'
-import { FooterMobileComponent } from './footer-mobile/footer-mobile.component'
+import { FooterMobileComponent } from './footer-mobile/footer-mobile.component';
+import { SkeletonBoxComponent } from './skeleton-box/skeleton-box.component'
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { FooterMobileComponent } from './footer-mobile/footer-mobile.component'
     LoginModalComponent,
     HeaderMobileComponent,
     FooterMobileComponent,
+    SkeletonBoxComponent,
     ...declarations,
   ],
   imports: [
@@ -24,6 +26,7 @@ import { FooterMobileComponent } from './footer-mobile/footer-mobile.component'
     LoginModalComponent,
     HeaderMobileComponent,
     FooterMobileComponent,
+    SkeletonBoxComponent,
     ...modules,
     ...components,
   ],
