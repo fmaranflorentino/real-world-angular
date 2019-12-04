@@ -57,24 +57,41 @@
       <div class="row">
         <div class="col-md-auto">
           <div class="logo">
-            <a [routerLink]="['/home']"><img src="../../../assets/img/logo.png"/></a>
+            <a [routerLink]="['/home']"
+              ><img src="../../../assets/img/logo.png"
+            /></a>
           </div>
         </div>
         <div class="col-md-auto">
           <ul class="nav-header">
-            <li [routerLink]="['/como-funciona']" [routerLinkActive]="['nav-header__item__activated']" class="nav-header__item">
+            <li
+              [routerLink]="['/como-funciona']"
+              [routerLinkActive]="['nav-header__item__activated']"
+              class="nav-header__item"
+            >
               <a href="javascript: void(0)">Como Funciona</a>
             </li>
             <li class="nav-header__item">
-              <a [routerLink]="['/produtos']" [routerLinkActive]="['nav-header__item__activated']">Produtos/Serviços</a>
+              <a
+                [routerLink]="['/produtos']"
+                [routerLinkActive]="['nav-header__item__activated']"
+                >Produtos/Serviços</a
+              >
             </li>
             <!-- <li class="nav-header__item">
               <a routerLink="/beneficios">Benefícios</a>
             </li> -->
             <li class="nav-header__item">
-              <a routerLink="/parceiros" [routerLinkActive]="['nav-header__item__activated']">Parceiros</a>
+              <a
+                routerLink="/parceiros"
+                [routerLinkActive]="['nav-header__item__activated']"
+                >Parceiros</a
+              >
             </li>
-            <li class="nav-header__item" [routerLinkActive]="['nav-header__item__activated']">
+            <li
+              class="nav-header__item"
+              [routerLinkActive]="['nav-header__item__activated']"
+            >
               <a routerLink="/simulador">Simulador</a>
             </li>
           </ul>
@@ -96,7 +113,11 @@
             <!-- <a href="javascript: void(0)" [matMenuTriggerFor]="menuCart"
               ><img src="../../../assets/img/icons/cart.png"
             /></a> -->
-            <fa-icon [icon]="faHeart" [matMenuTriggerFor]="menuCart" [styles]="{'color': '#9053a1'}"></fa-icon>
+            <fa-icon
+              [icon]="faHeart"
+              [matMenuTriggerFor]="menuCart"
+              [styles]="{ color: '#9053a1' }"
+            ></fa-icon>
           </div>
           <mat-menu #menuCart="matMenu" class="menu-cart">
             <ng-template matMenuContent>
@@ -126,7 +147,12 @@
           </mat-menu>
         </div>
         <div class="col-md-auto">
-          <a href="#" class="btn btn-round btn-primary">Faça parte </a>
+          <a
+            href="https://play.google.com/store/apps/details?id=br.com.sicoob.facaparte.app&hl=pt_BR"
+            target="_blank"
+            class="btn btn-round btn-primary"
+            >Faça parte
+          </a>
         </div>
       </div>
     </div>
