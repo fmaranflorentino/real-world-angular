@@ -10,6 +10,8 @@ import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-br
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { NgxCurrencyModule } from 'ngx-currency';
+
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -24,12 +26,14 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NgxPaginationModule,
     NgxGalleryModule,
     PerfectScrollbarModule,
+    NgxCurrencyModule,
   ],
   exports: [
     ComponentsModule,
     NgxPaginationModule,
     NgxGalleryModule,
     PerfectScrollbarModule,
+    NgxCurrencyModule,
   ],
   providers: [
     { provide: HAMMER_GESTURE_CONFIG, useClass: SharedModule },

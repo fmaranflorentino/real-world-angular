@@ -1,0 +1,39 @@
+<div class="table w-100">
+  <div class="table--header row m-0">
+    <div class="col-3">
+      <span>
+        Produto
+      </span>
+    </div>
+    <div class="col-3">
+      <span>
+        Valor do produto
+      </span>
+    </div>
+    <div class="col-3">
+      <span>Financiamento</span>
+    </div>
+    <div class="col-3">
+      <span>Parcelas</span>
+    </div>
+  </div>
+  <div class="table--body row m-0" @listOpacity *ngIf="products.length > 0">
+    <ul class="w-100 d-flex" *ngFor="let product of products">
+      <li class="col-3">
+        <span
+          [matTooltipDisabled]="product.name.length < 16"
+          [matTooltip]="product.name"
+        >
+          {{ product.name | slice: 0:16 }}
+          {{ product.name.length > 16 ? "..." : "" }}
+        </span>
+      </li>
+      <li class="col-3">
+        {{ product.financing }}
+      </li>
+      <li class="col-3">
+        {{ product.parcelas }}
+      </li>
+    </ul>
+  </div>
+</div>

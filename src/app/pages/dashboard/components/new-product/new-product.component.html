@@ -1,0 +1,79 @@
+<div class="row pl-3">
+  <div class="col-12">
+    <h6>Novo Produto</h6>
+  </div>
+
+  <form class="col-12 row">
+    <div class="col-12 form-group">
+      <label for="name">Nome do produto e/ou serviço</label>
+      <input
+        type="text"
+        id="name"
+        value="Maria da Silva Costa"
+        placeholder="Nome completo"
+      />
+    </div>
+    <div class="col-12 col-md-6 form-group">
+      <label for="name">Valor Total</label>
+      <input
+        type="text"
+        id="name"
+        value="240000"
+        placeholder="Nome completo"
+        currencyMask
+        [options]="currencyOptions"
+      />
+    </div>
+    <div class="col-12 col-md-6 form-group">
+      <label for="name">Valor com Desconto</label>
+      <input
+        type="text"
+        id="name"
+        value="403000"
+        placeholder="Nome completo"
+        currencyMask
+        [options]="currencyOptions"
+      />
+    </div>
+    <div class="col-12 col-md-6 form-group">
+      <label for="name">Data Limite</label>
+      <input
+        type="text"
+        id="name"
+        value="Maria da Silva Costa"
+        placeholder="Nome completo"
+      />
+    </div>
+    <div class="col-12 col-md-6 form-group">
+      <label for="name">Hora Limite</label>
+      <input
+        type="text"
+        id="name"
+        value=""
+        placeholder=""
+      />
+    </div>
+    <div class="col-auto form-group">
+      <label for="name">Estoque</label>
+      <input
+        type="text"
+        id="name"
+        value="Maria da Silva Costa"
+        placeholder="Nome completo"
+      />
+    </div>
+    <div class="col-12">
+      <button type="button" mat-button class="btn btn-round btn-primary mr-4">
+        Salvar produto
+      </button>
+      <button
+        type="button"
+        mat-button
+        class="btn btn-round btn-transparent-full"
+        (click)="toggleIsNewProduct()"
+      >
+        Voltar
+      </button>
+    </div>
+  </form>
+</div>
