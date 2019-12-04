@@ -7,6 +7,8 @@ import { LoginModalComponent } from './login-modal/login-modal.component';
 import { HeaderMobileComponent } from './header-mobile/header-mobile.component'
 import { FooterMobileComponent } from './footer-mobile/footer-mobile.component';
 import { SkeletonBoxComponent } from './skeleton-box/skeleton-box.component'
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,6 +22,9 @@ import { SkeletonBoxComponent } from './skeleton-box/skeleton-box.component'
   imports: [
     CommonModule,
     RouterModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     ...modules,
   ],
   exports: [
@@ -27,6 +32,9 @@ import { SkeletonBoxComponent } from './skeleton-box/skeleton-box.component'
     HeaderMobileComponent,
     FooterMobileComponent,
     SkeletonBoxComponent,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     ...modules,
     ...components,
   ],
