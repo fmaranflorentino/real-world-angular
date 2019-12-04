@@ -1,10 +1,16 @@
 <h1 mat-dialog-title>Acesse sua conta</h1>
-<button class="close" type="button" mat-button tabindex="-1">
+<button
+  class="close"
+  type="button"
+  mat-button
+  tabindex="-1"
+  (click)="closeModal()"
+>
   <mat-icon>
     <fa-icon [icon]="faTimes"></fa-icon>
   </mat-icon>
 </button>
-<form>
+<form [formGroup]="loginForm">
   <div mat-dialog-content class="py-4">
     <div class="form-group">
       <input
@@ -12,7 +18,18 @@
         placeholder="Usuário"
         class="form-control"
         autocomplete="off"
+        formControlName="user"
       />
+      <mat-error
+        @fadeIn
+        *ngIf="
+          controls?.user?.errors &&
+          controls?.user?.errors?.required &&
+          controls?.user?.touched
+        "
+      >
+        Campo usuário é <strong>obrigatório</strong>
+      </mat-error>
     </div>
     <div class="form-group m-0 p-0">
       <input
@@ -20,10 +37,28 @@
         placeholder="Senha"
         class="form-control"
         autocomplete="off"
+        formControlName="password"
       />
+      <mat-error
+        @fadeIn
+        *ngIf="
+          controls?.password?.errors &&
+          controls?.password?.errors.required &&
+          controls?.password?.touched
+        "
+      >
+        Campo senha é <strong>obrigatório</strong>
+      </mat-error>
     </div>
   </div>
   <div mat-dialog-actions class="justify-content-center">
-    <button mat-button class="btn btn-round btn-primary">Entrar</button>
+    <button
+      mat-button
+      class="btn btn-round btn-primary"
+      (click)="closeModal()"
+      [disabled]="!formValidation"
+    >
+      Entrar
+    </button>
   </div>
 </form>
