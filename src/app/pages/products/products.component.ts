@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { listStateTrigger } from 'src/app/shared/helpers/animations';
+import { listStateTrigger, fadeIn } from 'src/app/shared/helpers/animations';
 import { faBars, faTh, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 import { wait } from 'src/app/shared/helpers/ui.helper';
@@ -9,7 +9,7 @@ import { wait } from 'src/app/shared/helpers/ui.helper';
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss'],
-  animations: [ listStateTrigger ],
+  animations: [listStateTrigger, fadeIn],
 })
 export class ProductsComponent implements OnInit {
   collection = [];
@@ -17,18 +17,34 @@ export class ProductsComponent implements OnInit {
   faTh = faTh;
   faChevronDown = faChevronDown;
   showEffects: boolean;
+  loadingProducts = false;
 
   constructor() {
     for (let i = 1; i <= 50; i++) {
-      this.collection.push('item ${i}');
+      this.collection.push(i);
     }
-   }
+  }
 
   ngOnInit() {
+    this.loadingProducts = true;
+
     wait(500)
       .then(() => {
         this.showEffects = true;
       });
+
+    wait(3000)
+      .then(() => {
+        this.loadingProducts = false;
+      });
+  }
+
+  generateArray(count: number): Array<number> {
+    const indexes = [];
+    for (let i = 0; i < count; i++) {
+      indexes.push(i);
+    }
+    return indexes;
   }
 
 }

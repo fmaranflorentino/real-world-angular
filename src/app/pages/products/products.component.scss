@@ -70,3 +70,10 @@ h2 {
     position: absolute;
     bottom: 8px;
 }
+
+.loading-skeleton {
+    .col-4 {
+        max-height: 300px !important;
+        margin-bottom: 30px;
+    }
+}
