@@ -272,3 +272,11 @@ input.form-control:active {
 input.form-control:focus {
   background: #fff !important;
 }
+
+mat-error {
+  font-size: 12px;
+
+  margin-top: 15px;
+  position: absolute;
+  bottom: -20px;
+}

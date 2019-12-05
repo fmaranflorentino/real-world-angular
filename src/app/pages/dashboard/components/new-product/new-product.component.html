@@ -3,15 +3,19 @@
     <h6>Novo Produto</h6>
   </div>
 
-  <form class="col-12 row">
+  <form [formGroup]="newProductForm" class="col-12 row">
     <div class="col-12 form-group">
       <label for="name">Nome do produto e/ou serviço</label>
       <input
         type="text"
         id="name"
         value="Maria da Silva Costa"
-        placeholder="Nome completo"
+        placeholder=""
+        formControlName="productName"
       />
+      <mat-error @fadeIn *ngIf="errorsHandler('productName')">
+        Campo nome do produto/serviço é <strong>obrigatório</strong>
+      </mat-error>
     </div>
     <div class="col-12 col-md-6 form-group">
       <label for="name">Valor Total</label>
@@ -19,10 +23,14 @@
         type="text"
         id="name"
         value="240000"
-        placeholder="Nome completo"
+        placeholder=""
         currencyMask
         [options]="currencyOptions"
+        formControlName="totalPrice"
       />
+      <mat-error @fadeIn *ngIf="errorsHandler('totalPrice')">
+        Campo valor total é <strong>obrigatório</strong>
+      </mat-error>
     </div>
     <div class="col-12 col-md-6 form-group">
       <label for="name">Valor com Desconto</label>
@@ -30,10 +38,14 @@
         type="text"
         id="name"
         value="403000"
-        placeholder="Nome completo"
+        placeholder=""
         currencyMask
         [options]="currencyOptions"
+        formControlName="discountPrice"
       />
+      <mat-error @fadeIn *ngIf="errorsHandler('discountPrice')">
+        Campo valor com desconto é <strong>obrigatório</strong>
+      </mat-error>
     </div>
     <div class="col-12 col-md-6 form-group">
       <label for="name">Data Limite</label>
@@ -41,8 +53,12 @@
         type="text"
         id="name"
         value="Maria da Silva Costa"
-        placeholder="Nome completo"
+        placeholder=""
+        formControlName="limitDate"
       />
+      <mat-error @fadeIn *ngIf="errorsHandler('limitDate')">
+        Campo data limite é <strong>obrigatório</strong>
+      </mat-error>
     </div>
     <div class="col-12 col-md-6 form-group">
       <label for="name">Hora Limite</label>
@@ -51,26 +67,39 @@
         id="name"
         value=""
         placeholder=""
+        formControlName="limitTime"
       />
+      <mat-error @fadeIn *ngIf="errorsHandler('limitTime')">
+        Campo hora limite é <strong>obrigatório</strong>
+      </mat-error>
     </div>
     <div class="col-auto form-group">
       <label for="name">Estoque</label>
       <input
         type="text"
         id="name"
-        value="Maria da Silva Costa"
-        placeholder="Nome completo"
+        value=""
+        placeholder=""
+        formControlName="stock"
       />
+      <mat-error @fadeIn *ngIf="errorsHandler('stock')">
+        Campo estoque é <strong>obrigatório</strong>
+      </mat-error>
     </div>
     <div class="col-12">
-      <button type="button" mat-button class="btn btn-round btn-primary mr-4">
+      <button
+        type="button"
+        mat-button
+        class="btn btn-round btn-primary mr-4"
+        [disabled]="!formValidation"
+      >
         Salvar produto
       </button>
       <button
         type="button"
         mat-button
         class="btn btn-round btn-transparent-full"
-        (click)="toggleIsNewProduct()"
+        [routerLink]="['/minha-conta/produtos']"
       >
         Voltar
       </button>

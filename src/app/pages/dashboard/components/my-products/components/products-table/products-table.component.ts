@@ -1,17 +1,15 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { faExclamation, faCheck, faPlus } from '@fortawesome/free-solid-svg-icons';
-import { listOpacity, slideInAnimation } from 'src/app/shared/helpers/animations';
+import { listOpacity } from 'src/app/shared/helpers/animations';
 
 @Component({
-  selector: 'app-my-products',
-  templateUrl: './my-products.component.html',
-  styleUrls: ['./my-products.component.scss'],
-  animations: [  listOpacity, slideInAnimation ]
+  selector: 'app-products-table',
+  templateUrl: './products-table.component.html',
+  styleUrls: ['./products-table.component.scss'],
+  animations: [  listOpacity ]
 })
-export class MyProductsComponent implements OnInit {
-  @Output()
-  toggleIsnewProduct: EventEmitter<boolean> = new EventEmitter();
+export class ProductsTableComponent implements OnInit {
   faExclamation = faExclamation;
   faCheck = faCheck;
   faPlus = faPlus;
@@ -33,10 +31,6 @@ export class MyProductsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
-
-  toggleNewProduct(): void {
-    this.toggleIsnewProduct.emit(true);
   }
 
 }

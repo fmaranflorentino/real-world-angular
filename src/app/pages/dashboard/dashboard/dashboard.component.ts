@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { listStateTrigger, listOpacity, fadeIn } from 'src/app/shared/helpers/animations';
+import { listStateTrigger, listOpacity, fadeIn, slideInAnimation } from 'src/app/shared/helpers/animations';
 
 import { wait } from 'src/app/shared/helpers/ui.helper';
 
@@ -9,17 +9,17 @@ import { wait } from 'src/app/shared/helpers/ui.helper';
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
-  animations: [ listStateTrigger, listOpacity, fadeIn ],
+  animations: [ listStateTrigger, listOpacity, fadeIn, slideInAnimation ],
 })
 export class DashboardComponent implements OnInit {
   faChevronRight = faChevronRight;
-  menuItems: { title: string, text: string }[] = [
-    { title: 'Meus produtos', text: 'Veja todos os seus produtos cadastrados' },
-    { title: 'Meus dados', text: 'Veja e edite suas informações' },
-    { title: 'Alterar senha', text: 'Altera a senha da sua conta' },
-    { title: 'Financiamentos em processo', text: 'Confira informações de financiamento' },
-    { title: 'Minhas vendas', text: 'Visualize seu histórico de vendas' },
-    { title: 'Meus favoritos', text: 'Veja todos os itens favoritados' },
+  menuItems: { routerLink: string, title: string, text: string }[] = [
+    { routerLink: 'produtos', title: 'Meus produtos', text: 'Veja todos os seus produtos cadastrados' },
+    { routerLink: 'dados', title: 'Meus dados', text: 'Veja e edite suas informações' },
+    { routerLink: 'senha', title: 'Alterar senha', text: 'Altera a senha da sua conta' },
+    { routerLink: 'financiamentos', title: 'Financiamentos em processo', text: 'Confira informações de financiamento' },
+    { routerLink: 'vendas', title: 'Minhas vendas', text: 'Visualize seu histórico de vendas' },
+    { routerLink: 'favoritos', title: 'Meus favoritos', text: 'Veja todos os itens favoritados' },
   ];
   showEffects: boolean;
   selectedItem = this.menuItems[0];
@@ -34,7 +34,7 @@ export class DashboardComponent implements OnInit {
       });
   }
 
-  toggleActiveItem(item: { title: string, text: string }): void {
+  toggleActiveItem(item: { routerLink: string, title: string, text: string }): void {
     this.selectedItem = item;
   }
 

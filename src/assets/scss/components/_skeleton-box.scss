@@ -1,27 +1,4 @@
 app-skeleton-box {
-  @keyframes placeHolderShimmer {
-    0% {
-      background-position: -100px + 52 + 16;
-    }
-
-    40% {
-      background-position: 140px + 52 + 16;
-    }
-    100% {
-      background-position: 140px + 52 + 16;
-    }
-  }
-
-  @keyframes placeHolderShimmer2 {
-    0% {
-      background-position: -100px;
-    }
-
-    100% {
-      background-position: 140px;
-    }
-  }
-
   .loading-background-highlight {
     animation: placeHolderShimmer 2s infinite ease-out;
     background-image: linear-gradient(

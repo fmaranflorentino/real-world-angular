@@ -17,8 +17,8 @@
             <li
               mat-ripple
               *ngFor="let item of menuItems; let l = last"
-              [ngClass]="{ last: l, active: item === selectedItem }"
-              (click)="toggleActiveItem(item)"
+              [routerLink]="[item.routerLink]"
+              [routerLinkActive]="['active']"
             >
               <span>{{ item.title }}</span>
               <small>{{ item.text }}</small>
@@ -29,10 +29,17 @@
 
         <div
           class="col-12 col-md-9 col-lg-8"
-          @fadeIn
+          [@routeAnimations]="
+            o.isActivated ? o.activatedRoute : ''
+          "
           *ngIf="showEffects && selectedItem"
         >
-          <ng-container *ngIf="selectedItem === menuItems[0]">
+
+          <router-outlet #o="outlet"></router-outlet>
+    
+
+
+          <!-- <ng-container *ngIf="selectedItem === menuItems[0]">
             <app-my-products
               @fadeIn
               *ngIf="!isNewProduct"
@@ -54,7 +61,7 @@
           </ng-container>
           <ng-container *ngIf="selectedItem === menuItems[4]">
             <app-salles-history @fadeIn></app-salles-history>
-          </ng-container>
+          </ng-container> -->
         </div>
       </div>
     </div>

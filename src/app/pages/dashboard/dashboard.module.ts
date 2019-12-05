@@ -9,9 +9,10 @@ import { MyInformationComponent } from './components/my-information/my-informati
 import { NewProductComponent } from './components/new-product/new-product.component';
 import { FinancingProcessesComponent } from './components/financing-processes/financing-processes.component';
 import { SallesHistoryComponent } from './components/salles-history/salles-history.component';
+import { ProductsTableComponent } from './components/my-products/components/products-table/products-table.component';
 
 @NgModule({
-  declarations: [DashboardComponent, MyProductsComponent, MyInformationComponent, NewProductComponent, FinancingProcessesComponent, SallesHistoryComponent],
+  declarations: [DashboardComponent, MyProductsComponent, MyInformationComponent, NewProductComponent, FinancingProcessesComponent, SallesHistoryComponent, ProductsTableComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
