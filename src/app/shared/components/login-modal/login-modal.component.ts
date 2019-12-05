@@ -30,6 +30,12 @@ export class LoginModalComponent implements OnInit {
     });
   }
 
+  errorsHandler(control) {
+    return (this.controls[control].errors &&
+      this.controls[control].errors.required) &&
+      this.controls[control].touched;
+  }
+
   closeModal(): void {
     this.dialogRef.close();
   }

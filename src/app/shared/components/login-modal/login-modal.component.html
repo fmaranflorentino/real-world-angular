@@ -20,14 +20,7 @@
         autocomplete="off"
         formControlName="user"
       />
-      <mat-error
-        @fadeIn
-        *ngIf="
-          controls?.user?.errors &&
-          controls?.user?.errors?.required &&
-          controls?.user?.touched
-        "
-      >
+      <mat-error @fadeIn *ngIf="errorsHandler('user')">
         Campo usuário é <strong>obrigatório</strong>
       </mat-error>
     </div>
@@ -39,14 +32,7 @@
         autocomplete="off"
         formControlName="password"
       />
-      <mat-error
-        @fadeIn
-        *ngIf="
-          controls?.password?.errors &&
-          controls?.password?.errors.required &&
-          controls?.password?.touched
-        "
-      >
+      <mat-error @fadeIn *ngIf="errorsHandler('password')">
         Campo senha é <strong>obrigatório</strong>
       </mat-error>
     </div>
