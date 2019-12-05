@@ -4,9 +4,9 @@ export abstract class AuthInterface {
 
     constructor() { }
 
-    abstract registerTokens(): Observable<T>;
+    abstract registerTokens();
 
-    abstract getUserInformation(): Observable<T>;
+    abstract getUserInformation();
     
-    abstract getIsUserAuthenticated(): Observable<T>;
+    abstract getIsUserAuthenticated();
 }

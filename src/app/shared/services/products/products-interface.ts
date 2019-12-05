@@ -4,9 +4,9 @@ export abstract class ProductsInterface {
 
     constructor() { }
 
-    abstract getProducts(filters?): Observable<T>;
+    abstract getProducts(filters?);
 
-    abstract createProduct(): Observable<T>;
+    abstract createProduct();
     
-    abstract updateProduct(): Observable<T>;
+    abstract updateProduct();
 }

@@ -1,13 +1,13 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 import { faExclamation, faCheck, faPlus } from '@fortawesome/free-solid-svg-icons';
-import { listOpacity, slideInAnimation } from 'src/app/shared/helpers/animations';
+import { listOpacity, slideInAnimation, routeSlideSide } from 'src/app/shared/helpers/animations';
 
 @Component({
   selector: 'app-my-products',
   templateUrl: './my-products.component.html',
   styleUrls: ['./my-products.component.scss'],
-  animations: [  listOpacity, slideInAnimation ]
+  animations: [  listOpacity, slideInAnimation, routeSlideSide ]
 })
 export class MyProductsComponent implements OnInit {
   @Output()

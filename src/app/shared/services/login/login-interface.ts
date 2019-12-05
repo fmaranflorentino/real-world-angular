@@ -4,9 +4,9 @@ export abstract class LoginInterface {
 
     constructor() { }
 
-    abstract login(): Observable<T>;
+    abstract login();
 
-    abstract logOut(): Observable<T>;
+    abstract logOut();
     
-    abstract registerCredentials(): Observable<T>;
+    abstract registerCredentials();
 }

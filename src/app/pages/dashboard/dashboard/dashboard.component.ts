@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { listStateTrigger, listOpacity, fadeIn, slideInAnimation } from 'src/app/shared/helpers/animations';
+import { listStateTrigger, listOpacity, fadeIn, slideInAnimation, routeSlideSide } from 'src/app/shared/helpers/animations';
 
 import { wait } from 'src/app/shared/helpers/ui.helper';
 
@@ -9,7 +9,7 @@ import { wait } from 'src/app/shared/helpers/ui.helper';
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
-  animations: [ listStateTrigger, listOpacity, fadeIn, slideInAnimation ],
+  animations: [ listStateTrigger, listOpacity, fadeIn, slideInAnimation, routeSlideSide ],
 })
 export class DashboardComponent implements OnInit {
   faChevronRight = faChevronRight;

@@ -28,8 +28,8 @@
         </div>
 
         <div
-          class="col-12 col-md-9 col-lg-8"
-          [@routeAnimations]="
+          class="col-12 col-md-9 col-lg-8 container-route"
+          [@slideSide]="
             o.isActivated ? o.activatedRoute : ''
           "
           *ngIf="showEffects && selectedItem"

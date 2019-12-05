@@ -12,10 +12,10 @@ export class ProductsService extends ProductsInterface {
     super();
    }
 
-  getProducts(filters?): Observable<any> {}
+  getProducts(filters?) {}
 
-  createProduct(): Observable<any> {}
+  createProduct() {}
 
-  updateProduct(): Observable<any> {}
+  updateProduct() {}
 
 }
