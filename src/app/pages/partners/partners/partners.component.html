@@ -9,7 +9,7 @@
             </ul>
           </div>
           <app-filters-mobile></app-filters-mobile>
-          <app-categories></app-categories>
+          <app-categories *ngIf="showEffects"></app-categories>
         </div>
       </div>
       
@@ -90,9 +90,17 @@
               <app-range-simulator></app-range-simulator>
       
           </aside>
-      
-          <section class="col-9 products-list">
+
+          <div class="col-9 loading-skeleton" @fadeIn *ngIf="loadingPartners">
             <div class="row">
+              <div class="col-4" *ngFor="let item of generateArray(9)">
+                <app-skeleton-box></app-skeleton-box>
+              </div>
+            </div>
+          </div>
+      
+          <section class="col-9 products-list"  @fadeIn *ngIf="!loadingPartners">
+            <div class="row" @listState *ngIf="collection?.length > 0">
               <app-partner *ngFor="let item of collection | paginate: { itemsPerPage: 9, currentPage: 1 }" class="col-md-4 col-6"></app-partner>
               <!-- <app-partner *ngFor="let item of collection | paginate: { itemsPerPage: 9, currentPage: p }" class="col-md-4 col-6"></app-partner> -->
             </div>

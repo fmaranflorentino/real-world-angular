@@ -72,10 +72,6 @@ export class LandingComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.modal.open(LoginModalComponent , { width: '570px' });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
   }
 
 }
