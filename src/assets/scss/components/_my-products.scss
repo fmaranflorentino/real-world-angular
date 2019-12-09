@@ -1,5 +1,6 @@
 app-my-products {
   display: block;
+  height: 99%;
 }
 
 .table {
@@ -26,7 +27,7 @@ app-my-products {
 
   &--body {
     padding: 16px;
-    max-height: 376px;
+    max-height: 455px;
     overflow-y: auto;
     overflow-x: hidden !important;
 

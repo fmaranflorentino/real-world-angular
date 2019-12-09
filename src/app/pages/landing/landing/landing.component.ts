@@ -44,9 +44,9 @@ export class LandingComponent implements OnInit {
   };
 
   indicators = [
-    { icon: 'assets/img/icon1.png', title: '1.000.000', desc: 'Clientes já cadastrados' },
-    { icon: 'assets/img/icon1.png', title: '15.000', desc: 'Pontos de venda' },
-    { icon: 'assets/img/icon1.png', title: 'R$ 10.000.000', desc: 'Economizados anualmente por nossos clientes' }
+    { icon: 'assets/img/svg/home01.svg', title: '1.000.000', desc: 'Clientes já cadastrados' },
+    { icon: 'assets/img/svg/home02.svg', title: '15.000', desc: 'Pontos de venda' },
+    { icon: 'assets/img/svg/home03.svg', title: 'R$ 10.000.000', desc: 'Economizados anualmente por nossos clientes' }
   ];
 
   leadBannerItems = [
