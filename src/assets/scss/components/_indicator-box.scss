@@ -1,0 +1,12 @@
+app-indicator-box {
+  .slide-differential__item {
+    @media screen and (max-width: 676px) {
+      display: flex;
+      align-items: center;
+
+      img {
+          padding-right: 30px;
+      }
+    }
+  }
+}

@@ -63,7 +63,7 @@ export class LandingComponent implements OnInit {
   constructor(public dialog: MatDialog, private modal: ModalService) { }
 
   ngOnInit() {
-    this.openDialog();
+    // this.openDialog();
   }
 
   toggleSelectedStep(step: {title: string, text: string}): void {
