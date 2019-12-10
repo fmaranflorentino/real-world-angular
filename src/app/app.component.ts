@@ -10,9 +10,20 @@ import { RouterOutlet } from '@angular/router';
   animations: [ slideInAnimation ]
 })
 export class AppComponent {
+  promptEvent;
   title = 'marketclub-ui';
 
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
+  }
+
+  constructor() {
+    window.addEventListener('beforeinstallprompt', event => {
+      this.promptEvent = event;
+    });
+  }
+
+  installPwa(): void {
+    this.promptEvent.prompt();
   }
 }
