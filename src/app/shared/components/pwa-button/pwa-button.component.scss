@@ -1,0 +1,16 @@
+:host {
+    background: #26806B;
+    border-radius: 50%;
+    z-index: 11;
+    cursor: pointer;
+
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

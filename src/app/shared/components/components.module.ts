@@ -9,6 +9,7 @@ import { FooterMobileComponent } from './footer-mobile/footer-mobile.component';
 import { SkeletonBoxComponent } from './skeleton-box/skeleton-box.component'
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { PwaButtonComponent } from './pwa-button/pwa-button.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     HeaderMobileComponent,
     FooterMobileComponent,
     SkeletonBoxComponent,
+    PwaButtonComponent,
     ...declarations,
   ],
   imports: [
@@ -35,6 +37,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    PwaButtonComponent,
     ...modules,
     ...components,
   ],
