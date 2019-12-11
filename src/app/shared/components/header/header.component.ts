@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { fadeIn } from '../../helpers/animations';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { CacheService } from '../../services/cache/cache.service';
 
 @Component({
   selector: 'app-header',
@@ -11,10 +12,12 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 })
 export class HeaderComponent implements OnInit {
   faHeart = faHeart;
-
-  constructor() { }
+  favoritos = [];
+  constructor(private cacheService: CacheService) { }
 
   ngOnInit() {
+    this.favoritos = this.cacheService.getStorage('favoritos');
+    console.log(favoritos);
   }
 
 }

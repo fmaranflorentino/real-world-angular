@@ -130,18 +130,20 @@
                   Meu carrinho
                 </h6>
 
-                <div class="d-flex w-100 pt-3">
-                  <img src="./../../../../assets/img/icon1.png" alt="" />
-                  <div class="px-3">
-                    <h4 class="m-0 mb-2">
-                      BMW Série 3 Sedã 2.0 16V TurboActive
-                    </h4>
-                    <span>R$ 230.900</span>
-                    <button type="button" class="btn btn-round mt-3" mat-ripple>
-                      Fechar pedido
-                    </button>
-                  </div>
-                </div>
+                <ng-container *ngIf="favoritos.length > 1;">
+                    <div class="d-flex w-100 pt-3" *ngFor="let fav of favoritos">
+                        <img src="./../../../../assets/img/icon1.png" alt="" />
+                        <div class="px-3">
+                          <h4 class="m-0 mb-2">
+                            BMW Série 3 Sedã 2.0 16V TurboActive
+                          </h4>
+                          <span>R$ 230.900</span>
+                          <button type="button" class="btn btn-round mt-3" mat-ripple>
+                            Fechar pedido
+                          </button>
+                        </div>
+                      </div>
+                </ng-container>
               </div>
             </ng-template>
           </mat-menu>
