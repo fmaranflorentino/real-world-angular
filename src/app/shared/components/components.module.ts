@@ -9,6 +9,7 @@ import { FooterMobileComponent } from './footer-mobile/footer-mobile.component';
 import { SkeletonBoxComponent } from './skeleton-box/skeleton-box.component'
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ErrorModalComponent } from './error-modal/error-modal.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     HeaderMobileComponent,
     FooterMobileComponent,
     SkeletonBoxComponent,
+    ErrorModalComponent,
     ...declarations,
   ],
   imports: [
@@ -35,9 +37,10 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    ErrorModalComponent,
     ...modules,
     ...components,
   ],
-  entryComponents: [ LoginModalComponent ]
+  entryComponents: [ LoginModalComponent, ErrorModalComponent ]
 })
 export class ComponentsModule { }
