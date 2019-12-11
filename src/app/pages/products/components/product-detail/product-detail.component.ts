@@ -4,6 +4,7 @@ import "hammerjs";
 import { SlidesOutputData, OwlOptions } from 'ngx-owl-carousel-o';
 
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { CacheService } from 'src/app/shared/services/cache/cache.service';
 
 
 @Component({
@@ -39,7 +40,7 @@ export class ProductDetailComponent implements OnInit {
   galleryImages: NgxGalleryImage[];
 
 
-  constructor() { }
+  constructor(private cacheService: CacheService) { }
 
   ngOnInit() {
     this.galleryOptions = [
@@ -83,6 +84,15 @@ export class ProductDetailComponent implements OnInit {
         big: './../../../../../assets/img/parceiro.jpg'
       }
   ];
+  }
+
+  insertOnCache() {
+    const arr = [
+      {title: 'um'},
+      {title: 'dois'},
+      {title: 'dois'},
+    ]
+    this.cacheService.setStorage('favoritos', JSON.stringify(arr));
   }
 
 }
