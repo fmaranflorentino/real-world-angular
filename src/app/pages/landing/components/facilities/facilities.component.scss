@@ -1,3 +1,8 @@
+:host {
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+}
 .block-icons {
   padding-top: 80px;
   padding-bottom: 80px;

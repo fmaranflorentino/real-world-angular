@@ -61,7 +61,6 @@ owl-carousel-o.slide-differential {
   }
 }
 
-
 .stores {
   background-color: #f1fafa;
   padding: 80px 0;
@@ -72,6 +71,15 @@ owl-carousel-o.slide-differential {
     line-height: 48px;
     color: #013e43;
     margin-bottom: 30px;
+  }
+
+  .link-purple {
+    @media screen and (max-width: 676px) {
+      display: block;
+      position: relative !important;
+      width: 92px;
+      left: 0;
+    }
   }
 }
 .stores__box {
@@ -154,6 +162,10 @@ owl-carousel-o.slide-differential {
 .simulator {
   background-color: #f1fafa;
 
+  @media screen and (max-width: 676px) {
+    display: none;
+  }
+
   .title {
     font-weight: 600;
     font-size: 32px;
@@ -172,8 +184,8 @@ owl-carousel-o.slide-differential {
   }
 
   &--box {
-    width: 100%;
-    min-height: 450px;
+    width: 429px;
+    height: 429px;
 
     display: flex;
     flex-direction: column;
@@ -182,6 +194,18 @@ owl-carousel-o.slide-differential {
 
     background: #013e43;
     border-radius: 50%;
+
+    position: relative;
+
+    &:after {
+      content: url("./../../../../assets/img/icons/back-simulator-box.svg");
+      position: absolute;
+      width: 429px;
+      height: 429px;
+      top: -32px;
+      left: -33px;
+      z-index: -1;
+    }
 
     &--first {
       font-size: 26px;

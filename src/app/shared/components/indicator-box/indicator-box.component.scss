@@ -27,3 +27,9 @@
     color: #013e43;
     margin: 0;
   }
+
+  .container {
+    @media screen and (max-width: 676px) {
+      margin-top: 100px;
+    }
+  }
