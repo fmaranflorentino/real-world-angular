@@ -1,7 +1,19 @@
 .block-icons {
   padding-top: 80px;
   padding-bottom: 80px;
-  
+  position: relative;
+
+  &:after {
+    content: url("./../../../../../assets/img/icons/detail-blue.png");
+    position: absolute;
+    top: 10px;
+    left: -116px;
+    z-index: -1;
+
+    width: 320px;
+    height: 320px;
+  }
+
   article {
     padding-bottom: 1rem;
     img {
