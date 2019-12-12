@@ -3,7 +3,7 @@ import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gal
 import "hammerjs";
 import { SlidesOutputData, OwlOptions } from 'ngx-owl-carousel-o';
 
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faShoppingCart, faHeart } from '@fortawesome/free-solid-svg-icons';
 import { CacheService } from 'src/app/shared/services/cache/cache.service';
 
 
@@ -14,6 +14,8 @@ import { CacheService } from 'src/app/shared/services/cache/cache.service';
 })
 export class ProductDetailComponent implements OnInit {
   faStar = faStar;
+  faShoppingCart = faShoppingCart;
+  faHeart = faHeart;
 
   productsOptions: OwlOptions = {
     autoWidth: true,

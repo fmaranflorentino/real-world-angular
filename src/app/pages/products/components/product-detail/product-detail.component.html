@@ -143,15 +143,18 @@
         </perfect-scrollbar>
 
         <div class="product-info__buttons">
-          <a routerLink="" class="btn btn-gray"
-            ><i class="fa fa-shopping-cart"></i>Quero Comprar</a
-          >
-          <a
-            href="javascript:void(0)"
+          <button class="btn btn-round btn-primary mr-3">
+            <fa-icon class="pr-2" [icon]="faShoppingCart" [styles]="{'color': '#fff'}"></fa-icon>
+            Quero Comprar
+          </button>
+          <button
             (click)="insertOnCache()"
-            class="link-purple noborder"
-            ><i class="fa fa-heart"> Adicionar aos Favoritos</i></a
-          >
+            class="btn btn-round btn-transparent-full"
+            >
+            <fa-icon class="pr-2" [icon]="faHeart" [styles]="{'color': '#9053a1'}"></fa-icon>
+
+            Adicionar aos favoritos
+        </button>
         </div>
       </div>
     </div>
