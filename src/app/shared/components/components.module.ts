@@ -10,6 +10,7 @@ import { SkeletonBoxComponent } from './skeleton-box/skeleton-box.component'
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ErrorModalComponent } from './error-modal/error-modal.component';
+import { SuccessModalComponent } from './success-modal/success-modal.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { ErrorModalComponent } from './error-modal/error-modal.component';
     FooterMobileComponent,
     SkeletonBoxComponent,
     ErrorModalComponent,
+    SuccessModalComponent,
     ...declarations,
   ],
   imports: [
@@ -38,9 +40,10 @@ import { ErrorModalComponent } from './error-modal/error-modal.component';
     FormsModule,
     ReactiveFormsModule,
     ErrorModalComponent,
+    SuccessModalComponent,
     ...modules,
     ...components,
   ],
-  entryComponents: [ LoginModalComponent, ErrorModalComponent ]
+  entryComponents: [ LoginModalComponent, ErrorModalComponent, SuccessModalComponent ]
 })
 export class ComponentsModule { }
