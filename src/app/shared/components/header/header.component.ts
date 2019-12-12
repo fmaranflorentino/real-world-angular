@@ -17,7 +17,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.favoritos = this.cacheService.getStorage('favoritos');
-    console.log(favoritos);
   }
 
 }
