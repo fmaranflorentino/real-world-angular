@@ -1,79 +1,105 @@
 app-product {
-    /* display: inline-block;
+  /* display: inline-block;
     margin: 7px; */
 }
 
-
-
 .products-config {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 .products-config a {
-    padding: 10px;
+  padding: 10px;
 }
 .products-config a i {
-    color: #9053A1;
-    font-size: 25px;
+  color: #9053a1;
+  font-size: 25px;
 }
 .products-config .dropdown {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 .products-config .dropdown a {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 h2 {
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 48px;
-    color: #0D363C;
-    margin-top: 80px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 48px;
+  color: #0d363c;
+  margin-top: 80px;
 }
 .dropdown-local {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 .dropdown-local button {
-    width: 100%;
+  width: 100%;
 }
 
-.dropdown-local .dropdown-menu{
-    width: 550px;
+.dropdown-local .dropdown-menu {
+  width: 550px;
 }
 .dropdown-local-mobile .dropdown-menu {
-    width: 350px;
+  width: 350px;
 }
 .dropdown-local .dropdown-menu h2,
 .dropdown-local-mobile .dropdown-menu h2 {
-    margin-top: 0px;
+  margin-top: 0px;
 }
 
 .dropdown-local-mobile {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
-@media (max-width: 768px) { 
-    .filters, .breadcrumb, .products-config {
-        display: none;
-    }
-    .products-list {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
+@media (max-width: 768px) {
+  .filters,
+  .breadcrumb,
+  .products-config {
+    display: none;
+  }
+  .products-list {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 
 .link-purple {
-    border: none;
+  border: none;
 }
 .cep {
-    right: 17px;
-    position: absolute;
-    bottom: 8px;
+  right: 17px;
+  position: absolute;
+  bottom: 8px;
 }
 
 .loading-skeleton {
-    .col-4 {
-        max-height: 300px !important;
-        margin-bottom: 30px;
-    }
+  .col-4 {
+    max-height: 300px !important;
+    margin-bottom: 30px;
+  }
+}
+
+::ng-deep .mat-expanded {
+  border: 0 !important;
+}
+
+.bgs {
+  position: relative;
+
+  &:before {
+    content: url("./../../../assets/img/icons/prod-bg-right.svg");
+    position: absolute;
+    top: -162px;
+    right: 90px;
+    z-index: -1;
+
+    width: 158px;
+    height: 158px;
+  }
+
+  .yellow-curve {
+      position: absolute;
+      z-index: -2;
+      top: -80px;
+      left: 0;
+  }
 }

@@ -25,7 +25,6 @@ app-products-carousel {
     margin: 5px;
     padding: 4px 7px;
     background: #ffffff;
-    display: inline-block;
     cursor: pointer;
     border-radius: 3px;
     border: 1px solid #8f53a1;
@@ -33,6 +32,9 @@ app-products-carousel {
     width: 45px;
     height: 45px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .slide-products .owl-theme .owl-nav [class*="owl-"] i {
     font-size: 18px;
@@ -43,8 +45,10 @@ app-products-carousel {
     position: absolute;
     top: -81px;
     right: 0;
+    display: flex;
   }
   .slide-products .owl-theme .owl-nav [class*="owl-"] img {
-    margin-top: 5px;
+    width: 16px;
+    height: 16px;
   }
 }
