@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 import { listStateTrigger, listOpacity, fadeIn, slideInAnimation, routeSlideSide } from 'src/app/shared/helpers/animations';
 
 import { wait } from 'src/app/shared/helpers/ui.helper';
@@ -13,6 +13,7 @@ import { wait } from 'src/app/shared/helpers/ui.helper';
 })
 export class DashboardComponent implements OnInit {
   faChevronRight = faChevronRight;
+  faEllipsisV = faEllipsisV;
   menuItems: { routerLink: string, title: string, text: string }[] = [
     { routerLink: 'produtos', title: 'Meus produtos', text: 'Veja todos os seus produtos cadastrados' },
     { routerLink: 'dados', title: 'Meus dados', text: 'Veja e edite suas informações' },
@@ -40,6 +41,24 @@ export class DashboardComponent implements OnInit {
 
   toggleNewProduct(): void {
     this.isNewProduct = !this.isNewProduct;
+  }
+
+  getUserInformation(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      resolve();
+    });
+  }
+
+  getUserProducts(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      resolve();
+    });
+  }
+
+  getUserFinancing(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      resolve();
+    });
   }
 
 }

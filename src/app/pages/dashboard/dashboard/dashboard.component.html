@@ -2,13 +2,32 @@
   <section class="my-account">
     <div class="container dash">
       <div class="row" @fadeIn *ngIf="showEffects">
-        <div class="col-12">
+        <div class="col-12 d-flex justify-content-between header-menu">
           <h1 @fadeIn class="title">
             Minha conta
           </h1>
+          <button mat-icon-button>
+            <fa-icon
+              [matMenuTriggerFor]="menuNav"
+              [icon]="faEllipsisV"
+              size="1x"
+              [styles]="{ color: '#9053a1' }"
+            ></fa-icon>
+          </button>
+          <mat-menu #menuNav="matMenu">
+            <ng-template matMenuContent>
+              <button
+                mat-menu-item
+                *ngFor="let item of menuItems"
+                [routerLink]="[item.routerLink]"
+              >
+                {{ item.title }}
+              </button>
+            </ng-template>
+          </mat-menu>
         </div>
 
-        <div class="col-12 col-md-3 col-lg-4">
+        <div class="col-12 col-md-3 col-lg-4 navMenu">
           <ul
             class="my-account--menu-items"
             @listState
@@ -29,15 +48,10 @@
 
         <div
           class="col-12 col-md-9 col-lg-8 container-route"
-          [@slideSide]="
-            o.isActivated ? o.activatedRoute : ''
-          "
+          [@slideSide]="o.isActivated ? o.activatedRoute : ''"
           *ngIf="showEffects && selectedItem"
         >
-
           <router-outlet #o="outlet"></router-outlet>
-    
-
 
           <!-- <ng-container *ngIf="selectedItem === menuItems[0]">
             <app-my-products
