@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsService } from 'src/app/shared/services/products/products.service';
 
 import { listStateTrigger, fadeIn } from 'src/app/shared/helpers/animations';
 import { faBars, faTh, faChevronDown } from '@fortawesome/free-solid-svg-icons';
@@ -19,7 +20,9 @@ export class ProductsComponent implements OnInit {
   showEffects: boolean;
   loadingProducts = false;
 
-  constructor() {
+  constructor(
+    private productsService: ProductsService,
+  ) {
     for (let i = 1; i <= 50; i++) {
       this.collection.push(i);
     }
@@ -31,6 +34,14 @@ export class ProductsComponent implements OnInit {
     wait(500)
       .then(() => {
         this.showEffects = true;
+      });
+
+    this.getProducts()
+      .then((products: any) => {
+
+      })
+      .catch((error: any) => {
+
       });
 
     wait(3000)
@@ -45,6 +56,18 @@ export class ProductsComponent implements OnInit {
       indexes.push(i);
     }
     return indexes;
+  }
+
+  getProducts(filters?): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.productsService.getProducts(filters)
+        .subscribe((response: any) => {
+          resolve(response);
+        },
+        (error) => {
+          reject();
+        });
+    });
   }
 
 }
