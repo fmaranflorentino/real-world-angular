@@ -125,8 +125,10 @@ header {
   }
 
   @media screen and (max-width: 380px) {
+    width: 90px;
+    
     img {
-      width: 120px;
+      width: 90px;
     }
   }
 }

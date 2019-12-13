@@ -210,3 +210,17 @@ nav {
 {
   transform: none;
 }
+
+
+    @media screen and (max-width: 1030px) {
+      .logo img {
+        width: 150px;
+      }
+    }
+  
+    @media screen and (max-width: 380px) {
+      
+     .logo img {
+        width: 90px;
+      }
+    }
