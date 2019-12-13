@@ -11,7 +11,11 @@ export class AuthService extends AuthInterface {
     super()
   }
 
-  registerTokens() {}
+  registerTokens(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      resolve();
+    });
+  }
 
   getUserInformation() {}
   

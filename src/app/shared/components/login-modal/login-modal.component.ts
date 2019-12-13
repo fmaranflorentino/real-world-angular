@@ -40,6 +40,12 @@ export class LoginModalComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  logIn(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      resolve();
+    });
+  }
+
   get controls(): any {
     return this.loginForm.controls;
   }
