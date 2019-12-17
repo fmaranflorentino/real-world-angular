@@ -10,6 +10,10 @@
   line-height: 52px;
   color: #013e43;
   margin-top: 80px;
+
+  @media screen and (max-width: 676px) {
+    margin-top: 40px;
+  }
 }
 .slide-banner p {
   font-size: 20px;
@@ -56,6 +60,9 @@
 }
 
 @media (max-width: 768px) {
+  .slide-banner {
+    height: auto !important;
+  }
   .slide-banner .owl-dots {
     max-width: 720px;
     margin: 0 auto;

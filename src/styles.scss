@@ -320,3 +320,28 @@ app-product-detail {
     height: 16px;
   }
 }
+
+html, body {
+
+  &::-webkit-scrollbar {
+    width: 8px;
+
+    &:hover {
+      width: 10px;
+
+      transition: all 0.5s ease-in;
+    }
+  }
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 1px grey;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #999;
+  }
+}

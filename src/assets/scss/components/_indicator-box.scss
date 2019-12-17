@@ -9,4 +9,12 @@ app-indicator-box {
       }
     }
   }
+
+  @media screen and (max-width: 676px) {
+    .container {
+      padding-top: 40px !important;
+      padding-bottom: 20px !important;
+      margin-top: 0 !important;
+    }
+  }
 }
