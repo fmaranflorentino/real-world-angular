@@ -33,6 +33,13 @@
       line-height: 50px;
     }
   }
+
+  @media screen and (max-width: 580px) {
+    h1 {
+      font-size: 26px;
+      line-height: 40px;
+    }
+  }
 }
 
 .mobile {

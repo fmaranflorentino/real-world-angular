@@ -36,10 +36,11 @@ export class ProductDetailComponent implements OnInit {
           items: 4
         }
       }
-  }
+  };
 
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
+  productType: 'product' | 'service' = 'service';
 
 
   constructor(private cacheService: CacheService) { }
@@ -93,8 +94,12 @@ export class ProductDetailComponent implements OnInit {
       {title: 'um'},
       {title: 'dois'},
       {title: 'dois'},
-    ]
+    ];
     this.cacheService.setStorage('favoritos', JSON.stringify(arr));
+  }
+
+  get isProductTypeService(): boolean {
+    return this.productType === 'service' ? true : false;
   }
 
 }

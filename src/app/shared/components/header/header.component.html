@@ -53,8 +53,8 @@
     </div>
   </div>
   <div class="nav-bar">
-    <div class="container-fluid">
-      <div class="row">
+    <div class="container">
+      <div class="row justify-content-between">
         <div class="col-md-auto">
           <div class="logo">
             <a [routerLink]="['/home']"
@@ -127,7 +127,7 @@
                 (click)="$event.stopPropagation()"
               >
                 <h6 class="mt-0 mb-2">
-                  Meu carrinho
+                  Meus favoritos
                 </h6>
 
                 <ng-container *ngIf="favoritos.length > 1;">
