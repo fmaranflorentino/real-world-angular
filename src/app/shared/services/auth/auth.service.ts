@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { AuthInterface } from './auth-interface';
 
+import * as jwt_decode from 'jwt-decode';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -32,5 +34,18 @@ export class AuthService extends AuthInterface {
 
   getIsUserAuthenticated() {}
 
-  isTokenExpired() {}
+  isTokenExpired(token: string) {
+    const decodedToken = jwt_decode(token);
+
+    if (decodedToken.exp === undefined) {
+      return null;
+    }
+
+    const now = new Date(0);
+    const transformedTokenExp = now.setUTCSeconds(decodedToken.exp);
+
+    const tokenExp = !(transformedTokenExp.valueOf() > new Date().valueOf());
+
+    return tokenExp;
+  }
 }
