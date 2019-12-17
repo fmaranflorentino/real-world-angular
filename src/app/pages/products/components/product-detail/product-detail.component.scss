@@ -97,7 +97,7 @@
 }
 
 ::ng-deep .product-service-box {
-  box-shadow: 0 0px 1px #000;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
   border-radius: 6px;
 
   padding: 30px;
@@ -120,5 +120,19 @@
 
   input::placeholder {
     font-weight: bold !important;
+  }
+}
+
+::ng-deep {
+  .btns-prod {
+    @media screen and (max-width: 676px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+@media screen and (max-width: 676px) {
+  .btn-fav {
+    margin-top: 30px;
   }
 }

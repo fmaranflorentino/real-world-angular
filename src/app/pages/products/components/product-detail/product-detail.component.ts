@@ -40,7 +40,7 @@ export class ProductDetailComponent implements OnInit {
 
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
-  productType: 'product' | 'service' = 'service';
+  productType: 'product' | 'service' = 'product';
 
 
   constructor(private cacheService: CacheService) { }

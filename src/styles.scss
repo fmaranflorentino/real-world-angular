@@ -107,9 +107,14 @@ html {
       color: #013e43;
     }
 
+    h4 {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
     img {
-      width: 55px;
-      height: 55px;
+      width: 70px;
+      height: 50px;
     }
 
     span {
@@ -119,6 +124,9 @@ html {
     .btn-round {
       background-color: #9053a1;
       color: #fff;
+      font-size: 12px;
+
+      padding: 10px 15px;
     }
   }
 }
@@ -344,4 +352,8 @@ html, body {
   &::-webkit-scrollbar-thumb:hover {
     background: #999;
   }
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
 }

@@ -98,7 +98,7 @@
         </div>
         <div class="col-md-auto">
           <div class="search" mat-ripple>
-            <a href="javascript: void(0)" [matMenuTriggerFor]="menuSearch"
+            <a class="cursor-pointer" href="javascript: void(0)" [matMenuTriggerFor]="menuSearch"
               ><img src="../../../assets/img/icons/search.png"
             /></a>
           </div>
@@ -117,6 +117,7 @@
               [icon]="faHeart"
               [matMenuTriggerFor]="menuCart"
               [styles]="{ color: '#9053a1' }"
+              class="cursor-pointer"
             ></fa-icon>
           </div>
           <mat-menu #menuCart="matMenu">
@@ -138,7 +139,7 @@
                             BMW Série 3 Sedã 2.0 16V TurboActive
                           </h4>
                           <span>R$ 230.900</span>
-                          <button type="button" class="btn btn-round mt-3" mat-ripple>
+                          <button type="button" class="btn btn-round mt-3 mb-3" mat-ripple>
                             Fechar pedido
                           </button>
                         </div>
