@@ -13,6 +13,7 @@ export class TermsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    window.scrollTo({ top: 0 });
   }
 
 }

@@ -12,11 +12,10 @@ import { SimulatorComponent } from './components/simulator/simulator.component';
 import { StepByStepComponent } from './components/step-by-step/step-by-step.component';
 import { FacilitiesComponent } from './components/facilities/facilities.component';
 import { SellersComponent } from './components/sellers/sellers.component';
-import { TermsComponent } from './terms/terms.component';
 
 
 @NgModule({
-  declarations: [LandingComponent, BannerCarouselComponent, StoresCarouselComponent, SimulatorComponent, StepByStepComponent, FacilitiesComponent, SellersComponent, TermsComponent],
+  declarations: [LandingComponent, BannerCarouselComponent, StoresCarouselComponent, SimulatorComponent, StepByStepComponent, FacilitiesComponent, SellersComponent,],
   imports: [
     CommonModule,
     LandingRoutingModule,

@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'como-funciona', loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule) },
   { path: 'financiamento', loadChildren: () => import('./pages/financing/financing.module').then(m => m.FinancingModule) },
   { path: 'minha-conta', loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule) },
+  { path: 'termos', loadChildren: () => import('./pages/terms/terms.module').then(m => m.TermsModule) },
 ];
 
 @NgModule({
