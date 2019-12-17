@@ -7,17 +7,30 @@ import { AuthInterface } from './auth-interface';
 })
 export class AuthService extends AuthInterface {
 
-  constructor() { 
-    super()
+  constructor() {
+    super();
   }
 
-  registerTokens(): Promise<any> {
+  authenticate() {}
+
+  registerToken(token: string): Promise<any> {
     return new Promise((resolve, reject) => {
+      this.setToken(token);
       resolve();
     });
   }
 
+  getToken(): string {
+    return localStorage.getItem('_marketclubToken');
+  }
+
+  setToken(token: string) {
+    localStorage.setItem('_marketclubToken', token);
+  }
+
   getUserInformation() {}
-  
+
   getIsUserAuthenticated() {}
+
+  isTokenExpired() {}
 }

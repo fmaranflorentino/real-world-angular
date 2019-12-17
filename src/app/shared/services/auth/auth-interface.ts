@@ -4,7 +4,7 @@ export abstract class AuthInterface {
 
     constructor() { }
 
-    abstract registerTokens();
+    abstract registerToken(token: string);
 
     abstract getUserInformation();
     

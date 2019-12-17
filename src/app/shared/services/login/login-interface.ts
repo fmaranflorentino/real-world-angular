@@ -4,7 +4,7 @@ export abstract class LoginInterface {
 
     constructor() { }
 
-    abstract login();
+    abstract logIn();
 
     abstract logOut();
     

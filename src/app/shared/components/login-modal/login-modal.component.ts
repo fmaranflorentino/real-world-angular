@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+import { LoginService } from '../../services/login/login.service';
 import { MatDialogRef } from '@angular/material';
+
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { fadeIn } from '../../helpers/animations';
 
@@ -9,7 +11,7 @@ import { fadeIn } from '../../helpers/animations';
   selector: 'app-login-modal',
   templateUrl: './login-modal.component.html',
   styleUrls: ['./login-modal.component.scss'],
-  animations: [ fadeIn ]
+  animations: [fadeIn]
 })
 export class LoginModalComponent implements OnInit {
   faTimes = faTimes;
@@ -17,6 +19,7 @@ export class LoginModalComponent implements OnInit {
 
   constructor(
     private dialogRef: MatDialogRef<any>,
+    private login$: LoginService,
   ) { }
 
   ngOnInit() {
@@ -40,9 +43,22 @@ export class LoginModalComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  logIn(): Promise<any> {
+  logIn(loginObj): Promise<any> | any {
+    if (!loginObj) { return; }
+    console.log(loginObj);
+    return this.autheticate();
+  }
+
+  autheticate(): Promise<any> {
     return new Promise((resolve, reject) => {
-      resolve();
+      this.login$.logIn()
+        .subscribe(
+          (response) => {
+            resolve(response);
+          },
+          (error) => {
+            reject(error);
+          });
     });
   }
 
@@ -52,6 +68,13 @@ export class LoginModalComponent implements OnInit {
 
   get formValidation(): boolean {
     return this.loginForm.valid;
+  }
+
+  get loginControls() {
+    return {
+      user: this.controls.user.value,
+      password: this.controls.password.value,
+     };
   }
 
 }
