@@ -39,4 +39,10 @@ button {
     color: #9053a1;
     border: 2px solid #9053a1;
   }
+
+  &.btn-grey {
+    background-color: #e0e0e0 !important;
+    color: #000;
+    border: 2px solid #e0e0e0;
+  }
 }
