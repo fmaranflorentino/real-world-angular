@@ -35,14 +35,14 @@ export class AuthService extends AuthInterface {
   getIsUserAuthenticated() {}
 
   isTokenExpired(token: string) {
-    const decodedToken = jwt_decode(token);
+    const undecodedToken = jwt_decode(token);
 
-    if (decodedToken.exp === undefined) {
+    if (undecodedToken.exp === undefined) {
       return null;
     }
 
     const now = new Date(0);
-    const transformedTokenExp = now.setUTCSeconds(decodedToken.exp);
+    const transformedTokenExp = now.setUTCSeconds(undecodedToken.exp);
 
     const tokenExp = !(transformedTokenExp.valueOf() > new Date().valueOf());
 
