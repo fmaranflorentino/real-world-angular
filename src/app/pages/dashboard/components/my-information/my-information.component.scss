@@ -23,6 +23,10 @@
     height: 46px;
     width: 469px;
     padding: 5px 15px;
+
+    @media screen and (max-width: 676px) {
+      width: 100%;
+    }
   }
 }
 
@@ -31,4 +35,12 @@
 
   padding-top: 16px;
   padding-bottom: 16px;
+}
+
+form {
+  @media screen and (max-width: 676px) {
+    .row {
+      padding: 0 !important;
+    }
+  }
 }
