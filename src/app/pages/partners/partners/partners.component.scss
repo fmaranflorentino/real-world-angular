@@ -48,3 +48,38 @@
 .products-config .dropdown a {
   font-size: 14px;
 }
+
+
+h2.titulo {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 48px;
+  color: #0D363C;
+  margin-top: 80px;
+}
+
+::ng-deep .mat-expanded {
+  border: 0 !important;
+}
+
+.bgs {
+  position: relative;
+
+  &:before {
+    content: url("./../../../../assets/img/icons/prod-bg-right.svg");
+    position: absolute;
+    top: -162px;
+    right: 90px;
+    z-index: -1;
+
+    width: 158px;
+    height: 158px;
+  }
+
+  .yellow-curve {
+      position: absolute;
+      z-index: -2;
+      top: -80px;
+      left: 0;
+  }
+}

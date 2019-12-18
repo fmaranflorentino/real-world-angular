@@ -1,0 +1,38 @@
+app-product-tabs {
+  @extend .d-block;
+  padding: 40px 0;
+
+  .mat-tab-header {
+    border-bottom: 1px solid #9053a1;
+    .mat-tab-labels {
+      justify-content: center;
+      .mat-tab-label {
+        font-weight: bold;
+        color: #000 !important;
+        font-size: 18px !important;
+        opacity: 1 !important;
+
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+
+      .mat-tab-label-active {
+        border-bottom: 1px solid #9053a1;
+        color: #9053a1 !important;
+      }
+    }
+  }
+
+  .mat-ink-bar {
+    background-color: #9053a1 !important;
+    border-radius: 6px;
+
+    height: 3px;
+  }
+
+  .mat-tab-body-wrapper {
+    background-color: #f2f2f2 !important;
+
+    padding: 40px 0;
+  }
+}

@@ -9,6 +9,8 @@ import { FooterMobileComponent } from './footer-mobile/footer-mobile.component';
 import { SkeletonBoxComponent } from './skeleton-box/skeleton-box.component'
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ErrorModalComponent } from './error-modal/error-modal.component';
+import { SuccessModalComponent } from './success-modal/success-modal.component';
 import { PwaButtonComponent } from './pwa-button/pwa-button.component';
 
 
@@ -19,6 +21,8 @@ import { PwaButtonComponent } from './pwa-button/pwa-button.component';
     FooterMobileComponent,
     SkeletonBoxComponent,
     PwaButtonComponent,
+    ErrorModalComponent,
+    SuccessModalComponent,
     ...declarations,
   ],
   imports: [
@@ -37,10 +41,12 @@ import { PwaButtonComponent } from './pwa-button/pwa-button.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    ErrorModalComponent,
+    SuccessModalComponent,
     PwaButtonComponent,
     ...modules,
     ...components,
   ],
-  entryComponents: [ LoginModalComponent ]
+  entryComponents: [ LoginModalComponent, ErrorModalComponent, SuccessModalComponent ]
 })
 export class ComponentsModule { }

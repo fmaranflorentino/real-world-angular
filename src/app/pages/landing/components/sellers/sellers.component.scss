@@ -2,6 +2,15 @@
   padding-top: 80px;
   padding-bottom: 100px;
 
+  position: relative;
+
+  &:after {
+    content: url('./../../../../../assets/img/icons/pink-round.svg');
+    position: absolute;
+    bottom: 36px;
+    right: -60px;
+  }
+
   &--text {
     margin: 40px 0;
   }

@@ -18,6 +18,7 @@ $marketclub-ui-theme: mat-light-theme(
 html,
 body {
   height: 100%;
+  overflow-x: hidden;
 }
 body {
   margin: 0;
@@ -53,6 +54,9 @@ html {
 @import "./assets/scss/components/my-products";
 @import "./assets/scss/components/new-product";
 @import "./assets/scss/components/skeleton-box";
+@import "./assets/scss/components/indicator-box";
+@import "./assets/scss/components/product-tabs";
+@import "./assets/scss/components/success-modal";
 
 
 .menu-cart {
@@ -103,9 +107,14 @@ html {
       color: #013e43;
     }
 
+    h4 {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
     img {
-      width: 55px;
-      height: 55px;
+      width: 70px;
+      height: 50px;
     }
 
     span {
@@ -115,6 +124,9 @@ html {
     .btn-round {
       background-color: #9053a1;
       color: #fff;
+      font-size: 12px;
+
+      padding: 10px 15px;
     }
   }
 }
@@ -279,4 +291,69 @@ mat-error {
   margin-top: 15px;
   position: absolute;
   bottom: -20px;
+}
+
+
+app-product-detail {
+  .slide-products .owl-theme .owl-nav [class*="owl-"] {
+    color: #8f53a1;
+    font-size: 14px;
+    margin: 5px;
+    padding: 4px 7px;
+    background: #ffffff;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid #8f53a1;
+    border-radius: 50px;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .slide-products .owl-theme .owl-nav [class*="owl-"] i {
+    font-size: 18px;
+    line-height: 37px;
+  }
+  .slide-products .owl-theme .owl-nav {
+    margin-top: 0px;
+    position: absolute;
+    top: -81px;
+    right: 0;
+    display: flex;
+  }
+  .slide-products .owl-theme .owl-nav [class*="owl-"] img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+html, body {
+
+  &::-webkit-scrollbar {
+    width: 8px;
+
+    &:hover {
+      width: 10px;
+
+      transition: all 0.5s ease-in;
+    }
+  }
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 1px grey;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #999;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
 }

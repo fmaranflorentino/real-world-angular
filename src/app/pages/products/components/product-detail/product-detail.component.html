@@ -1,4 +1,5 @@
-<div class="top">
+<app-base>
+  <div class="top">
     <div class="container">
       <div class="breadcrumb">
         <ul>
@@ -13,13 +14,15 @@
       </div>
     </div>
   </div>
-  
-  
+
   <div class="container product-info">
     <div class="row">
       <div class="col-md-6">
         <div class="product-info__img">
-            <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+          <ngx-gallery
+            [options]="galleryOptions"
+            [images]="galleryImages"
+          ></ngx-gallery>
         </div>
       </div>
       <div class="col-md-6">
@@ -35,160 +38,180 @@
           <!-- <i class="fa fa-star-half-empty"></i> -->
           <span>4 of 5</span>
         </div>
-        <perfect-scrollbar style="max-width: 600px; max-height: 250px;">
-          <div class="product-info__prices" for="radio1">
-            <div class="product-info__prices__select">
-              <input type="radio" id="radio1"/>
-            </div>
-            <div class="product-info__prices__offers">
-              <h3>R$ 230.900</h3>
-              <span>Loja São Paulo</span>
-            </div>
-            <div class="product-info__prices__label">
-              <label>Melhor preço</label>
-            </div>
-            <div class="product-info__prices__economy">
-                <span>Preço na loja:  R$ 255.000,00</span>
+
+        <ng-container *ngIf="!isProductTypeService">
+          <perfect-scrollbar style="max-width: 600px; max-height: 250px;">
+            <div class="product-info__prices" for="radio1">
+              <div class="product-info__prices__select">
+                <input type="radio" id="radio1" />
+              </div>
+              <div class="product-info__prices__offers">
+                <h3>R$ 230.900</h3>
+                <span>Loja São Paulo</span>
+              </div>
+              <div class="product-info__prices__label">
+                <label>Melhor preço</label>
+              </div>
+              <div class="product-info__prices__economy">
+                <span>Preço na loja: R$ 255.000,00</span>
                 <span>Econômetro: 24.100,00</span>
+              </div>
+            </div>
+
+            <div class="product-info__prices" for="radio1">
+              <div class="product-info__prices__select">
+                <input type="radio" id="radio1" />
+              </div>
+              <div class="product-info__prices__offers">
+                <h3>R$ 230.900</h3>
+                <span>Loja São Paulo</span>
+              </div>
+              <div class="product-info__prices__label">
+                <label>Melhor preço</label>
+              </div>
+              <div class="product-info__prices__economy">
+                <span>Preço na loja: R$ 255.000,00</span>
+                <span>Econômetro: 24.100,00</span>
+              </div>
+            </div>
+
+            <div class="product-info__prices" for="radio1">
+              <div class="product-info__prices__select">
+                <input type="radio" id="radio1" />
+              </div>
+              <div class="product-info__prices__offers">
+                <h3>R$ 230.900</h3>
+                <span>Loja São Paulo</span>
+              </div>
+              <div class="product-info__prices__label">
+                <label>Melhor preço</label>
+              </div>
+              <div class="product-info__prices__economy">
+                <span>Preço na loja: R$ 255.000,00</span>
+                <span>Econômetro: 24.100,00</span>
+              </div>
+            </div>
+
+            <div class="product-info__prices" for="radio1">
+              <div class="product-info__prices__select">
+                <input type="radio" id="radio1" />
+              </div>
+              <div class="product-info__prices__offers">
+                <h3>R$ 230.900</h3>
+                <span>Loja São Paulo</span>
+              </div>
+              <div class="product-info__prices__label">
+                <label>Melhor preço</label>
+              </div>
+              <div class="product-info__prices__economy">
+                <span>Preço na loja: R$ 255.000,00</span>
+                <span>Econômetro: 24.100,00</span>
+              </div>
+            </div>
+
+            <div class="product-info__prices" for="radio1">
+              <div class="product-info__prices__select">
+                <input type="radio" id="radio1" />
+              </div>
+              <div class="product-info__prices__offers">
+                <h3>R$ 230.900</h3>
+                <span>Loja São Paulo</span>
+              </div>
+              <div class="product-info__prices__label">
+                <label>Melhor preço</label>
+              </div>
+              <div class="product-info__prices__economy">
+                <span>Preço na loja: R$ 255.000,00</span>
+                <span>Econômetro: 24.100,00</span>
+              </div>
+            </div>
+
+            <div class="product-info__prices" for="radio1">
+              <div class="product-info__prices__select">
+                <input type="radio" id="radio1" />
+              </div>
+              <div class="product-info__prices__offers">
+                <h3>R$ 230.900</h3>
+                <span>Loja São Paulo</span>
+              </div>
+              <div class="product-info__prices__label">
+                <label>Melhor preço</label>
+              </div>
+              <div class="product-info__prices__economy">
+                <span>Preço na loja: R$ 255.000,00</span>
+                <span>Econômetro: 24.100,00</span>
+              </div>
+            </div>
+          </perfect-scrollbar>
+        </ng-container>
+
+        <ng-container *ngIf="isProductTypeService">
+          <div class="product-service-box">
+            <header class="mb-3">
+              Solicite um orçamento sem compromisso
+            </header>
+            <div>
+              <div class="form-group mb-4">
+                <input
+                  type="text"
+                  placeholder="Nome"
+                  class="form-control pl-0"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="form-group mb-4">
+                <input
+                  type="text"
+                  placeholder="E-mail"
+                  class="form-control pl-0"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  placeholder="Telefone"
+                  class="form-control pl-0"
+                  autocomplete="off"
+                />
+              </div>
+
+              <button class="btn btn-round btn-grey mt-5">Solicitar orçamento</button>
             </div>
           </div>
+        </ng-container>
 
-          <div class="product-info__prices" for="radio1">
-            <div class="product-info__prices__select">
-              <input type="radio" id="radio1"/>
-            </div>
-            <div class="product-info__prices__offers">
-              <h3>R$ 230.900</h3>
-              <span>Loja São Paulo</span>
-            </div>
-            <div class="product-info__prices__label">
-              <label>Melhor preço</label>
-            </div>
-            <div class="product-info__prices__economy">
-                <span>Preço na loja:  R$ 255.000,00</span>
-                <span>Econômetro: 24.100,00</span>
-            </div>
-          </div>
+        <div class="product-info__buttons btns-prod" *ngIf="!isProductTypeService">
+          <button class="btn btn-round btn-primary mr-3">
+            <fa-icon
+              class="pr-2"
+              [icon]="faShoppingCart"
+              [styles]="{ color: '#fff' }"
+            ></fa-icon>
+            Quero Comprar
+          </button>
+          <button
+            (click)="insertOnCache()"
+            class="btn btn-round btn-transparent-full btn-fav"
+          >
+            <fa-icon
+              class="pr-2"
+              [icon]="faHeart"
+              [styles]="{ color: '#9053a1' }"
+            ></fa-icon>
 
-          <div class="product-info__prices" for="radio1">
-            <div class="product-info__prices__select">
-              <input type="radio" id="radio1"/>
-            </div>
-            <div class="product-info__prices__offers">
-              <h3>R$ 230.900</h3>
-              <span>Loja São Paulo</span>
-            </div>
-            <div class="product-info__prices__label">
-              <label>Melhor preço</label>
-            </div>
-            <div class="product-info__prices__economy">
-                <span>Preço na loja:  R$ 255.000,00</span>
-                <span>Econômetro: 24.100,00</span>
-            </div>
-          </div>
-
-          <div class="product-info__prices" for="radio1">
-            <div class="product-info__prices__select">
-              <input type="radio" id="radio1"/>
-            </div>
-            <div class="product-info__prices__offers">
-              <h3>R$ 230.900</h3>
-              <span>Loja São Paulo</span>
-            </div>
-            <div class="product-info__prices__label">
-              <label>Melhor preço</label>
-            </div>
-            <div class="product-info__prices__economy">
-                <span>Preço na loja:  R$ 255.000,00</span>
-                <span>Econômetro: 24.100,00</span>
-            </div>
-          </div>
-
-          <div class="product-info__prices" for="radio1">
-            <div class="product-info__prices__select">
-              <input type="radio" id="radio1"/>
-            </div>
-            <div class="product-info__prices__offers">
-              <h3>R$ 230.900</h3>
-              <span>Loja São Paulo</span>
-            </div>
-            <div class="product-info__prices__label">
-              <label>Melhor preço</label>
-            </div>
-            <div class="product-info__prices__economy">
-                <span>Preço na loja:  R$ 255.000,00</span>
-                <span>Econômetro: 24.100,00</span>
-            </div>
-          </div>
-
-          <div class="product-info__prices" for="radio1">
-            <div class="product-info__prices__select">
-              <input type="radio" id="radio1"/>
-            </div>
-            <div class="product-info__prices__offers">
-              <h3>R$ 230.900</h3>
-              <span>Loja São Paulo</span>
-            </div>
-            <div class="product-info__prices__label">
-              <label>Melhor preço</label>
-            </div>
-            <div class="product-info__prices__economy">
-                <span>Preço na loja:  R$ 255.000,00</span>
-                <span>Econômetro: 24.100,00</span>
-            </div>
-          </div>
-        </perfect-scrollbar>
-
-        <div class="product-info__buttons">
-          <a routerLink="" class="btn btn-gray"><i class="fa fa-shopping-cart"></i>Quero Comprar</a>
-          <a routerLink="" class="link-purple noborder"><i class="fa fa-heart"> Adicionar aos Favoritos</i></a>
+            Adicionar aos favoritos
+          </button>
         </div>
       </div>
     </div>
   </div>
 
   <div class="product-desc">
-    <!-- <app-tabs></app-tabs> -->
-  </div>
-  
-  
-  <!-- PRODUCTS -->
-  <div class="slide-products back-curves">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h1 class="title">Quem viu, viu também</h1>
-        </div>
-        <owl-carousel-o [options]="productsOptions" class="col-12">
-          <ng-template carouselSlide class="col-md-auto">
-            <app-product></app-product>
-          </ng-template>  
-          <ng-template carouselSlide class="col-md-auto">
-            <app-product></app-product>
-          </ng-template>
-          <ng-template carouselSlide class="col-md-auto">
-            <app-product></app-product>
-          </ng-template>
-          <ng-template carouselSlide class="col-md-auto">
-            <app-product></app-product>
-          </ng-template>
-          <ng-template carouselSlide class="col-md-auto">
-            <app-product></app-product>
-          </ng-template>  
-          <ng-template carouselSlide class="col-md-auto">
-            <app-product></app-product>
-          </ng-template>
-          <ng-template carouselSlide class="col-md-auto">
-            <app-product></app-product>
-          </ng-template>
-          <ng-template carouselSlide class="col-md-auto">
-            <app-product></app-product>
-          </ng-template>
-        </owl-carousel-o>
-      </div>
-    </div>
+    <app-product-tabs></app-product-tabs>
   </div>
 
+  <app-products-carousel class="d-block mt-5"></app-products-carousel>
 
   <!-- PRODUCTS -->
   <div class="slide-products back-green">
@@ -200,9 +223,6 @@
         <owl-carousel-o [options]="productsOptions" class="col-12">
           <ng-template carouselSlide class="col-md-auto">
             <app-product></app-product>
-          </ng-template>  
-          <ng-template carouselSlide class="col-md-auto">
-            <app-product></app-product>
           </ng-template>
           <ng-template carouselSlide class="col-md-auto">
             <app-product></app-product>
@@ -212,7 +232,10 @@
           </ng-template>
           <ng-template carouselSlide class="col-md-auto">
             <app-product></app-product>
-          </ng-template>  
+          </ng-template>
+          <ng-template carouselSlide class="col-md-auto">
+            <app-product></app-product>
+          </ng-template>
           <ng-template carouselSlide class="col-md-auto">
             <app-product></app-product>
           </ng-template>
@@ -226,7 +249,4 @@
       </div>
     </div>
   </div>
-
-
-
-  
+</app-base>

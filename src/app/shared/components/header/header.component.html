@@ -53,8 +53,8 @@
     </div>
   </div>
   <div class="nav-bar">
-    <div class="container-fluid">
-      <div class="row">
+    <div class="container">
+      <div class="row justify-content-between">
         <div class="col-md-auto">
           <div class="logo">
             <a [routerLink]="['/home']"
@@ -98,7 +98,7 @@
         </div>
         <div class="col-md-auto">
           <div class="search" mat-ripple>
-            <a href="javascript: void(0)" [matMenuTriggerFor]="menuSearch"
+            <a class="cursor-pointer" href="javascript: void(0)" [matMenuTriggerFor]="menuSearch"
               ><img src="../../../assets/img/icons/search.png"
             /></a>
           </div>
@@ -117,9 +117,10 @@
               [icon]="faHeart"
               [matMenuTriggerFor]="menuCart"
               [styles]="{ color: '#9053a1' }"
+              class="cursor-pointer"
             ></fa-icon>
           </div>
-          <mat-menu #menuCart="matMenu" class="menu-cart">
+          <mat-menu #menuCart="matMenu">
             <ng-template matMenuContent>
               <div class="triangle"></div>
               <div
@@ -127,21 +128,23 @@
                 (click)="$event.stopPropagation()"
               >
                 <h6 class="mt-0 mb-2">
-                  Meu carrinho
+                  Meus favoritos
                 </h6>
 
-                <div class="d-flex w-100 pt-3">
-                  <img src="./../../../../assets/img/icon1.png" alt="" />
-                  <div class="px-3">
-                    <h4 class="m-0 mb-2">
-                      BMW Série 3 Sedã 2.0 16V TurboActive
-                    </h4>
-                    <span>R$ 230.900</span>
-                    <button type="button" class="btn btn-round mt-3" mat-ripple>
-                      Fechar pedido
-                    </button>
-                  </div>
-                </div>
+                <ng-container *ngIf="favoritos.length > 1;">
+                    <div class="d-flex w-100 pt-3" *ngFor="let fav of favoritos">
+                        <img src="./../../../../assets/img/icon1.png" alt="" />
+                        <div class="px-3">
+                          <h4 class="m-0 mb-2">
+                            BMW Série 3 Sedã 2.0 16V TurboActive
+                          </h4>
+                          <span>R$ 230.900</span>
+                          <button type="button" class="btn btn-round mt-3 mb-3" mat-ripple>
+                            Fechar pedido
+                          </button>
+                        </div>
+                      </div>
+                </ng-container>
               </div>
             </ng-template>
           </mat-menu>
@@ -158,3 +161,4 @@
     </div>
   </div>
 </header>
+

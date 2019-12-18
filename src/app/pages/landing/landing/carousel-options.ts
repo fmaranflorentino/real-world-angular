@@ -8,7 +8,12 @@ export const bannerOptions: OwlOptions = {
     dots: true,
     smartSpeed: 400,
     dragEndSpeed: 350,
-    nav: false
+    nav: false,
+    responsive: {
+        0: {
+            dots: false,
+        },
+    }
 };
 
 export const differentialOptions: OwlOptions = {
@@ -64,7 +69,7 @@ export const storesOptions: OwlOptions = {
     nav: false,
     responsive: {
         0: {
-            items: 1,
+            items: 2,
             nav: false,
         },
         768: {

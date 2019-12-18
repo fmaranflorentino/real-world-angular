@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
+
+
+
+
 @Component({
   selector: 'app-terms',
   templateUrl: './terms.component.html',
@@ -9,10 +13,9 @@ import { faDownload } from '@fortawesome/free-solid-svg-icons';
 })
 export class TermsComponent implements OnInit {
   faDownload = faDownload;
-  
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

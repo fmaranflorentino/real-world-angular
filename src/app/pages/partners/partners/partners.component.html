@@ -1,112 +1,159 @@
 <app-base>
-    <div class="top back-top">
-        <div class="container">
-          <div class="breadcrumb">
-            <ul>
-              <li><a routerLink="">Página inicial</a></li>
-              <li><i class="fa fa-angle-right"></i></li>
-              <li class="active">Parceiros</li>
-            </ul>
-          </div>
-          <app-filters-mobile></app-filters-mobile>
-          <app-categories *ngIf="showEffects"></app-categories>
-        </div>
-      </div>
-      
-      
-      <div class="container mt-4">
-        <div class="row">
-          <div class="col-6">
-            <h1 class="title">Todos <span>10.000 resultados</span></h1>
-      
-            <div class="dropdown dropdown-local-mobile">
-                <button class="btn btn-dropdown dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Localização Bebedouro, SP
-                </button>
-                <div class="dropdown-menu modal-body" aria-labelledby="dropdownMenuButton">
-                    <div class="row">
-                      <div class="col-12">
-                        <h2>Encontre as lojas mais próximas à você</h2>
-                        <input type="text" class="form-control" placeholder="Digite seu CEP"/>
-                        <a href="#" class="link-purple btn-small cep">Não sabe o cep?</a>
-                      </div>
-                      <div class="col-12 btns-end">
-                        <a href="#" class="link-purple btn-small">CANCELAR</a><a href="#" class="btn btn-primary">LOCALIZAR</a>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-          </div>
-          
-          <div class="col-6 products-config">
-            <button mat-icon-button aria-label="">
-              <mat-icon>
-                <fa-icon [icon]="faTh" [styles]="{ color: '#9053A1' }"></fa-icon>
-              </mat-icon>
-            </button>
-            <button mat-icon-button aria-label="">
-              <mat-icon>
-                <fa-icon [icon]="faBars" [styles]="{ color: '#9053A1' }"></fa-icon>
-              </mat-icon>
-            </button>
-            <div class="dropdown dropdown-order">
-              <button class="btn" mat-button [matMenuTriggerFor]="maisVendidos">
-                <span class="mr-3">
-                  Mais vendidos
-                </span>
-                <fa-icon [icon]="faChevronDown"></fa-icon>
-              </button>
-              <mat-menu #maisVendidos="matMenu">
-                <ng-template matMenuContent>
-                  <button mat-menu-item>Mais Recentes</button>
-                  <button mat-menu-item>Menos Valor</button>
-                  <button mat-menu-item>Maior Valor</button>
-                </ng-template>
-              </mat-menu>
-            </div>
-          </div>
-      
-          <aside class="filters col-3">
-              <div class="dropdown dropdown-local">
-                <button class="btn btn-dropdown dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Localização Bebedouro, SP
-                </button>
-                <div class="dropdown-menu modal-body" aria-labelledby="dropdownMenuButton">
-                    <div class="row">
-                      <div class="col-12">
-                        <h2>Encontre as lojas mais próximas à você</h2>
-                        <input type="text" class="form-control" placeholder="Digite seu CEP"/>
-                        <a href="#" class="link-purple btn-small cep">Não sabe o cep?</a>
-                      </div>
-                      <div class="col-12 btns-end">
-                        <a href="#" class="link-purple btn-small">CANCELAR</a><a href="#" class="btn btn-primary">LOCALIZAR</a>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-              <app-filters></app-filters>
-      
-              <h2>Faça a simulação</h2>
-              <app-range-simulator></app-range-simulator>
-      
-          </aside>
+  <div class="top back-top bgs">
+    <img
+      class="yellow-curve"
+      src="./../../../../assets/img/icons/prod-bg-center.svg"
+      alt=""
+    />
 
-          <div class="col-9 loading-skeleton" @fadeIn *ngIf="loadingPartners">
+    <div class="container">
+      <div class="breadcrumb">
+        <ul>
+          <li><a routerLink="">Página inicial</a></li>
+          <li><i class="fa fa-angle-right"></i></li>
+          <li class="active">Parceiros</li>
+        </ul>
+      </div>
+      <app-filters-mobile></app-filters-mobile>
+      <app-categories *ngIf="showEffects"></app-categories>
+    </div>
+  </div>
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-6">
+        <h1 class="title">Todos <span>10.000 resultados</span></h1>
+
+        <div class="dropdown dropdown-local-mobile">
+          <button
+            class="btn btn-dropdown dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Localização Bebedouro, SP
+          </button>
+          <div
+            class="dropdown-menu modal-body"
+            aria-labelledby="dropdownMenuButton"
+          >
             <div class="row">
-              <div class="col-4" *ngFor="let item of generateArray(9)">
-                <app-skeleton-box></app-skeleton-box>
+              <div class="col-12">
+                <h2>Encontre as lojas mais próximas à você</h2>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Digite seu CEP"
+                />
+                <a href="#" class="link-purple btn-small cep"
+                  >Não sabe o cep?</a
+                >
+              </div>
+              <div class="col-12 btns-end">
+                <a href="#" class="link-purple btn-small">CANCELAR</a
+                ><a href="#" class="btn btn-primary">LOCALIZAR</a>
               </div>
             </div>
           </div>
-      
-          <section class="col-9 products-list"  @fadeIn *ngIf="!loadingPartners">
-            <div class="row" @listState *ngIf="collection?.length > 0">
-              <app-partner *ngFor="let item of collection | paginate: { itemsPerPage: 9, currentPage: 1 }" class="col-md-4 col-6"></app-partner>
-              <!-- <app-partner *ngFor="let item of collection | paginate: { itemsPerPage: 9, currentPage: p }" class="col-md-4 col-6"></app-partner> -->
-            </div>
-            <pagination-controls></pagination-controls>
-            <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
-          </section>
         </div>
       </div>
+
+      <div class="col-6 products-config">
+        <button mat-icon-button aria-label="">
+          <mat-icon>
+            <fa-icon [icon]="faTh" [styles]="{ color: '#9053A1' }"></fa-icon>
+          </mat-icon>
+        </button>
+        <button mat-icon-button aria-label="">
+          <mat-icon>
+            <fa-icon [icon]="faBars" [styles]="{ color: '#9053A1' }"></fa-icon>
+          </mat-icon>
+        </button>
+        <div class="dropdown dropdown-order">
+          <button class="btn" mat-button [matMenuTriggerFor]="maisVendidos">
+            <span class="mr-3">
+              Mais vendidos
+            </span>
+            <fa-icon
+              [icon]="faChevronDown"
+              [styles]="{ color: '#9053a1' }"
+            ></fa-icon>
+          </button>
+          <mat-menu #maisVendidos="matMenu">
+            <ng-template matMenuContent>
+              <button mat-menu-item>Mais Recentes</button>
+              <button mat-menu-item>Menos Valor</button>
+              <button mat-menu-item>Maior Valor</button>
+            </ng-template>
+          </mat-menu>
+        </div>
+      </div>
+
+      <aside class="filters col-3">
+        <div class="dropdown dropdown-local">
+          <button
+            class="btn btn-dropdown dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Localização Bebedouro, SP
+          </button>
+          <div
+            class="dropdown-menu modal-body"
+            aria-labelledby="dropdownMenuButton"
+          >
+            <div class="row">
+              <div class="col-12">
+                <h2>Encontre as lojas mais próximas à você</h2>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Digite seu CEP"
+                />
+                <a href="#" class="link-purple btn-small cep"
+                  >Não sabe o cep?</a
+                >
+              </div>
+              <div class="col-12 btns-end">
+                <a href="#" class="link-purple btn-small">CANCELAR</a
+                ><a href="#" class="btn btn-primary">LOCALIZAR</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <app-filters></app-filters>
+
+        <h2 class="titulo">Faça a simulação</h2>
+        <app-range-simulator></app-range-simulator>
+      </aside>
+
+      <div class="col-9 loading-skeleton" @fadeIn *ngIf="loadingPartners">
+        <div class="row">
+          <div class="col-4" *ngFor="let item of generateArray(9)">
+            <app-skeleton-box></app-skeleton-box>
+          </div>
+        </div>
+      </div>
+
+      <section class="col-9 products-list" @fadeIn *ngIf="!loadingPartners">
+        <div class="row" @listState *ngIf="collection?.length > 0">
+          <app-partner
+            *ngFor="
+              let item of collection
+                | paginate: { itemsPerPage: 9, currentPage: 1 }
+            "
+            class="col-md-4 col-6"
+          ></app-partner>
+          <!-- <app-partner *ngFor="let item of collection | paginate: { itemsPerPage: 9, currentPage: p }" class="col-md-4 col-6"></app-partner> -->
+        </div>
+        <pagination-controls></pagination-controls>
+        <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+      </section>
+    </div>
+  </div>
 </app-base>

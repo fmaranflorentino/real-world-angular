@@ -3,7 +3,8 @@ import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gal
 import "hammerjs";
 import { SlidesOutputData, OwlOptions } from 'ngx-owl-carousel-o';
 
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faShoppingCart, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { CacheService } from 'src/app/shared/services/cache/cache.service';
 
 
 @Component({
@@ -13,6 +14,8 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 })
 export class ProductDetailComponent implements OnInit {
   faStar = faStar;
+  faShoppingCart = faShoppingCart;
+  faHeart = faHeart;
 
   productsOptions: OwlOptions = {
     autoWidth: true,
@@ -33,13 +36,14 @@ export class ProductDetailComponent implements OnInit {
           items: 4
         }
       }
-  }
+  };
 
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
+  productType: 'product' | 'service' = 'product';
 
 
-  constructor() { }
+  constructor(private cacheService: CacheService) { }
 
   ngOnInit() {
     this.galleryOptions = [
@@ -83,6 +87,19 @@ export class ProductDetailComponent implements OnInit {
         big: './../../../../../assets/img/parceiro.jpg'
       }
   ];
+  }
+
+  insertOnCache() {
+    const arr = [
+      {title: 'um'},
+      {title: 'dois'},
+      {title: 'dois'},
+    ];
+    this.cacheService.setStorage('favoritos', JSON.stringify(arr));
+  }
+
+  get isProductTypeService(): boolean {
+    return this.productType === 'service' ? true : false;
   }
 
 }

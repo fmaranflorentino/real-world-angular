@@ -1,67 +1,61 @@
 <app-base>
-    <app-lead-banner [bannerItems]="leadBannerItems" [opts]="bannerOpts"></app-lead-banner>
+  <app-lead-banner
+    [bannerItems]="leadBannerItems"
+    [opts]="bannerOpts"
+  ></app-lead-banner>
 
-    <app-indicator-box [indicators]="indicators"></app-indicator-box>
-    
-    <app-products-carousel class="d-block mt-5"></app-products-carousel>
-    
-    <div class="curves">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <path
-            fill="#F1FAFA"
-            fill-opacity="1"
-            d="M0,160L34.3,165.3C68.6,171,137,181,206,202.7C274.3,224,343,256,411,261.3C480,267,549,245,617,218.7C685.7,192,754,160,823,138.7C891.4,117,960,107,1029,112C1097.1,117,1166,139,1234,133.3C1302.9,128,1371,96,1406,80L1440,64L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"
-          ></path>
-        </svg>
-      </div>
-    
-    <!-- STORES -->
-    <div class="stores">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h1 class="title">
-              Lojas que já fazem parte do Market Club
-              <a href="#" class="link-purple">Veja todos</a>
-            </h1>
-          </div>
-          <owl-carousel-o [options]="storesOpts" class="col-12">
-            <ng-template carouselSlide class="col-md-auto">
-              <div class="stores__box">
-                <img src="../../../../assets/img/stores/logo1.png" />
-              </div>
-            </ng-template>
-            <ng-template carouselSlide class="col-md-auto">
-              <div class="stores__box">
-                <img src="../../../../assets/img/stores/logo2.png" />
-              </div>
-            </ng-template>
-            <ng-template carouselSlide class="col-md-auto">
-              <div class="stores__box">
-                <img src="../../../../assets/img/stores/logo3.png" />
-              </div>
-            </ng-template>
-            <ng-template carouselSlide class="col-md-auto">
-              <div class="stores__box">
-                <img src="../../../../assets/img/stores/logo4.png" />
-              </div>
-            </ng-template>
-            <ng-template carouselSlide class="col-md-auto">
-              <div class="stores__box">
-                <img src="../../../../assets/img/stores/logo5.png" />
-              </div>
-            </ng-template>
-            <ng-template carouselSlide class="col-md-auto">
-              <div class="stores__box">
-                <img src="../../../../assets/img/stores/logo6.png" />
-              </div>
-            </ng-template>
-          </owl-carousel-o>
+  <app-indicator-box [indicators]="indicators"></app-indicator-box>
+
+  <app-products-carousel class="d-block mt-5"></app-products-carousel>
+
+  <!-- STORES -->
+  <div class="stores">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="title">
+            Lojas que já fazem parte do Market Club
+            <a href="#" class="link-purple">Veja todos</a>
+          </h1>
         </div>
+        <owl-carousel-o [options]="storesOpts" class="col-12">
+          <ng-template carouselSlide class="col-md-auto">
+            <div class="stores__box">
+              <img src="../../../../assets/img/stores/logo1.png" />
+            </div>
+          </ng-template>
+          <ng-template carouselSlide class="col-md-auto">
+            <div class="stores__box">
+              <img src="../../../../assets/img/stores/logo2.png" />
+            </div>
+          </ng-template>
+          <ng-template carouselSlide class="col-md-auto">
+            <div class="stores__box">
+              <img src="../../../../assets/img/stores/logo3.png" />
+            </div>
+          </ng-template>
+          <ng-template carouselSlide class="col-md-auto">
+            <div class="stores__box">
+              <img src="../../../../assets/img/stores/logo4.png" />
+            </div>
+          </ng-template>
+          <ng-template carouselSlide class="col-md-auto">
+            <div class="stores__box">
+              <img src="../../../../assets/img/stores/logo5.png" />
+            </div>
+          </ng-template>
+          <ng-template carouselSlide class="col-md-auto">
+            <div class="stores__box">
+              <img src="../../../../assets/img/stores/logo6.png" />
+            </div>
+          </ng-template>
+        </owl-carousel-o>
       </div>
     </div>
-    
-    <section class="container simulator py-4">
+  </div>
+
+  <section class="simulator">
+    <div class="container py-4">
       <div class="row">
         <div class="col-12 col-md-7 pr-md-5">
           <h2 class="title">Faça a simulação do financiamento</h2>
@@ -70,7 +64,7 @@
               <span>Valor desejado</span>
               <ng5-slider [(value)]="value" [options]="options"></ng5-slider>
             </div>
-    
+
             <div class="range">
               <span>Número de parcelas</span>
               <ng5-slider [(value)]="value" [options]="options2"></ng5-slider>
@@ -83,48 +77,58 @@
               <span class="simulator--box--first">
                 Valor de cada parcela
               </span>
-    
+
               <span class="simulator--box--second">
                 24 vezes de
               </span>
-    
+
               <span class="simulator--box--last">
                 R$ 2150,00
               </span>
             </p>
-    
+
             <button mat-ripple class="btn btn-round btn-white-purple">
               Solicitar financiamento
             </button>
           </div>
         </div>
       </div>
-    </section>
-    
-    <app-facilities></app-facilities>
-    
-    <section class="container step-by-step py-4">
-      <div class="row">
-        <div class="col-12 d-flex justify-content-center mb-2">
-          <h2 class="title">
-            Confira o passo-a-passo
-          </h2>
-        </div>
-        <div class="col-md-3">
-          <div class="steps-list mb-2 w-100 d-flex" *ngFor="let step of steps" (click)="toggleSelectedStep(step)">
-            <img src="./../../../../assets/img/icon2.png" alt="" />
-            <div>
-              <h6 class="m-0 pl-2 pb-2">{{ step.title }}</h6>
-              <p class="mt-0 pl-2">{{ step.text }}</p>
-            </div>
+    </div>
+  </section>
+
+  <app-facilities></app-facilities>
+
+  <section class="container step-by-step py-4">
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center mb-2">
+        <h2 class="title">
+          Confira o passo-a-passo
+        </h2>
+      </div>
+      <div class="col-md-3">
+        <div
+          class="steps-list mb-2 w-100 d-flex"
+          *ngFor="let step of steps"
+          (click)="toggleSelectedStep(step)"
+        >
+          <img [src]="step.img" alt="" />
+          <div>
+            <h6 class="m-0 pl-2 pb-1">{{ step.title }}</h6>
+            <p class="mt-0 pl-2">{{ step.text }}</p>
           </div>
         </div>
-        <div class="col-12 col-md-9">
-          {{ stepByStepSelected?.title }}
-          <img src="./../../../../../assets/img/temp/03.png" alt=""> 
-        </div>
       </div>
-    </section>
-    
-    <app-sellers></app-sellers>    
+      <div class="col-12 col-md-9">
+        <video width="100%" controls>
+          <source
+            src="./../../../../assets/videos/steps/sample.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <app-sellers></app-sellers>
 </app-base>

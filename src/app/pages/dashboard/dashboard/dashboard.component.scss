@@ -6,3 +6,21 @@
 .container-route {
   overflow: hidden;
 }
+
+.header-menu {
+  fa-icon {
+    display: none;
+  }
+
+  @media screen and (max-width: 676px) {
+    fa-icon {
+      display: block;
+    }
+  }
+}
+
+.navMenu {
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+}

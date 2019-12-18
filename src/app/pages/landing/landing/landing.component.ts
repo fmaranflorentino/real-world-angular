@@ -19,14 +19,17 @@ export class LandingComponent implements OnInit {
 
 
   steps = [
-    { title: 'Simule', text: ' Sem compromisso' },
-    { title: 'Simule2', text: ' Sem compromisso' },
-    { title: 'Simule', text: ' Sem compromisso' },
-    { title: 'Simule', text: ' Sem compromisso' },
-    { title: 'Simule', text: ' Sem compromisso' },
-    { title: 'Simule', text: ' Sem compromisso' },
-    { title: 'Simule', text: ' Sem compromisso' },
-    { title: 'Simule', text: ' Sem compromisso' },
+    {
+      title: 'Simule',
+      text: ' Sem compromisso',
+      img: './../../../../assets/img/temp/t01.png',
+      video: './../../../../assets/videos/steps/sample.mp4'
+    },
+    { title: 'Escolha', text: 'O produto desejado', img: './../../../../assets/img/temp/t02.png', video: './../../../../assets/videos/steps/sample.mp4' },
+    { title: 'Cadastro', text: 'Rápido e poucos passos', img: './../../../../assets/img/temp/t03.png', video: './../../../../assets/videos/steps/sample.mp4' },
+    { title: 'Documentos', text: 'Envie tudo online', img: './../../../../assets/img/temp/t04.png', video: './../../../../assets/videos/steps/sample.mp4' },
+    { title: 'Análise', text: 'Seu pedido analisado em até 24hrs', img: './../../../../assets/img/temp/t05.png', video: './../../../../assets/videos/steps/sample.mp4' },
+    { title: 'Assine', text: 'Tudo online e receba o produto em casa', img: './../../../../assets/img/temp/t06.png', video: './../../../../assets/videos/steps/sample.mp4' },
   ];
 
 
@@ -63,15 +66,15 @@ export class LandingComponent implements OnInit {
   constructor(public dialog: MatDialog, private modal: ModalService) { }
 
   ngOnInit() {
-    this.openDialog();
+    // this.openDialog();
   }
 
-  toggleSelectedStep(step: {title: string, text: string}): void {
-    this.stepByStepSelected = {...step};
+  toggleSelectedStep(step): void {
+    this.stepByStepSelected = { ...step };
   }
 
   openDialog(): void {
-    const dialogRef = this.modal.open(LoginModalComponent , { width: '570px' });
+    const dialogRef = this.modal.open(LoginModalComponent, { width: '570px' });
   }
 
 }

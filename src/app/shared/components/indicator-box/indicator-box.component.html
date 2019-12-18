@@ -1,11 +1,15 @@
-<div class="container pt-5" *ngIf="indicators && indicators.length > 0">
-    <div class="row">
-        <div class="col-12 col-md-auto" *ngFor="let indicator of indicators">
-          <div class="slide-differential__item">
-            <img [src]="indicator?.icon" />
-            <h1>{{ indicator?.title }}</h1>
-            <p>{{ indicator?.desc }}</p>
-          </div>
+<div class="container pt-1 pb-5" *ngIf="indicators && indicators.length > 0">
+  <div class="row">
+    <div class="col-12 col-md-auto" *ngFor="let indicator of indicators">
+      <div class="slide-differential__item">
+        <div>
+          <img [src]="indicator?.icon" />
         </div>
+        <div>
+          <h1>{{ indicator?.title }}</h1>
+          <p>{{ indicator?.desc }}</p>
+        </div>
+      </div>
     </div>
   </div>
+</div>

@@ -1,3 +1,9 @@
 .form-group {
-    position: relative;
+  position: relative;
+}
+
+.content {
+  @media screen and (max-width: 676px) {
+      padding: 0 !important;
+  }
 }
