@@ -1,44 +1,81 @@
- <header>
-    <div class="nav-bar">
-      <div class="container"> 
-          <div class="row">
-              <div class="col-md-auto">
-                  <div class="logo"><a routerLink="/home" ><img src="../../../assets/img/logo.png"></a></div>
-              </div>
-              <div class="col-md-auto">
-                  <div class="search"><a routerLink="/"><img src="../../../assets/img/icons/search.png"></a></div>
-              </div>
-              <div class="col-md-auto">
-                  <div class="cart"><a routerLink="/"><img src="../../../assets/img/icons/cart.png"></a></div>
-              </div>
-              <div class="col-md-auto">
-                  <nav role="navigation">
-                      <div id="menuToggle">
-                        <input type="checkbox" />
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <ul id="menu">
-                            <div class="user"><a routerLink="/home" ><img src="../../../assets/img/icons/user_2.png"></a>Acessar Minha Conta</div>
-                            <div class="location"><img src="../../../assets/img/icons/place_2.png"><span>Bebedouro, SP</span> <i class="fa fa-angle-down"></i></div>
-                            <ul class="nav-header">
-                              <li class="nav-header__item"><a routerLink="/sobre">Como Funciona  <i class="fa fa-angle-down"></i></a></li>
-                              <li class="nav-header__item"><a routerLink="/produtos">Produtos/Serviços  <i class="fa fa-angle-down"></i></a></li>
-                              <li class="nav-header__item"><a routerLink="/beneficios">Benefícios  <i class="fa fa-angle-down"></i></a></li>
-                              <li class="nav-header__item"><a routerLink="/parceiros">Parceiros  <i class="fa fa-angle-down"></i></a></li>
-                              <li class="nav-header__item"><a routerLink="/simulador">Simulador  <i class="fa fa-angle-down"></i></a></li>
-                            </ul>   
+<header>
+  <div class="nav-bar">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-auto">
+          <div class="logo">
+            <a routerLink="/home"><img src="../../../assets/img/logo.png"/></a>
+          </div>
+        </div>
+        <div class="col-md-auto">
+          <div class="search">
+            <a routerLink="/"
+              ><img src="../../../assets/img/icons/search.png"
+            /></a>
+          </div>
+        </div>
+        <div class="col-md-auto">
+          <div class="cart">
+            <a routerLink="/"
+              ><img src="../../../assets/img/icons/cart.png"
+            /></a>
+          </div>
+        </div>
+        <div class="col-md-auto">
+          <nav role="navigation">
+            <div id="menuToggle">
+              <input type="checkbox" />
+              <span></span>
+              <span></span>
+              <span></span>
+              <ul id="menu">
+                <div class="user mb-4">
+                  <a routerLink="/home"
+                    ><img src="../../../assets/img/icons/user_2.png"/></a
+                  >Acessar Minha Conta
+                </div>
+                <!-- <div class="location"><img src="../../../assets/img/icons/place_2.png"><span>Bebedouro, SP</span> <i class="fa fa-angle-down"></i></div> -->
+                <ul class="nav-header">
+                  <li class="nav-header__item">
+                    <a routerLink="/sobre"
+                      >Como Funciona <i class="fa fa-angle-down"></i
+                    ></a>
+                  </li>
+                  <li class="nav-header__item">
+                    <a routerLink="/produtos"
+                      >Produtos/Serviços <i class="fa fa-angle-down"></i
+                    ></a>
+                  </li>
+                  <li class="nav-header__item">
+                    <a routerLink="/beneficios"
+                      >Benefícios <i class="fa fa-angle-down"></i
+                    ></a>
+                  </li>
+                  <li class="nav-header__item">
+                    <a routerLink="/parceiros"
+                      >Parceiros <i class="fa fa-angle-down"></i
+                    ></a>
+                  </li>
+                  <li class="nav-header__item">
+                    <a routerLink="/simulador"
+                      >Simulador <i class="fa fa-angle-down"></i
+                    ></a>
+                  </li>
+                </ul>
 
-                            <a routerLink="/" class="btn btn-primary">Faça parte </a>
+                <a routerLink="/" class="btn btn-primary">Faça parte </a>
 
-                            <div class="phone"><img src="../../../assets/img/icons/phone_2.png"><span>0800 770 6883</span></div>
-
-                          </ul>
-                        </div>
-                  </nav>
-                  <!-- <div class="menu"><a routerLink="/"><img src="../../../assets/img/menu.png"></a></div> -->
-              </div>
+                <div class="phone">
+                  <img src="../../../assets/img/icons/phone_2.png" /><span
+                    >0800 770 6883</span
+                  >
+                </div>
+              </ul>
             </div>
+          </nav>
+          <!-- <div class="menu"><a routerLink="/"><img src="../../../assets/img/menu.png"></a></div> -->
+        </div>
       </div>
     </div>
-  </header>
+  </div>
+</header>
