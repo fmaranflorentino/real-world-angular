@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ErrorModalComponent } from './error-modal/error-modal.component';
 import { SuccessModalComponent } from './success-modal/success-modal.component';
+import { PwaButtonComponent } from './pwa-button/pwa-button.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { SuccessModalComponent } from './success-modal/success-modal.component';
     HeaderMobileComponent,
     FooterMobileComponent,
     SkeletonBoxComponent,
+    PwaButtonComponent,
     ErrorModalComponent,
     SuccessModalComponent,
     ...declarations,
@@ -41,6 +43,7 @@ import { SuccessModalComponent } from './success-modal/success-modal.component';
     ReactiveFormsModule,
     ErrorModalComponent,
     SuccessModalComponent,
+    PwaButtonComponent,
     ...modules,
     ...components,
   ],

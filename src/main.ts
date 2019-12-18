@@ -7,6 +7,17 @@ import { environment } from './environments/environment';
 
 if (environment.production) {
   enableProdMode();
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('/sw.js')
+      .then(function () {
+        console.log('Service worker registered!');
+      })
+      .catch(function(err) {
+        console.log(err);
+      });
+  }
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule)
