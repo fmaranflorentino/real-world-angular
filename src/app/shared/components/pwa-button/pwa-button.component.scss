@@ -1,16 +1,83 @@
 :host {
-    background: #26806B;
-    border-radius: 50%;
-    z-index: 11;
-    cursor: pointer;
+  background: #fff;
+  box-shadow: 0 -2px 2px -2px rgba(0, 0, 0, 0.6);
 
-    width: 55px;
-    height: 55px;
-    position: absolute;
-    left: 20px;
-    bottom: 20px;
+  z-index: 11;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100vw;
+  height: 60px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  article {
+    padding: 12px;
+
+    button {
+      cursor: pointer;
+    }
+  }
+
+  @media screen and (max-width: 676px) {
+    article {
+      padding: 25px;
+
+      p {
+        font-size: 12px;
+
+        span {
+          display: block;
+        }
+      }
+
+      button {
+        font-size: 12px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    article {
+      padding: 15px;
+
+      .col-auto {
+        padding-left: 0 !important;
+      }
+
+      p {
+        span {
+          display: inline;
+        }
+      }
+
+      button {
+        padding-right: 13px !important;
+        padding-left: 13px !important;
+      }
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    article {
+      padding: 10px;
+
+      p {
+        font-size: 11px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    article {
+      padding: 10px;
+
+      p {
+        font-size: 10px;
+      }
+    }
+  }
 }

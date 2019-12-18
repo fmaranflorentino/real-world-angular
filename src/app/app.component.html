@@ -1,4 +1,4 @@
-<app-pwa-button *ngIf="promptEvent" (click)="installPwa()"></app-pwa-button>
+<app-pwa-button *ngIf="promptEvent" [promptEvent]="promptEvent" (pwaChoice)="handlePwaChoice($event)" @slideIn></app-pwa-button>
 <div [@routeAnimations]="o.isActivated ? o.activatedRoute : ''">
   <router-outlet #o="outlet"></router-outlet>
 </div>

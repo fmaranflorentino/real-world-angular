@@ -23,6 +23,34 @@ export const fadeIn = trigger('fadeIn', [
     ])
 ]);
 
+export const slideIn = trigger('slideIn', [
+    transition(':leave', [
+        animate('300ms ease-in', keyframes([
+            style({
+                opacity: 1,
+                transform: 'translateY(0)',
+            }),
+            style({
+                opacity: 0,
+                transform: 'translateY(100px)',
+            })
+        ]))
+    ]),
+    transition(':enter', [
+        animate('700ms ease-in', keyframes([
+            style({
+                opacity: 0,
+                transform: 'translateY(100px)',
+            }),
+            style({
+                opacity: 1,
+                transform: 'translateY(0)',
+
+            })
+        ]))
+    ])
+]);
+
 export const scaleOut = trigger('scaleOut', [
     transition(':leave', [
         animate('500ms ease-in', keyframes([
