@@ -43,7 +43,7 @@ header {
 
         padding: 10px 20px;
 
-        @media screen and (max-width: 1030px) { 
+        @media screen and (max-width: 1030px) {
           padding: 10px;
         }
 
@@ -105,7 +105,7 @@ header {
   font-size: 14px;
   letter-spacing: 1px;
 
-  padding: 13px 25px;
+  padding: 9 25px;
 
   @media screen and (max-width: 1030px) {
     font-size: 12px;
@@ -126,7 +126,7 @@ header {
 
   @media screen and (max-width: 380px) {
     width: 90px;
-    
+
     img {
       width: 90px;
     }
