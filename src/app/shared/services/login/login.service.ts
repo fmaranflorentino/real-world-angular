@@ -20,9 +20,10 @@ export class LoginService extends LoginInterface {
     super();
   }
 
-   logIn(): Observable<any> {
-     const url = `${this.baseUrl}`;
-     return this.api$.post(url, {});
+   logIn(body: { user: string, password: string, system?: string }): Observable<any> {
+     body.system = 'AD';
+     const url = `${this.baseUrl}${env.api.domains.auth.login}`;
+     return this.api$.post(url, body);
    }
 
    logOut(): Observable<any> {

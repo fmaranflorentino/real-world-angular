@@ -10,6 +10,13 @@
     <fa-icon [icon]="faTimes"></fa-icon>
   </mat-icon>
 </button>
+<div
+  class="w-100 login-error alert alert-danger"
+  @fadeIn
+  *ngIf="loginError && loginError.hasError"
+>
+  <p class="m-0">{{ loginError.message }}</p>
+</div>
 <form [formGroup]="loginForm">
   <div mat-dialog-content class="py-4">
     <div class="form-group">
@@ -41,10 +48,11 @@
     <button
       mat-button
       class="btn btn-round btn-primary"
-      (click)="logIn(loginControls)"
+      (click)="executeLogin(loginControls)"
       [disabled]="!formValidation"
     >
-      Entrar
+      <mat-spinner *ngIf="loading" class="pr-3"></mat-spinner>
+      <span [ngClass]="{ 'pl-2': loading }">{{ loading ? 'Processando' : 'Entrar'}}</span>
     </button>
   </div>
 </form>

@@ -16,6 +16,8 @@ import { fadeIn } from '../../helpers/animations';
 export class LoginModalComponent implements OnInit {
   faTimes = faTimes;
   loginForm: FormGroup;
+  loginError = null;
+  loading = false;
 
   constructor(
     private dialogRef: MatDialogRef<any>,
@@ -43,15 +45,34 @@ export class LoginModalComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  logIn(loginObj): Promise<any> | any {
+  executeLogin(loginObj) {
     if (!loginObj) { return; }
-    console.log(loginObj);
-    return this.autheticate();
+
+    this.loading = true;
+
+    this.logIn(loginObj)
+      .then((response) => {
+          this.loading = false;
+      })
+      .catch((error) => {
+        this.loading = false;
+
+        if (error.status === 400) {
+          this.loginError = {
+            hasError: true,
+            message: error.error,
+          };
+        }
+      });
   }
 
-  autheticate(): Promise<any> {
+  logIn(loginObj): Promise<any> | any {
+    return this.autheticate(loginObj);
+  }
+
+  autheticate(login): Promise<any> {
     return new Promise((resolve, reject) => {
-      this.login$.logIn()
+      this.login$.logIn(login)
         .subscribe(
           (response) => {
             resolve(response);

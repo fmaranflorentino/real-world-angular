@@ -44,7 +44,6 @@
   input::placeholder {
     font-weight: bold !important;
   }
-
 }
 
 button {
@@ -59,4 +58,25 @@ button {
     top: 0;
     right: 0;
   }
+}
+
+::ng-deep {
+  mat-spinner,
+  .mat-progress-spinner svg {
+    width: 20px !important;
+    height: 20px !important;
+
+    circle {
+      stroke: #fff !important;
+    }
+  }
+
+  .mat-button-wrapper {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.login-error {
+  max-width: 370px;
 }
