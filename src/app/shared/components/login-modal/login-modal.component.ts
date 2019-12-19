@@ -6,6 +6,7 @@ import { MatDialogRef } from '@angular/material';
 
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { fadeIn } from '../../helpers/animations';
+import { Login } from '../../interfaces/login';
 
 @Component({
   selector: 'app-login-modal',
@@ -45,17 +46,22 @@ export class LoginModalComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  executeLogin(loginObj) {
+  executeLogin(loginObj: Login) {
     if (!loginObj) { return; }
 
-    this.loading = true;
+    this.setLoadingStatus(true);
 
     this.logIn(loginObj)
-      .then((response) => {
-          this.loading = false;
-      })
+      .then(
+        async (response) => {
+          // TODO: colocar o código abaixo no metodo registerCredentials
+          await this.login$.registerCredentials(response)
+            .then(res => { })
+            .catch(error => { });
+          this.setLoadingStatus(false);
+        })
       .catch((error) => {
-        this.loading = false;
+        this.setLoadingStatus(false);
 
         if (error.status === 400) {
           this.loginError = {
@@ -66,21 +72,29 @@ export class LoginModalComponent implements OnInit {
       });
   }
 
-  logIn(loginObj): Promise<any> | any {
+  logIn(loginObj: Login): Promise<any> | any {
     return this.autheticate(loginObj);
   }
 
-  autheticate(login): Promise<any> {
+  autheticate(login: Login): Promise<any> {
     return new Promise((resolve, reject) => {
       this.login$.logIn(login)
         .subscribe(
           (response) => {
-            resolve(response);
+            resolve(response)
           },
           (error) => {
             reject(error);
           });
     });
+  }
+
+  registerCredentials() {
+
+  }
+
+  setLoadingStatus(status: boolean) {
+    this.loading = status;
   }
 
   get controls(): any {
@@ -91,11 +105,11 @@ export class LoginModalComponent implements OnInit {
     return this.loginForm.valid;
   }
 
-  get loginControls() {
+  get loginControls(): Login {
     return {
       user: this.controls.user.value,
       password: this.controls.password.value,
-     };
+    };
   }
 
 }
