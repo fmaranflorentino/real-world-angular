@@ -15,7 +15,7 @@
           </div>
           <mat-menu #userMenu="matMenu">
             <button mat-menu-item>Minhas vendas</button>
-            <button mat-menu-item>Sair</button>
+            <button mat-menu-item (click)="logout()">Sair</button>
           </mat-menu>
           <div style="cursor: pointer" [matMenuTriggerFor]="userMenu">
             <fa-icon *ngIf="isUserLoggedIn" [icon]="faAngleDown" class="ml-2"></fa-icon>

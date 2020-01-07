@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
+import { BehaviorSubject, Observable } from 'rxjs';
 import { AuthInterface } from './auth-interface';
 
 import * as jwt_decode from 'jwt-decode';
-import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class AuthService extends AuthInterface {
   isUserLogged = new BehaviorSubject(this.isLoggedIn());
 
-  constructor() {
+  constructor(private router: Router) {
     super();
   }
 
@@ -69,6 +70,12 @@ export class AuthService extends AuthInterface {
     const tokenExp = !(transformedTokenExp.valueOf() > new Date().valueOf());
 
     return tokenExp;
+  }
+
+  logout() {
+    localStorage.removeItem('_marketclubToken');
+    this.router.navigate(['/']);
+    this.isUserLogged.next(false);
   }
 
   isLoggedIn() {

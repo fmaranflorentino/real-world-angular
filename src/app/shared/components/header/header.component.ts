@@ -51,4 +51,8 @@ export class HeaderComponent implements OnInit {
     const dialogRef = this.modal.open(LoginModalComponent, { width: '570px' });
   }
 
+  logout() {
+    this.auth$.logout();
+  }
+
 }
