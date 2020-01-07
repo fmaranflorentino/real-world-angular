@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './shared/services/guard/auth.guard';
 
 
 const routes: Routes = [
@@ -14,7 +15,11 @@ const routes: Routes = [
   { path: 'simulador', loadChildren: () => import('./pages/simulator/simulator.module').then(m => m.SimulatorModule) },
   { path: 'como-funciona', loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule) },
   { path: 'financiamento', loadChildren: () => import('./pages/financing/financing.module').then(m => m.FinancingModule) },
-  { path: 'minha-conta', loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule) },
+  {
+    path: 'minha-conta',
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule)
+  },
   { path: 'termos', loadChildren: () => import('./pages/terms/terms.module').then(m => m.TermsModule) },
 ];
 

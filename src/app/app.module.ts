@@ -7,10 +7,12 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
+import { LoginBtnDirective } from './shared/helpers/directives/login-btn.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginBtnDirective
   ],
   imports: [
     BrowserModule,

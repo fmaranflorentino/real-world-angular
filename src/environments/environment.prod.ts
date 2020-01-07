@@ -6,6 +6,7 @@ export const environment = {
   production: true,
   api: {
     basePath: '',
+    basePathLogin: 'http://191.239.251.236:8081',
     version: '',
     protocol: '',
     domains: {

@@ -12,6 +12,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ErrorModalComponent } from './error-modal/error-modal.component';
 import { SuccessModalComponent } from './success-modal/success-modal.component';
 import { PwaButtonComponent } from './pwa-button/pwa-button.component';
+import { BtnLoaderComponent } from './btn-loader/btn-loader.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { PwaButtonComponent } from './pwa-button/pwa-button.component';
     PwaButtonComponent,
     ErrorModalComponent,
     SuccessModalComponent,
+    BtnLoaderComponent,
     ...declarations,
   ],
   imports: [
@@ -44,9 +46,10 @@ import { PwaButtonComponent } from './pwa-button/pwa-button.component';
     ErrorModalComponent,
     SuccessModalComponent,
     PwaButtonComponent,
+    BtnLoaderComponent,
     ...modules,
     ...components,
   ],
-  entryComponents: [ LoginModalComponent, ErrorModalComponent, SuccessModalComponent ]
+  entryComponents: [ LoginModalComponent, ErrorModalComponent, SuccessModalComponent, BtnLoaderComponent ]
 })
 export class ComponentsModule { }

@@ -6,11 +6,12 @@ export const environment = {
   production: false,
   api: {
     basePath: 'http://64.225.25.94:8082',
+    basePathLogin: 'http://191.239.251.236:8081',
     version: '',
     protocol: '',
     domains: {
       auth: {
-        login: '/api/Marketclub/Security/Login',
+        login: '/api/Security/Login',
         logout: '',
       },
       products: {

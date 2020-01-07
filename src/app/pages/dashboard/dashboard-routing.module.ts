@@ -8,11 +8,14 @@ import { MyProductsComponent } from './components/my-products/my-products.compon
 import { FinancingProcessesComponent } from './components/financing-processes/financing-processes.component';
 import { NewProductComponent } from './components/new-product/new-product.component';
 import { ProductsTableComponent } from './components/my-products/components/products-table/products-table.component';
+import { AuthGuard } from 'src/app/shared/services/guard/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: DashboardComponent,
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
     children: [
       { path: 'vendas', component: SallesHistoryComponent },
       {

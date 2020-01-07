@@ -4,9 +4,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login/login.service';
 import { MatDialogRef } from '@angular/material';
 
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faTimes, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { fadeIn } from '../../helpers/animations';
 import { Login } from '../../interfaces/login';
+import { LoginResponse } from '../../services/login/login-response.model';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-login-modal',
@@ -16,6 +18,7 @@ import { Login } from '../../interfaces/login';
 })
 export class LoginModalComponent implements OnInit {
   faTimes = faTimes;
+  faExclamationTriangle = faExclamationTriangle;
   loginForm: FormGroup;
   loginError = null;
   loading = false;
@@ -53,10 +56,11 @@ export class LoginModalComponent implements OnInit {
 
     this.logIn(loginObj)
       .then(
-        async (response) => {
-          // TODO: colocar o código abaixo no metodo registerCredentials
-          await this.login$.registerCredentials(response)
-            .then(res => { })
+        async (response: LoginResponse) => {
+          await this.login$.registerCredentials(response.access_token)
+            .then(() => {
+              this.closeModal();
+            })
             .catch(error => { });
           this.setLoadingStatus(false);
         })
@@ -66,7 +70,7 @@ export class LoginModalComponent implements OnInit {
         if (error.status === 400) {
           this.loginError = {
             hasError: true,
-            message: error.error,
+            message: 'Credenciais de acesso inválidas',
           };
         }
       });
@@ -81,7 +85,7 @@ export class LoginModalComponent implements OnInit {
       this.login$.logIn(login)
         .subscribe(
           (response) => {
-            resolve(response)
+            resolve(response);
           },
           (error) => {
             reject(error);

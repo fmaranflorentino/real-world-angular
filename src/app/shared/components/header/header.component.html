@@ -8,8 +8,19 @@
             <span>0800 770 6883</span>
           </div>
         </div>
-        <div class="col-md-auto">
-          <div mat-ripple class="access" (click)="openLoginDialog()">
+        <div class="col-md-auto" [ngClass]="{'d-flex': isUserLoggedIn}">
+          <div class="access" *ngIf="isUserLoggedIn">
+            <img src="../../../assets/img/icons/user.png" [matMenuTriggerFor]="userMenu" class="mr-2" />
+            <span [matMenuTriggerFor]="userMenu">{{ userInformation?.name }}</span>
+          </div>
+          <mat-menu #userMenu="matMenu">
+            <button mat-menu-item>Minhas vendas</button>
+            <button mat-menu-item>Sair</button>
+          </mat-menu>
+          <div style="cursor: pointer" [matMenuTriggerFor]="userMenu">
+            <fa-icon *ngIf="isUserLoggedIn" [icon]="faAngleDown" class="ml-2"></fa-icon>
+          </div>
+          <div mat-ripple class="access" *ngIf="!isUserLoggedIn" (click)="openLoginDialog()">
             <!-- <div mat-ripple class="access" [routerLink]="['/minha-conta/produtos']"> -->
             <img src="../../../assets/img/icons/user.png" class="mr-2" />
             <span>Acessar Minha Conta</span>

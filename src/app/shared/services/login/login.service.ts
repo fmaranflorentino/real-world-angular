@@ -7,12 +7,13 @@ import { ApiService } from '../api';
 import { Observable } from 'rxjs';
 import { environment as env } from 'src/environments/environment';
 import { Login } from '../../interfaces/login';
+import { LoginResponse } from './login-response.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService extends LoginInterface {
-  baseUrl = env.api.basePath;
+  baseUrl = env.api.basePathLogin;
 
   constructor(
     private api$: ApiService,
@@ -21,10 +22,10 @@ export class LoginService extends LoginInterface {
     super();
   }
 
-   logIn(body: Login): Observable<any> {
+   logIn(body: Login): Observable<LoginResponse> {
      body.system = 'AD';
      const url = `${this.baseUrl}${env.api.domains.auth.login}`;
-     
+
      return this.api$.post(url, body);
    }
 
@@ -32,7 +33,7 @@ export class LoginService extends LoginInterface {
     return this.api$.post('', {});
   }
 
-   registerCredentials(token): Promise<any> {
-     return this.auth$.registerToken('token');
+   registerCredentials(token: string): Promise<any> {
+     return this.auth$.registerToken(token);
    }
 }

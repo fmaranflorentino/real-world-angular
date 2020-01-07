@@ -3,11 +3,13 @@ import { Injectable } from '@angular/core';
 import { AuthInterface } from './auth-interface';
 
 import * as jwt_decode from 'jwt-decode';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService extends AuthInterface {
+  isUserLogged = new BehaviorSubject(this.isLoggedIn());
 
   constructor() {
     super();
@@ -18,6 +20,10 @@ export class AuthService extends AuthInterface {
   registerToken(token: string): Promise<any> {
     return new Promise((resolve, reject) => {
       this.setToken(token);
+
+      const userInformation = this.getUserInformation();
+      this.setUserInformation(userInformation);
+      this.isUserLogged.next(true);
       resolve();
     });
   }
@@ -30,11 +36,27 @@ export class AuthService extends AuthInterface {
     localStorage.setItem('_marketclubToken', token);
   }
 
-  getUserInformation() {}
+  getUserInformation() {
+    const token: string = this.getToken();
+    const undecodedToken = jwt_decode(token);
+    
+    return undecodedToken;
+  }
 
-  getIsUserAuthenticated() {}
+  setUserInformation(information) {
+    localStorage.setItem('_userInformation', information);
+  }
+
+  getIsUserAuthenticated() {
+    const token: string = this.getToken();
+    return !this.isTokenExpired(token);
+  }
 
   isTokenExpired(token: string) {
+    if (!token) {
+      return true;
+    }
+
     const undecodedToken = jwt_decode(token);
 
     if (undecodedToken.exp === undefined) {
@@ -47,5 +69,15 @@ export class AuthService extends AuthInterface {
     const tokenExp = !(transformedTokenExp.valueOf() > new Date().valueOf());
 
     return tokenExp;
+  }
+
+  isLoggedIn() {
+    const isLoggedIn = this.getIsUserAuthenticated();
+
+    return isLoggedIn;
+  }
+
+  getIsUserLoggedIn(): Observable<any> {
+    return this.isUserLogged.asObservable();
   }
 }

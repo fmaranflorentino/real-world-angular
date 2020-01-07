@@ -6,7 +6,7 @@ export abstract class AuthInterface {
 
     abstract registerToken(token: string);
 
-    abstract getUserInformation();
+    abstract getUserInformation(token: string);
     
     abstract getIsUserAuthenticated();
 }
