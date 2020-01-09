@@ -10,10 +10,10 @@ import { ServerErrorInterceptor } from './handlers/server-error.interceptor';
   imports: [
     CommonModule,
   ],
-  providers: [
-    { provide: ErrorHandler, useClass: ApplicationErrorHandler },
-    { provide: HTTP_INTERCEPTORS, useClass: ServerErrorInterceptor, multi: true }
-  ],
+  // providers: [
+  //   { provide: ErrorHandler, useClass: ApplicationErrorHandler },
+  //   { provide: HTTP_INTERCEPTORS, useClass: ServerErrorInterceptor, multi: true }
+  // ],
 })
 
 export class CoreModule {

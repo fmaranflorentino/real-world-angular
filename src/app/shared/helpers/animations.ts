@@ -86,14 +86,14 @@ export const listStateTrigger = trigger('listState', [
         query(':enter', [
             style({
                 opacity: 0,
-                transform: 'translateX(-100%)'
+                // transform: 'translateX(-100%)'
             }),
             stagger(300, [
                 animate('1100ms ease-out', keyframes([
                     style({
-                        opacity: 0.5,
+                        opacity: 0.2,
                         transform: 'translateX(15%)',
-                        offset: 0.4
+                        offset: 0.6
                     }),
                     style({
                         opacity: 1,

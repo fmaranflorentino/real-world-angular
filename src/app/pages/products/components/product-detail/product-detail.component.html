@@ -20,6 +20,7 @@
       <div class="col-md-6">
         <div class="product-info__img">
           <ngx-gallery
+          *ngIf="handleGallery"
             [options]="galleryOptions"
             [images]="galleryImages"
           ></ngx-gallery>
@@ -27,7 +28,7 @@
       </div>
       <div class="col-md-6">
         <div class="product-info__logo">
-          <h1>BMW Série 3 Sedã 2.0 16V Turbo Active Automático</h1>
+          <h1>{{ productDetails?.nome }}</h1>
         </div>
         <div class="product-info__rating">
           <fa-icon [icon]="faStar"></fa-icon>

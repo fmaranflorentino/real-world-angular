@@ -1,13 +1,13 @@
-<div routerLink="/produtos/12/detalhe" class="product-box">
+<div [routerLink]="productLink" class="product-box">
   <div class="product-box__img">
-    <img src="../../../../../assets/img/product.png" class="img-fluid"/>
+    <img [src]="transform()" class="img-fluid"/>
   </div>
   <div class="product-box__title">
     <span>loja online</span>
-    <h1>Bolsa Loius Vuitton Neverfull MM</h1>
+    <h1>{{ productObj?.produto?.nome || 'Bolsa Loius Vuitton Neverfull MM' }}</h1>
   </div>
   <div class="product-box__price">
     <span>14 ofertas a partir de</span>
-    <p>R$ 2.600,00</p>
+    <p>{{ productObj?.precoFinal }}</p>
   </div>
 </div>

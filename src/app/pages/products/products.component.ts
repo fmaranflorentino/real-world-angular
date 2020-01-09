@@ -23,31 +23,30 @@ export class ProductsComponent implements OnInit {
   constructor(
     private productsService: ProductsService,
   ) {
-    for (let i = 1; i <= 50; i++) {
-      this.collection.push(i);
-    }
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.loadingProducts = true;
+
+    await this.getAllProducts()
+      .then((products) => {
+        this.collection = products.items;
+        this.loadingProducts = false;
+      });
 
     wait(500)
       .then(() => {
         this.showEffects = true;
       });
 
-    this.getProducts()
-      .then((products: any) => {
+  }
 
-      })
-      .catch((error: any) => {
-
-      });
-
-    wait(3000)
-      .then(() => {
-        this.loadingProducts = false;
-      });
+  getAllProducts(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.productsService
+        .getProducts()
+        .subscribe(response => resolve(response), error => reject(error));
+    });
   }
 
   generateArray(count: number): Array<number> {
@@ -56,18 +55,6 @@ export class ProductsComponent implements OnInit {
       indexes.push(i);
     }
     return indexes;
-  }
-
-  getProducts(filters?): Promise<any> {
-    return new Promise((resolve, reject) => {
-      this.productsService.getProducts(filters)
-        .subscribe((response: any) => {
-          resolve(response);
-        },
-        (error) => {
-          reject();
-        });
-    });
   }
 
 }

@@ -5,7 +5,7 @@ const attributesBase = '/api/Atributos';
 export const environment = {
   production: false,
   api: {
-    basePath: 'http://64.225.25.94:8082',
+    basePath: 'http://191.239.251.236:8080',
     basePathLogin: 'http://191.239.251.236:8081',
     version: '',
     protocol: '',
