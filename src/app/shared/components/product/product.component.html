@@ -6,8 +6,8 @@
     <span>loja online</span>
     <h1>{{ productObj?.produto?.nome || 'Bolsa Loius Vuitton Neverfull MM' }}</h1>
   </div>
-  <div class="product-box__price">
+  <div class="product-box__price" *ngIf="productObj?.precoFinal">
     <span>14 ofertas a partir de</span>
-    <p>{{ productObj?.precoFinal }}</p>
+    <p>R$ {{ priceFormatted }}</p>
   </div>
 </div>

@@ -38,4 +38,10 @@ export class ProductComponent implements OnInit {
     return this.productObj ? `data:image/png;base64, ${this.productObj.produto.imagens[0]}` : './../../../../assets/img/nao-disponivel.jpg';
   }
 
+  get priceFormatted() {
+    const price = new Intl.NumberFormat('pt-BR').format(this.productObj.precoFinal);
+
+    return price;
+  }
+
 }
