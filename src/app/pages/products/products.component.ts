@@ -19,20 +19,31 @@ export class ProductsComponent implements OnInit {
   faChevronDown = faChevronDown;
   showEffects: boolean;
   loadingProducts = false;
+  priceRangeList;
+  paginationState = {
+    currentPage: 1,
+    pageSize: 10,
+  };
 
   constructor(
     private productsService: ProductsService,
   ) {
   }
 
-  async ngOnInit() {
+  ngOnInit() {
     this.loadingProducts = true;
 
-    await this.getAllProducts()
+    this.getPriceRange()
+      .then((range) => {
+        this.priceRangeList = range;
+      });
+
+    this.getAllProducts({ PageNumber: 1, PageSize: 10, orderDesc: true })
       .then((products) => {
         this.collection = products.items;
         this.loadingProducts = false;
       });
+
 
     wait(500)
       .then(() => {
@@ -41,10 +52,21 @@ export class ProductsComponent implements OnInit {
 
   }
 
-  getAllProducts(): Promise<any> {
+  getAllProducts(filters?): Promise<any> {
+    if (filters && filters.pageNumber) {
+      this.paginationState.currentPage = filters.pageNumber;
+    }
     return new Promise((resolve, reject) => {
       this.productsService
-        .getProducts()
+        .getProducts(filters)
+        .subscribe(response => resolve(response), error => reject(error));
+    });
+  }
+
+  getPriceRange(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.productsService
+        .getPriceRange()
         .subscribe(response => resolve(response), error => reject(error));
     });
   }

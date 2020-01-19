@@ -21,6 +21,7 @@ export const environment = {
         addProduct: '/api/Produtos',
         editProduct: productBase,
         deleteProduct: productBase,
+        priceRange: '/api/Filtros/FaixaPrecos',
       },
       sellers: {
         all: sellersBase,

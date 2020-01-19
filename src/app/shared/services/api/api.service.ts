@@ -29,7 +29,6 @@ export class ApiService extends HttpMethods {
   }
 
   public post<T>(url: string, body: object, options?: object): Observable<T> {
-
     const request = this.http
       .post<T>(`${this.basePath}${url}`, body, options);
 

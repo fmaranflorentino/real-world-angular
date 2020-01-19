@@ -126,7 +126,7 @@
             </div>
           </div>
         </div> -->
-        <app-filters></app-filters>
+        <app-filters [priceRange]="priceRangeList"></app-filters>
 
         <h2>Faça a simulação</h2>
         <app-range-simulator></app-range-simulator>
@@ -144,13 +144,13 @@
           <app-product
             *ngFor="
               let item of collection
-                | paginate: { itemsPerPage: 9, currentPage: 1 }
+                | paginate: { itemsPerPage: 9, currentPage: paginationState?.currentPage }
             "
             class="col-md-4 col-6"
             [product]="item"
           ></app-product>
         </div>
-        <pagination-controls></pagination-controls>
+        <pagination-controls previousLabel="Anterior" nextLabel="Próximo" (pageChange)="getAllProducts({PageNumber: $event, PageSize: 10, orderDesc: true})"></pagination-controls>
         <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
       </section>
     </div>

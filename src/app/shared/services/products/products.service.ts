@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment as env } from 'src/environments/environment';
 
 import { ProductsInterface } from './products-interface';
@@ -13,12 +13,18 @@ export class ProductsService extends ProductsInterface {
 
   constructor(private api$: ApiService) {
     super();
-   }
+  }
 
   getProducts(filters?) {
     const url = `${this.baseUrl}${env.api.domains.products.search}`;
 
-    return this.api$.post(url, []);
+    let params;
+
+    if (filters) {
+      params = this.toHttpParams(filters);
+    }
+
+    return this.api$.post(url, [], {params});
   }
 
   getProductById(id) {
@@ -27,8 +33,32 @@ export class ProductsService extends ProductsInterface {
     return this.api$.get(url);
   }
 
-  createProduct() {}
+  getPriceRange() {
+    const url = `${this.baseUrl}${env.api.domains.products.priceRange}`;
 
-  updateProduct() {}
+    return this.api$.get(url);
+  }
+
+  toHttpParams(obj: Object): HttpParams {
+    let params = new HttpParams();
+    for (const key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        const val = obj[key];
+
+        if (val instanceof Array) {
+          for (let i = 0; i < val.length; i++) {
+            params = params.append(key, val[i].toString());
+          }
+        } else if (val !== null && val !== undefined && val !== '') {
+          params = params.append(key, val.toString());
+        }
+      }
+    }
+    return params;
+  }
+
+  createProduct() { }
+
+  updateProduct() { }
 
 }

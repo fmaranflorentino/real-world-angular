@@ -13,6 +13,7 @@ import { ErrorModalComponent } from './error-modal/error-modal.component';
 import { SuccessModalComponent } from './success-modal/success-modal.component';
 import { PwaButtonComponent } from './pwa-button/pwa-button.component';
 import { BtnLoaderComponent } from './btn-loader/btn-loader.component';
+import { SimulatorModalComponent } from './simulator-modal/simulator-modal.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { BtnLoaderComponent } from './btn-loader/btn-loader.component';
     ErrorModalComponent,
     SuccessModalComponent,
     BtnLoaderComponent,
+    SimulatorModalComponent,
     ...declarations,
   ],
   imports: [
@@ -47,9 +49,10 @@ import { BtnLoaderComponent } from './btn-loader/btn-loader.component';
     SuccessModalComponent,
     PwaButtonComponent,
     BtnLoaderComponent,
+    SimulatorModalComponent,
     ...modules,
     ...components,
   ],
-  entryComponents: [ LoginModalComponent, ErrorModalComponent, SuccessModalComponent, BtnLoaderComponent ]
+  entryComponents: [ SimulatorModalComponent, LoginModalComponent, ErrorModalComponent, SuccessModalComponent, BtnLoaderComponent ]
 })
 export class ComponentsModule { }

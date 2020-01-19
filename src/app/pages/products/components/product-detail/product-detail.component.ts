@@ -8,6 +8,8 @@ import { CacheService } from 'src/app/shared/services/cache/cache.service';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from 'src/app/shared/services/products/products.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ModalService } from 'src/app/shared/services/modal';
+import { SimulatorModalComponent } from 'src/app/shared/components/simulator-modal/simulator-modal.component';
 
 
 @Component({
@@ -56,6 +58,7 @@ export class ProductDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private products$: ProductsService,
     private sanitizer: DomSanitizer,
+    private modal$: ModalService,
   ) {
     this.route.paramMap.subscribe((params: any) => {
       this.productId = params.params.id;
@@ -131,13 +134,7 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-
-
-
-
-
-  }
+  ngOnInit() { }
 
   insertOnCache() {
     const arr = [
@@ -170,6 +167,10 @@ export class ProductDetailComponent implements OnInit {
     const image = this.productDetails ? `data:image/png;base64, ${this.productDetails.imagens[index]}` : './../../../../../assets/img/nao-disponivel.jpg';
     const teste = this.sanitizer.bypassSecurityTrustResourceUrl(image);
     return teste;
+  }
+
+  openSimulatorModal() {
+    this.modal$.open(SimulatorModalComponent, {});
   }
 
   get isProductTypeService(): boolean {

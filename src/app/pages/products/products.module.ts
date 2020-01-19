@@ -10,11 +10,11 @@ import { ProductTabsComponent } from './components/product-detail/components/pro
 
 
 @NgModule({
-  declarations: [ProductsComponent, ProductDetailComponent, ProductTabsComponent],
+  declarations: [ProductsComponent, ProductDetailComponent, ProductTabsComponent, ],
   imports: [
     CommonModule,
     SharedModule,
     ProductsRoutingModule
-  ]
+  ],
 })
 export class ProductsModule { }

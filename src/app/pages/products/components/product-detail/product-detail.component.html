@@ -20,7 +20,7 @@
       <div class="col-md-6">
         <div class="product-info__img">
           <ngx-gallery
-          *ngIf="handleGallery"
+            *ngIf="handleGallery"
             [options]="galleryOptions"
             [images]="galleryImages"
           ></ngx-gallery>
@@ -41,109 +41,22 @@
         </div>
 
         <ng-container *ngIf="!isProductTypeService">
-          <perfect-scrollbar style="max-width: 600px; max-height: 250px;">
-            <div class="product-info__prices" for="radio1">
-              <div class="product-info__prices__select">
-                <input type="radio" id="radio1" />
-              </div>
-              <div class="product-info__prices__offers">
-                <h3>R$ 230.900</h3>
-                <span>Loja São Paulo</span>
-              </div>
-              <div class="product-info__prices__label">
-                <label>Melhor preço</label>
-              </div>
-              <div class="product-info__prices__economy">
-                <span>Preço na loja: R$ 255.000,00</span>
-                <span>Econômetro: 24.100,00</span>
-              </div>
+          <div class="product-info__prices" for="radio1">
+            <div class="product-info__prices__select">
+              <input type="radio" id="radio1" />
             </div>
-
-            <div class="product-info__prices" for="radio1">
-              <div class="product-info__prices__select">
-                <input type="radio" id="radio1" />
-              </div>
-              <div class="product-info__prices__offers">
-                <h3>R$ 230.900</h3>
-                <span>Loja São Paulo</span>
-              </div>
-              <div class="product-info__prices__label">
-                <label>Melhor preço</label>
-              </div>
-              <div class="product-info__prices__economy">
-                <span>Preço na loja: R$ 255.000,00</span>
-                <span>Econômetro: 24.100,00</span>
-              </div>
+            <div class="product-info__prices__offers">
+              <h3>R$ 230.900</h3>
+              <span>Loja São Paulo</span>
             </div>
-
-            <div class="product-info__prices" for="radio1">
-              <div class="product-info__prices__select">
-                <input type="radio" id="radio1" />
-              </div>
-              <div class="product-info__prices__offers">
-                <h3>R$ 230.900</h3>
-                <span>Loja São Paulo</span>
-              </div>
-              <div class="product-info__prices__label">
-                <label>Melhor preço</label>
-              </div>
-              <div class="product-info__prices__economy">
-                <span>Preço na loja: R$ 255.000,00</span>
-                <span>Econômetro: 24.100,00</span>
-              </div>
+            <div class="product-info__prices__label">
+              <label>Melhor preço</label>
             </div>
-
-            <div class="product-info__prices" for="radio1">
-              <div class="product-info__prices__select">
-                <input type="radio" id="radio1" />
-              </div>
-              <div class="product-info__prices__offers">
-                <h3>R$ 230.900</h3>
-                <span>Loja São Paulo</span>
-              </div>
-              <div class="product-info__prices__label">
-                <label>Melhor preço</label>
-              </div>
-              <div class="product-info__prices__economy">
-                <span>Preço na loja: R$ 255.000,00</span>
-                <span>Econômetro: 24.100,00</span>
-              </div>
+            <div class="product-info__prices__economy">
+              <span>Preço na loja: R$ 255.000,00</span>
+              <span>Econômetro: 24.100,00</span>
             </div>
-
-            <div class="product-info__prices" for="radio1">
-              <div class="product-info__prices__select">
-                <input type="radio" id="radio1" />
-              </div>
-              <div class="product-info__prices__offers">
-                <h3>R$ 230.900</h3>
-                <span>Loja São Paulo</span>
-              </div>
-              <div class="product-info__prices__label">
-                <label>Melhor preço</label>
-              </div>
-              <div class="product-info__prices__economy">
-                <span>Preço na loja: R$ 255.000,00</span>
-                <span>Econômetro: 24.100,00</span>
-              </div>
-            </div>
-
-            <div class="product-info__prices" for="radio1">
-              <div class="product-info__prices__select">
-                <input type="radio" id="radio1" />
-              </div>
-              <div class="product-info__prices__offers">
-                <h3>R$ 230.900</h3>
-                <span>Loja São Paulo</span>
-              </div>
-              <div class="product-info__prices__label">
-                <label>Melhor preço</label>
-              </div>
-              <div class="product-info__prices__economy">
-                <span>Preço na loja: R$ 255.000,00</span>
-                <span>Econômetro: 24.100,00</span>
-              </div>
-            </div>
-          </perfect-scrollbar>
+          </div>
         </ng-container>
 
         <ng-container *ngIf="isProductTypeService">
@@ -177,27 +90,39 @@
                 />
               </div>
 
-              <button class="btn btn-round btn-grey mt-5">Solicitar orçamento</button>
+              <button class="btn btn-round btn-grey mt-5">
+                Solicitar orçamento
+              </button>
             </div>
           </div>
         </ng-container>
 
-        <div class="product-info__buttons btns-prod" *ngIf="!isProductTypeService">
-          <button class="btn btn-round btn-primary mr-3">
+        <div
+          class="product-info__buttons btns-prod d-flex flex-row justify-content-center"
+          *ngIf="!isProductTypeService"
+        >
+          <button
+            mat-ripple
+            class="btn btn-round btn-primary mr-3 custon_btn flex-column d-flex justify-content-center align-items-center"
+            (click)="openSimulatorModal()"
+          >
             <fa-icon
-              class="pr-2"
+              class="pr-2 mb-2"
               [icon]="faShoppingCart"
+              [size]="'2x'"
               [styles]="{ color: '#fff' }"
             ></fa-icon>
             Quero Comprar
           </button>
           <button
+            mat-ripple
             (click)="insertOnCache()"
-            class="btn btn-round btn-transparent-full btn-fav"
+            class="btn btn-round btn-transparent-full btn-fav custon_btn flex-column d-flex justify-content-center align-items-center"
           >
             <fa-icon
-              class="pr-2"
+              class="pr-2 mb-2"
               [icon]="faHeart"
+              [size]="'2x'"
               [styles]="{ color: '#9053a1' }"
             ></fa-icon>
 

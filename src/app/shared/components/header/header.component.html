@@ -8,19 +8,34 @@
             <span>0800 770 6883</span>
           </div>
         </div>
-        <div class="col-md-auto" [ngClass]="{'d-flex': isUserLoggedIn}">
+        <div class="col-md-auto" [ngClass]="{ 'd-flex': isUserLoggedIn }">
           <div class="access" *ngIf="isUserLoggedIn">
-            <img src="../../../assets/img/icons/user.png" [matMenuTriggerFor]="userMenu" class="mr-2" />
-            <span [matMenuTriggerFor]="userMenu">{{ userInformation?.name }}</span>
+            <img
+              src="../../../assets/img/icons/user.png"
+              [matMenuTriggerFor]="userMenu"
+              class="mr-2"
+            />
+            <span [matMenuTriggerFor]="userMenu">{{
+              userInformation?.name
+            }}</span>
           </div>
           <mat-menu #userMenu="matMenu">
             <button mat-menu-item>Minhas vendas</button>
             <button mat-menu-item (click)="logout()">Sair</button>
           </mat-menu>
           <div style="cursor: pointer" [matMenuTriggerFor]="userMenu">
-            <fa-icon *ngIf="isUserLoggedIn" [icon]="faAngleDown" class="ml-2"></fa-icon>
+            <fa-icon
+              *ngIf="isUserLoggedIn"
+              [icon]="faAngleDown"
+              class="ml-2"
+            ></fa-icon>
           </div>
-          <div mat-ripple class="access" *ngIf="!isUserLoggedIn" (click)="openLoginDialog()">
+          <div
+            mat-ripple
+            class="access"
+            *ngIf="!isUserLoggedIn"
+            (click)="openLoginDialog()"
+          >
             <!-- <div mat-ripple class="access" [routerLink]="['/minha-conta/produtos']"> -->
             <img src="../../../assets/img/icons/user.png" class="mr-2" />
             <span>Acessar Minha Conta</span>
@@ -67,110 +82,118 @@
   <div class="nav-bar">
     <div class="container">
       <div class="row justify-content-between">
-        <div class="col-md-auto">
-          <div class="logo">
-            <a [routerLink]="['/home']"
-              ><img src="../../../assets/img/logo.png"
-            /></a>
+        <div class="col-6">
+          <div class="row justify-content-start m-0 p-0">
+            <div class="col-md-auto p-0">
+              <div class="logo">
+                <a [routerLink]="['/home']"
+                  ><img src="../../../assets/img/logo.png"
+                /></a>
+              </div>
+            </div>
+            <div class="col-md-auto">
+              <ul class="nav-header">
+                <li class="nav-header__item">
+                  <a
+                    [routerLink]="['/produtos']"
+                    [routerLinkActive]="['nav-header__item__activated']"
+                    >Produtos/Serviços</a
+                  >
+                </li>
+                <li class="nav-header__item">
+                  <a
+                    routerLink="/parceiros"
+                    [routerLinkActive]="['nav-header__item__activated']"
+                    >Parceiros</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-        <div class="col-md-auto">
-          <ul class="nav-header">
-            <li
-              [routerLink]="['/como-funciona']"
-              [routerLinkActive]="['nav-header__item__activated']"
-              class="nav-header__item"
-            >
-              <a href="javascript: void(0)">Como Funciona</a>
-            </li>
-            <li class="nav-header__item">
-              <a
-                [routerLink]="['/produtos']"
-                [routerLinkActive]="['nav-header__item__activated']"
-                >Produtos/Serviços</a
-              >
-            </li>
-            <!-- <li class="nav-header__item">
-              <a routerLink="/beneficios">Benefícios</a>
-            </li> -->
-            <li class="nav-header__item">
-              <a
-                routerLink="/parceiros"
-                [routerLinkActive]="['nav-header__item__activated']"
-                >Parceiros</a
-              >
-            </li>
-            <li
-              class="nav-header__item"
-              [routerLinkActive]="['nav-header__item__activated']"
-            >
-              <a routerLink="/simulador">Simulador</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-md-auto">
-          <div class="search" mat-ripple>
-            <a class="cursor-pointer" href="javascript: void(0)" [matMenuTriggerFor]="menuSearch"
-              ><img src="../../../assets/img/icons/search.png"
-            /></a>
-          </div>
-          <mat-menu #menuSearch="matMenu" class="menu-search">
-            <ng-template matMenuContent>
-              <app-search-panel></app-search-panel>
-            </ng-template>
-          </mat-menu>
-        </div>
-        <div class="col-md-auto">
-          <div class="cart" mat-ripple>
-            <!-- <a href="javascript: void(0)" [matMenuTriggerFor]="menuCart"
-              ><img src="../../../assets/img/icons/cart.png"
-            /></a> -->
-            <fa-icon
-              [icon]="faHeart"
-              [matMenuTriggerFor]="menuCart"
-              [styles]="{ color: '#9053a1' }"
-              class="cursor-pointer"
-            ></fa-icon>
-          </div>
-          <mat-menu #menuCart="matMenu">
-            <ng-template matMenuContent>
-              <div class="triangle"></div>
-              <div
-                class="menu-cart--content"
-                (click)="$event.stopPropagation()"
-              >
-                <h6 class="mt-0 mb-2">
-                  Meus favoritos
-                </h6>
+        <div class="col">
+          <div class="row justify-content-end m-0 p-0">
+            <div class="col-md-auto">
+              <div class="search" mat-ripple>
+                <a
+                  class="cursor-pointer"
+                  href="javascript: void(0)"
+                  [matMenuTriggerFor]="menuSearch"
+                  ><img src="../../../assets/img/icons/search.png"
+                /></a>
+              </div>
+              <mat-menu #menuSearch="matMenu" class="menu-search">
+                <ng-template matMenuContent>
+                  <app-search-panel></app-search-panel>
+                </ng-template>
+              </mat-menu>
+            </div>
+            <div class="col-md-auto">
+              <div class="cart" mat-ripple>
+                <!-- <a href="javascript: void(0)" [matMenuTriggerFor]="menuCart"
+                  ><img src="../../../assets/img/icons/cart.png"
+                /></a> -->
+                <fa-icon
+                  [icon]="faHeart"
+                  [matMenuTriggerFor]="menuCart"
+                  [styles]="{ color: '#9053a1' }"
+                  class="cursor-pointer"
+                ></fa-icon>
+              </div>
+              <mat-menu #menuCart="matMenu">
+                <ng-template matMenuContent>
+                  <div class="triangle"></div>
+                  <div
+                    class="menu-cart--content"
+                    (click)="$event.stopPropagation()"
+                  >
+                    <h6
+                      class="mt-0 mb-2"
+                      [ngClass]="{ 'text-center': !favoritos?.length }"
+                    >
+                      {{
+                        favoritos?.length > 0
+                          ? "Meus favoritos"
+                          : "Você não possui favoritos!"
+                      }}
+                    </h6>
 
-                <ng-container *ngIf="favoritos.length > 1;">
-                    <div class="d-flex w-100 pt-3" *ngFor="let fav of favoritos">
+                    <ng-container *ngIf="favoritos?.length > 0">
+                      <div
+                        class="d-flex w-100 pt-3"
+                        *ngFor="let fav of favoritos"
+                      >
                         <img src="./../../../../assets/img/icon1.png" alt="" />
                         <div class="px-3">
                           <h4 class="m-0 mb-2">
                             BMW Série 3 Sedã 2.0 16V TurboActive
                           </h4>
                           <span>R$ 230.900</span>
-                          <button type="button" class="btn btn-round mt-3 mb-3" mat-ripple>
+                          <button
+                            type="button"
+                            class="btn btn-round mt-3 mb-3"
+                            mat-ripple
+                          >
                             Fechar pedido
                           </button>
                         </div>
                       </div>
-                </ng-container>
-              </div>
-            </ng-template>
-          </mat-menu>
-        </div>
-        <div class="col-md-auto">
-          <a
-            href="https://play.google.com/store/apps/details?id=br.com.sicoob.facaparte.app&hl=pt_BR"
-            target="_blank"
-            class="btn btn-round btn-primary"
-            >Faça parte
-          </a>
+                    </ng-container>
+                  </div>
+                </ng-template>
+              </mat-menu>
+            </div>
+            <div class="col-md-auto pr-0">
+              <a
+                href="https://play.google.com/store/apps/details?id=br.com.sicoob.facaparte.app&hl=pt_BR"
+                target="_blank"
+                class="btn btn-round btn-primary"
+                >Faça parte
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </header>
-
