@@ -23,8 +23,7 @@ export class LoginService extends LoginInterface {
   }
 
    logIn(body: Login): Observable<LoginResponse> {
-     body.system = 'AD';
-     const url = `${this.baseUrl}${env.api.domains.auth.login}`;
+     const url = `${this.baseUrl}${env.api.domains.auth.login}/b2c`;
 
      return this.api$.post(url, body);
    }
