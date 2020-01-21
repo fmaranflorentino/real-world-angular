@@ -139,6 +139,94 @@
 
 .custon_btn {
   border-radius: 6px;
-  
+
   height: 120px;
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: 0;
+  }
+
+  40% {
+    background-position: 440px;
+  }
+  100% {
+    background-position: 900px;
+  }
+}
+
+
+.loading-background-highlight {
+  animation: placeHolderShimmer 2s infinite ease-in-out;
+  background-image: linear-gradient(
+    90deg,
+    #f4f4f4 0px,
+    rgba(229, 229, 229, 0.8) 40px,
+    #f4f4f4 80px
+  );
+  background-size: 900px;
+}
+
+.loading-background-highlightDelay {
+  animation: 2.3s placeHolderShimmer 1.7s infinite ease-in-out;
+  background-image: linear-gradient(
+    90deg,
+    #f4f4f4 0px,
+    rgba(229, 229, 229, 0.8) 40px,
+    #f4f4f4 80px
+  );
+  background-size: 900px;
+}
+
+.skeleton-img {
+  background-color: #ccc;
+  @extend .loading-background-highlight;
+
+  width: 100%;
+  height: 337px;
+}
+
+.skeleton-thumbnail {
+  background-color: #999;
+  border-radius: 8px;
+  @extend .loading-background-highlight;
+
+  width: 32%;
+  height: 102px;
+  margin-right: 0;
+  margin-top: 10px;
+
+  &:not(:last-child) {
+    margin-right: 2%;
+  }
+}
+
+.skeleton-title {
+  width: 100%;
+  height: 32px;
+  display: block;
+  @extend .loading-background-highlightDelay;
+  margin-bottom: 30px;
+}
+
+.skeleton-price {
+  width: 100%;
+  height: 32px;
+  display: block;
+  @extend .loading-background-highlightDelay;
+  height: 93px;
+}
+
+.skeleton-button {
+  width: 188px;
+  height: 120px;
+  display: block;
+  @extend .loading-background-highlightDelay;
+  margin-right: 10px;
+
+  &.second {
+    width: 266px;
+    margin-right: 0;
+  }
 }

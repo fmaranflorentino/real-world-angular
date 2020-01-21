@@ -15,7 +15,26 @@
     </div>
   </div>
 
-  <div class="container product-info">
+  <div class="container skeleton-detail" @fadeIn *ngIf="!handleGallery">
+    <div class="row">
+      <div class="col-md-6 row m-0">
+        <div class="skeleton-img"></div>
+        <div class="skeleton-thumbnail"></div>
+        <div class="skeleton-thumbnail"></div>
+        <div class="skeleton-thumbnail"></div>
+      </div>
+      <div class="col-md-6 d-flex flex-column">
+        <div class="skeleton-title"></div>
+        <div class="skeleton-price"></div>
+        <div class="d-flex w-100 flex-row justify-content-center mt-4">
+          <div class="skeleton-button"></div>
+          <div class="skeleton-button second"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container product-info" @fadeIn *ngIf="handleGallery">
     <div class="row">
       <div class="col-md-6">
         <div class="product-info__img">
@@ -30,15 +49,13 @@
         <div class="product-info__logo">
           <h1>{{ productDetails?.nome }}</h1>
         </div>
-        <div class="product-info__rating">
+        <!-- <div class="product-info__rating">
           <fa-icon [icon]="faStar"></fa-icon>
           <fa-icon [icon]="faStar"></fa-icon>
           <fa-icon [icon]="faStar"></fa-icon>
           <fa-icon [icon]="faStar"></fa-icon>
-
-          <!-- <i class="fa fa-star-half-empty"></i> -->
           <span>4 of 5</span>
-        </div>
+        </div> -->
 
         <ng-container *ngIf="!isProductTypeService">
           <div class="product-info__prices" for="radio1">

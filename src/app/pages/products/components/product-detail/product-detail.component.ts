@@ -10,12 +10,14 @@ import { ProductsService } from 'src/app/shared/services/products/products.servi
 import { DomSanitizer } from '@angular/platform-browser';
 import { ModalService } from 'src/app/shared/services/modal';
 import { SimulatorModalComponent } from 'src/app/shared/components/simulator-modal/simulator-modal.component';
+import { fadeIn } from 'src/app/shared/helpers/animations';
 
 
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
-  styleUrls: ['./product-detail.component.scss']
+  styleUrls: ['./product-detail.component.scss'],
+  animations: [fadeIn],
 })
 export class ProductDetailComponent implements OnInit {
   faStar = faStar;
