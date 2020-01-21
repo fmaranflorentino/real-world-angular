@@ -5,8 +5,8 @@ const attributesBase = '/api/Atributos';
 export const environment = {
   production: false,
   api: {
-    basePath: 'http://191.239.251.236:8080',
-    basePathLogin: 'http://191.239.251.236:8081',
+    basePath: 'http://104.41.43.248:8080',
+    basePathLogin: 'http://104.41.43.248:8081',
     version: '',
     protocol: '',
     domains: {
