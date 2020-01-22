@@ -24,6 +24,7 @@ export class ProductsComponent implements OnInit {
     currentPage: 1,
     pageSize: 10,
   };
+  errorGetProducts: boolean;
 
   constructor(
     private productsService: ProductsService,
@@ -41,6 +42,10 @@ export class ProductsComponent implements OnInit {
     this.getAllProducts({ PageNumber: 1, PageSize: 10, orderDesc: true })
       .then((products) => {
         this.collection = products.items;
+        this.loadingProducts = false;
+      })
+      .catch((error) => {
+        this.errorGetProducts = true;
         this.loadingProducts = false;
       });
 

@@ -61,7 +61,7 @@
       </div>
 
       <div class="col-6 products-config">
-        <button mat-icon-button aria-label="">
+        <!-- <button mat-icon-button aria-label="">
           <mat-icon>
             <fa-icon [icon]="faTh" [styles]="{ color: '#9053A1' }"></fa-icon>
           </mat-icon>
@@ -70,7 +70,7 @@
           <mat-icon>
             <fa-icon [icon]="faBars" [styles]="{ color: '#9053A1' }"></fa-icon>
           </mat-icon>
-        </button>
+        </button> -->
         <div class="dropdown dropdown-order">
           <button class="btn" mat-button [matMenuTriggerFor]="maisVendidos">
             <span class="mr-3">
@@ -139,12 +139,12 @@
           </div>
         </div>
       </div>
-      <section class="col-9 products-list" @fadeIn *ngIf="!loadingProducts">
+      <section class="col-9 products-list" @fadeIn *ngIf="!loadingProducts && !errorGetProducts">
         <div class="row" @listState *ngIf="collection?.length > 0">
           <app-product
             *ngFor="
               let item of collection
-                | paginate: { itemsPerPage: 9, currentPage: paginationState?.currentPage }
+                | paginate: { itemsPerPage: 9, currentPage: 2 }
             "
             class="col-md-4 col-6"
             [product]="item"
@@ -152,6 +152,15 @@
         </div>
         <pagination-controls previousLabel="Anterior" nextLabel="Próximo" (pageChange)="getAllProducts({PageNumber: $event, PageSize: 10, orderDesc: true})"></pagination-controls>
         <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+      </section>
+
+      <section class="col-9 products-list" @fadeIn *ngIf="errorGetProducts">
+        <div class="row justify-content-center mt-5">
+          <div class="col-6 custom-box px-3 py-4 d-flex flex-column align-items-center text-center">
+            <img class="mb-3" src="./../../../assets/img/svg/error.svg" width="60px" alt="Erro">
+            Não foi possível buscar os produtos.
+          </div>
+        </div>
       </section>
     </div>
   </div>
