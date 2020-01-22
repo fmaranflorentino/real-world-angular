@@ -40,7 +40,7 @@ export class AuthService extends AuthInterface {
   getUserInformation() {
     const token: string = this.getToken();
     const undecodedToken = jwt_decode(token);
-    
+
     return undecodedToken;
   }
 

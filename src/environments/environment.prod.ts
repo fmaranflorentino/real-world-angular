@@ -5,13 +5,13 @@ const attributesBase = '/api/Atributos';
 export const environment = {
   production: true,
   api: {
-    basePath: '',
-    basePathLogin: 'http://191.239.251.236:8081',
+    basePath: 'http://104.41.43.248:8080',
+    basePathLogin: 'http://104.41.43.248:8081',
     version: '',
     protocol: '',
     domains: {
       auth: {
-        login: '/api/Marketclub/Security/Login',
+        login: '/api/Security/Login',
         logout: '',
       },
       products: {
@@ -21,6 +21,7 @@ export const environment = {
         addProduct: '/api/Produtos',
         editProduct: productBase,
         deleteProduct: productBase,
+        priceRange: '/api/Filtros/FaixaPrecos',
       },
       sellers: {
         all: sellersBase,

@@ -58,9 +58,12 @@ export class ProductsComponent implements OnInit {
   }
 
   getAllProducts(filters?): Promise<any> {
-    if (filters && filters.pageNumber) {
-      this.paginationState.currentPage = filters.pageNumber;
+    if (filters && filters.PageNumber) {
+      this.paginationState.currentPage = filters.PageNumber;
+
+      document.body.scrollTo({ top: 0, behavior: 'smooth' });
     }
+    
     return new Promise((resolve, reject) => {
       this.productsService
         .getProducts(filters)

@@ -3,6 +3,7 @@
   margin-bottom: 50px;
   display: block;
   padding: 10px;
+  cursor: pointer;
 }
 .product-box__title h1 {
   font-size: 20px;

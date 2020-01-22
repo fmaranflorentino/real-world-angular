@@ -4,6 +4,7 @@ import { faChevronRight, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 import { listStateTrigger, listOpacity, fadeIn, slideInAnimation, routeSlideSide } from 'src/app/shared/helpers/animations';
 
 import { wait } from 'src/app/shared/helpers/ui.helper';
+import { AuthService } from 'src/app/shared/services/auth/auth.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -26,12 +27,17 @@ export class DashboardComponent implements OnInit {
   selectedItem = this.menuItems[0];
   isNewProduct = false;
 
-  constructor() { }
+  constructor(
+    private auth$: AuthService,
+  ) { }
 
   ngOnInit() {
     wait(500)
       .then(() => {
         this.showEffects = true;
+
+        const infos = this.auth$.getUserInformation();
+
       });
   }
 
